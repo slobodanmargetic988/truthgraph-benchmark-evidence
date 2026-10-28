@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-10-28T11:27:51.709384+00:00",
+  "original_native_copies_already_present": true,
+  "all3_original_whole_native_bytes_match_published_copies": true,
+  "logs": [
+    {
+      "thread_id": "01a17372-0953-7aa1-8fb9-ca58efd98f74",
+      "role": "with_truthgraph_operator",
+      "file": "logs/rollout-2026-10-25T15-23-35-01a17372-0953-7aa1-8fb9-ca58efd98f74.jsonl",
+      "bytes": 1827440,
+      "sha256": "33bd1d9eab35f4a347a22be96e6d7caa10f218757fc317cc2d249282c71ed6c2",
+      "later_settings_records": 2,
+      "additional_task_or_user_turn": false
+    },
+    {
+      "thread_id": "01a17378-fbf8-7da3-899f-12448bc85709",
+      "role": "without_truthgraph",
+      "file": "logs/rollout-2026-10-25T15-31-11-01a17378-fbf8-7da3-899f-12448bc85709.jsonl",
+      "bytes": 1832317,
+      "sha256": "f1c63d1cc6be13a8e7a9ae4c60d25331bf53d55767ee5a6891d87e8ded4478cc",
+      "later_settings_records": 2,
+      "additional_task_or_user_turn": false
+    },
+    {
+      "thread_id": "01a17381-9dde-7f50-a8ed-d237770f3703",
+      "role": "agent_authored_analysis",
+      "file": "logs/rollout-2026-10-25T15-40-36-01a17381-9dde-7f50-a8ed-d237770f3703.jsonl",
+      "bytes": 642675,
+      "sha256": "b4e0c0687a056ae15ece01acf3549e152f611df174ba1a4a6dca7f6769b52177",
+      "later_settings_records": 1,
+      "additional_task_or_user_turn": false
+    }
+  ],
+  "release_url": "https://github.com/slobodanmargetic988/truthgraph-benchmark-evidence/releases/tag/2026-10-25-weeyugaweb-request-id",
+  "all3_recordings_already_published": true,
+  "recordings": [
+    {
+      "name": "1-with-truthgraph_screen-recording-2026-10-25-15.23.33.mov",
+      "bytes": 161717881,
+      "sha256": "3ee8724caf96d9517c222809a8938ca1bff586ea75e0fa5223bd4f633243c1ec",
+      "url": "https://github.com/slobodanmargetic988/truthgraph-benchmark-evidence/releases/download/2026-10-25-weeyugaweb-request-id/1-with-truthgraph_screen-recording-2026-10-25-15.23.33.mov",
+      "GitHub_digest_matches_Desktop_original": true,
+      "duration_seconds": 430.626667,
+      "covers_complete_task": true,
+      "task_start_missed_seconds": 0
+    },
+    {
+      "name": "2-without-truthgraph_screen-recording-2026-10-25-15.32.12.mov",
+      "bytes": 99418829,
+      "sha256": "c9f660e5ae2e6fe0660764a544ad9950d3850e645d8ab940dfbd18c6e1f52cce",
+      "url": "https://github.com/slobodanmargetic988/truthgraph-benchmark-evidence/releases/download/2026-10-25-weeyugaweb-request-id/2-without-truthgraph_screen-recording-2026-10-25-15.32.12.mov",
+      "GitHub_digest_matches_Desktop_original": true,
+      "duration_seconds": 483.175,
+      "covers_complete_task": true,
+      "task_start_missed_seconds": 0
+    },
+    {
+      "name": "3-codex-summary_screen-recording-2026-10-25-15.42.04.mov",
+      "bytes": 45691025,
+      "sha256": "b7553962ae5df920c998861f2dc95ac284aa57bc8ef7ad397dfc18eee71f24e7",
+      "url": "https://github.com/slobodanmargetic988/truthgraph-benchmark-evidence/releases/download/2026-10-25-weeyugaweb-request-id/3-codex-summary_screen-recording-2026-10-25-15.42.04.mov",
+      "GitHub_digest_matches_Desktop_original": true,
+      "duration_seconds": 181.421667,
+      "covers_complete_task": false,
+      "task_start_missed_seconds": 2.0
+    }
+  ],
+  "raw_or_video_replacements": 0,
+  "operator_customer_distinction": "Original ON used operator truthgraph, not truthgraph_customer. This is not customer hybrid/vector qualification.",
+  "known_secret_pattern_matches": 0,
+  "video_review_scope": "Middle frames show the corresponding Codex chats; no credential/private unrelated window was observed in those three inspected images. OCR of nine sampled frames found no known credential patterns. This is scoped sampling, not exhaustive privacy certification.",
+  "summary_recording_note": "Begins approximately2seconds after summary task start, covers its completion. ON/OFF recordings cover their complete task intervals."
+}

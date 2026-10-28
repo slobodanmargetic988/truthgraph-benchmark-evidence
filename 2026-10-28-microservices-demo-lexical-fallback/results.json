@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "published_case": "Selected completed WITH-skill comparison with lexical fallback; NOT a full hybrid success.",
+  "source": {
+    "repository": "https://github.com/GoogleCloudPlatform/microservices-demo",
+    "commit": "38e7348eb289eb5b87c0c6e8cb19ced0449dc389",
+    "indexed_repository_id": "github-GoogleCloudPlatform-microservices-demo-1ae34901"
+  },
+  "controls": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "ultra",
+    "provider": "openai",
+    "CLI": "0.164.0-alpha.11.1",
+    "recorded_service_tier": "default",
+    "same_original_questions": true,
+    "service_skill_and_cache_conditions_not_equal_controlled": true,
+    "prompt_transport": "Exact original content after one normal XML entity decode of the native codex_delegation envelope. No trimming or line-ending normalization."
+  },
+  "tasks": [
+    "boutique-checkout-chain",
+    "boutique-recommendations"
+  ],
+  "runs": {
+    "off": {
+      "condition": "off",
+      "thread_id": "01a17da3-cb55-7302-b1b8-d33b0aac0f1a",
+      "file": "logs/01-original-off.jsonl",
+      "sha256": "2f1aeaecc328737290c7689d706cbf0fb4b20fe38e6deb34d47d185b8f9a3255",
+      "bytes": 1030593,
+      "prompt_file": "prompts/off.txt",
+      "prompt_sha256": "8a5f0686df47a407c308a0e6b02103e42813cc22c8de407a060ab482971e83cb",
+      "measured": {
+        "usage": {
+          "input_tokens": 942562,
+          "cached_input_tokens": 855552,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13555,
+          "reasoning_output_tokens": 5276,
+          "total_tokens": 956117
+        },
+        "duration_ms": 378653,
+        "model_responses": 12,
+        "local_commands": 22,
+        "native_mcp_calls": 0
+      }
+    },
+    "on": {
+      "condition": "on",
+      "thread_id": "01a18222-3517-7bc2-8472-6720ee60c245",
+      "file": "logs/02-with-skill-lexical-fallback.jsonl",
+      "sha256": "34b882896bd934adbfaf46ab8a2541647825f477b548474acb6e99056ef3aec9",
+      "bytes": 981433,
+      "prompt_file": "prompts/on.txt",
+      "prompt_sha256": "5f16a16d08068b5aa24bad668d2e0031e916ea4904a9098b67383961b719113f",
+      "measured": {
+        "usage": {
+          "input_tokens": 771058,
+          "cached_input_tokens": 692736,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10814,
+          "reasoning_output_tokens": 3728,
+          "total_tokens": 781872
+        },
+        "duration_ms": 307729,
+        "model_responses": 11,
+        "local_commands": 21,
+        "native_mcp_calls": 4
+      }
+    }
+  },
+  "comparison": {
+    "elapsed_ms": {
+      "on": 307729,
+      "off": 378653,
+      "difference": -70924,
+      "percent_change": -18.73060559403993
+    },
+    "total_tokens": {
+      "on": 781872,
+      "off": 956117,
+      "difference": -174245,
+      "percent_change": -18.224234063404378
+    },
+    "uncached_input_tokens": {
+      "on": 78322,
+      "off": 87010,
+      "difference": -8688,
+      "percent_change": -9.98505918859901
+    },
+    "uncached_input_plus_output_tokens": {
+      "on": 89136,
+      "off": 100565,
+      "difference": -11429,
+      "percent_change": -11.364788942475013
+    }
+  },
+  "retrieval": {
+    "requested_hybrid_queries": 2,
+    "full_hybrid_successes": 0,
+    "lexical_fallbacks": 2,
+    "semantic_retrieval_deadline_ms": 3000,
+    "reported_semantic_retrieval_elapsed_ms": [
+      3018,
+      3001
+    ],
+    "ready_memberships": 2489,
+    "pending_failed_missing": 0,
+    "excluded_whole_files": 30,
+    "additional_oversized_asset_omission": {
+      "path": "docs/img/online-boutique-frontend-1.png",
+      "bytes": 4721773
+    },
+    "context_call_edges_returned": 0,
+    "context_definition_edges_returned": 6,
+    "bounded_truncated_context": true
+  },
+  "quality": {
+    "reviewed": "Both original OFF and new ON against pinned source and citations",
+    "cited_files_checked": 27,
+    "ON_citation_instances": 60,
+    "OFF_citation_instances": 67,
+    "core_answers_accurate": true,
+    "material_quality_gain_established": false,
+    "OFF_additional_details": "Startup catalog-loading and non-default email failure branches were covered more explicitly.",
+    "runtime_execution_performed": false
+  },
+  "interpretation": "Observed fewer model responses, fewer local commands and lower output tokens; no isolated causal or vector-ranking performance claim. This is a selected single case, not a representative aggregate.",
+  "raw_policy": "Original sealed OFF snapshot and whole completed ON copy, byte-for-byte. No redaction, normalization, trimming or appended notes. Native baseline logs elsewhere can contain later settings appendices; this original sealed snapshot is unchanged."
+}

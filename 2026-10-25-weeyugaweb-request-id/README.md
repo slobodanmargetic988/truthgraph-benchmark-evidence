@@ -8,9 +8,9 @@ Two Codex desktop threads ran the same read-only investigation of the founder's 
 
 | Thread | Mode | Started (UTC) | Recording |
 | --- | --- | --- | --- |
-| `01a17372-0953-7aa1-8fb9-ca58efd98f74` | With TruthGraph: the prompt asks for the `truthgraph-context` skill and the TruthGraph MCP | 14:23:36 | `videos/1-with-truthgraph_…mov` |
-| `01a17378-fbf8-7da3-899f-12448bc85709` | Without TruthGraph: the prompt allows file reads, text search and Git only | 14:32:14 | `videos/2-without-truthgraph_…mov` |
-| `01a17381-9dde-7f50-a8ed-d237770f3703` | A third Codex thread asked to measure the two runs, so the totals are the agent's own reading of the logs | 14:42:02 | `videos/3-codex-summary_…mov` |
+| `01a17372-0953-7aa1-8fb9-ca58efd98f74` | With TruthGraph: the prompt asks for the `truthgraph-context` skill and the TruthGraph MCP | 14:23:36 | [Full ON recording](https://github.com/slobodanmargetic988/truthgraph-benchmark-evidence/releases/download/2026-10-25-weeyugaweb-request-id/1-with-truthgraph_screen-recording-2026-10-25-15.23.33.mov) |
+| `01a17378-fbf8-7da3-899f-12448bc85709` | Without TruthGraph: the prompt allows file reads, text search and Git only | 14:32:14 | [Full OFF recording](https://github.com/slobodanmargetic988/truthgraph-benchmark-evidence/releases/download/2026-10-25-weeyugaweb-request-id/2-without-truthgraph_screen-recording-2026-10-25-15.32.12.mov) |
+| `01a17381-9dde-7f50-a8ed-d237770f3703` | A third Codex thread asked to measure the two runs, so the totals are the agent's own reading of the logs | 14:42:02 | [Summary recording](https://github.com/slobodanmargetic988/truthgraph-benchmark-evidence/releases/download/2026-10-25-weeyugaweb-request-id/3-codex-summary_screen-recording-2026-10-25-15.42.04.mov) |
 | `01a17383-a155-7df2-8ec2-101f823bb417` | A sub-agent the third thread started to double-check one run | 14:42:48 | (inside recording 3) |
 
 ## Results
@@ -31,9 +31,9 @@ From `python3 verify.py`, which recomputes everything from the logs using only t
 - **One task, one run each.** This shows what happened once on one codebase. It is not an average.
 - **Most of the saving is cached input.** Codex resends the conversation on every step, and most of that is served from the provider's cache. The uncached input fell 17.9% and output fell 10.8%. Because cached tokens are billed at a lower rate, the cost change is smaller than 28.9%.
 - **The prompts differ in their tool instruction.** The task text is identical. The "with" prompt adds an instruction to use TruthGraph, and the "without" prompt adds an instruction not to. In the "without" run TruthGraph was excluded by that instruction, not by configuration. The log shows zero TruthGraph calls in that run.
-- **The with-TruthGraph run went first**, 9 minutes before the other. Run order doesn't change token counts. Any provider-side caching shared between threads could only have helped the second run, which was the one without TruthGraph.
+- **The with-TruthGraph run went first**, 9 minutes before the other. Order and cache warmth were not controlled; the causal effect of order/cache conditions is not established.
 - **The repository is private.** Outsiders can check the logs and recordings against each other, but cannot rerun this exact task. A public-repository benchmark is being prepared separately.
-- **The logs were reopened on 27 October.** Opening a thread in the Codex app appends one `thread_settings_applied` line, dated 27 October, to its log. Nothing else was added.
+- **Later settings records remain included.** The ON/OFF whole logs each retain two post-task `thread_settings_applied` records (25 and 27 October); the summary retains one (27 October). No additional user/task turns were found. Existing public copies exactly match the current whole native originals; they were not replaced or cleaned.
 
 ## Verify
 
@@ -46,3 +46,11 @@ python3 verify.py
 ```
 
 `SHA256SUMS` fixes the content of every file here. Each log's `session_meta` line carries its thread ID and the Codex version, and every event has a timestamp. You can match the timestamps to the "Working for …" timers and the session IDs in the status panel visible in the recordings.
+
+## Publication and workflow audit — 28 October 2026
+
+All three owner-specified raw logs were already present, along with the summary sub-agent log. The three Desktop recordings were already GitHub release assets. Their GitHub SHA-256 digests/sizes match both the existing checksum manifest and the Desktop originals; no replacement or duplicate upload was needed. The ON/OFF clips cover their complete task intervals; the summary recording starts about 2 seconds after that task began and covers completion. See [publication-audit-20261028.json](publication-audit-20261028.json).
+
+This older ON run used the **operator `truthgraph` MCP**, not the customer `/api/mcp` hybrid/vector pipeline. It made 10 native operator calls, including one failed lookup; other lookups were bounded/truncated. Those failures remain in the raw. It had 23 local command events / 26 model responses, versus 36 / 32 in OFF: observed less work consistent with reduced repeated context, not a controlled causal or quality claim. The third thread and its sub-agent contain the agents' own measurements/conclusions; preserving them does not turn every conclusion into a verified fact.
+
+Nine sampled video frames passed known-secret OCR checks, and three middle frames visibly matched the corresponding Codex chats. This was a bounded sample review, not an exhaustive privacy certification of every video frame. Raw logs and recordings remain unmodified.
