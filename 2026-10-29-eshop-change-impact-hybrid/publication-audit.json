@@ -1,0 +1,14 @@
+{
+  "publication_authorization": "Owner explicitly requested publishing this eShop pair in the public benchmark evidence repository.",
+  "known_credential_scan": {
+    "on_match_count": 0,
+    "off_match_count": 0,
+    "limitations": "Pattern screening cannot prove absence of all secrets."
+  },
+  "manual_scope_review": "No concrete credential literal, private third-party source or unrelated message content found. Native machine/account/session/tool metadata, local paths and historical command-approval prefixes remain in the raw logs.",
+  "whole_raw_byte_identity_verified": true,
+  "other_current_case_raw_files_added": 0,
+  "original_logs_changed": false,
+  "case_date": "2026-10-29",
+  "publication_date": "2026-10-30"
+}

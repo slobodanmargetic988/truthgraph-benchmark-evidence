@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "published_date": "2026-10-30",
+  "selected_comparison": true,
+  "selection": "Selected because this new WITH-skill attempt completed faster and used fewer total tokens than the original OFF. Other current cases did not all improve and are not included; this is not a suite-level win rate.",
+  "source": {
+    "repository": "https://github.com/dotnet/eShop",
+    "commit": "913acea66708a59595351174cee9b29f37179d29",
+    "indexed_repository_id": "github-dotnet-eShop-714ccd15"
+  },
+  "task": "Read-only change-impact investigation for an optional nullable checkout_reference across entry points, persistence, order lifecycle events and notifications, with backward compatibility.",
+  "controls": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "ultra",
+    "provider": "openai",
+    "same_source_pin": true,
+    "same_task_questions": true,
+    "fresh_projectless_desktop_chats": true,
+    "different_cli_versions": true,
+    "native_turn_service_tier": "not explicitly recorded",
+    "configured_service_tier": "default, from launch configuration; not an independently recorded native tier",
+    "prompt_transport": "Native codex_delegation input XML decoded once; no trimming or line-ending normalization."
+  },
+  "runs": {
+    "off": {
+      "thread_id": "01a186b4-6c69-7872-b61a-e1f1c86380df",
+      "condition": "off",
+      "cli_version": "0.164.0-alpha.11.1",
+      "file": "logs/01-original-off.jsonl",
+      "sha256": "825e4db469debcf0fc648281956053de404fe2e4e476260b84898bb7f6fcce13",
+      "bytes": 1311408,
+      "prompt_file": "prompts/off.txt",
+      "prompt_sha256": "383db1a78cdcd5b99b04e7a6946d60640d6e1a73e63cc02d62632ded59c1cc34",
+      "measured": {
+        "usage": {
+          "input_tokens": 2112651,
+          "cached_input_tokens": 1997056,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 11479,
+          "reasoning_output_tokens": 3527,
+          "total_tokens": 2124130
+        },
+        "duration_ms": 347718,
+        "model_responses": 22,
+        "local_commands": 36,
+        "native_mcp_calls": 0,
+        "nonzero_local_command_exits": 0
+      }
+    },
+    "on": {
+      "thread_id": "01a18990-4c3f-7553-b010-b1fd95b96e3e",
+      "condition": "on",
+      "cli_version": "0.165.0-alpha.1.2",
+      "file": "logs/02-with-skill-hybrid.jsonl",
+      "sha256": "4006167fb068ac4593368eeca9699bfe718ab16a67a63510b27ceaf7426b6658",
+      "bytes": 1561774,
+      "prompt_file": "prompts/on.txt",
+      "prompt_sha256": "b1490f1db5375312bc7c2bc6a8dd0b284659c781a236a0be870f46fe24407440",
+      "measured": {
+        "usage": {
+          "input_tokens": 1885246,
+          "cached_input_tokens": 1754112,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 11552,
+          "reasoning_output_tokens": 3377,
+          "total_tokens": 1896798
+        },
+        "duration_ms": 243980,
+        "model_responses": 18,
+        "local_commands": 33,
+        "native_mcp_calls": 6,
+        "nonzero_local_command_exits": 2
+      }
+    }
+  },
+  "comparison": {
+    "elapsed_ms": {
+      "on": 243980,
+      "off": 347718,
+      "difference": -103738,
+      "percent_change": -29.833945898688018
+    },
+    "input_tokens": {
+      "on": 1885246,
+      "off": 2112651,
+      "difference": -227405,
+      "percent_change": -10.763964327283592
+    },
+    "cached_input_tokens": {
+      "on": 1754112,
+      "off": 1997056,
+      "difference": -242944,
+      "percent_change": -12.165107037559286
+    },
+    "uncached_input_tokens": {
+      "on": 131134,
+      "off": 115595,
+      "difference": 15539,
+      "percent_change": 13.442622950819683
+    },
+    "output_tokens": {
+      "on": 11552,
+      "off": 11479,
+      "difference": 73,
+      "percent_change": 0.6359438975520604
+    },
+    "reasoning_output_tokens": {
+      "on": 3377,
+      "off": 3527,
+      "difference": -150,
+      "percent_change": -4.252906152537572
+    },
+    "total_tokens": {
+      "on": 1896798,
+      "off": 2124130,
+      "difference": -227332,
+      "percent_change": -10.70235814192163
+    }
+  },
+  "retrieval": {
+    "server": "truthgraph_customer",
+    "installed_skill_version": "2026.10.29.3",
+    "backend_source_commit": "7f26eea5e8f54586a4531b3df2df52ef5b4d34f6",
+    "generation": "afa23ce0-bf9a-4071-bc58-7c561324de9e",
+    "requested_hybrid_searches": 2,
+    "full_hybrid_searches": 2,
+    "reported_lexical_fallbacks": 0,
+    "structured_mcp_errors": 0,
+    "impact_confirmed_counts": [
+      0,
+      0
+    ],
+    "ownership_edges": 1,
+    "ownership_edge_type": "DEFINES",
+    "complete_change_impact": false,
+    "limits": "Two intact search responses report hybrid, semantic ready, all phases OK, reranking complete; bounded candidate truncation remains. Ownership is navigation evidence, not full lifecycle propagation."
+  },
+  "quality": {
+    "original_OFF_score": 9.5,
+    "new_ON_score": 9.5,
+    "out_of": 10,
+    "method": "Targeted unblinded static-source review against unchanged frozen rubric; no runtime execution.",
+    "material_quality_gain_established": false,
+    "partial_credit_gap": "No concrete existing command/idempotency test citations (E10), also absent from original OFF.",
+    "frozen_source_references_checked": 34,
+    "hash_mismatches": 0
+  },
+  "limitations": [
+    "Selected single comparison, not randomized repeats or a representative success rate.",
+    "Desktop CLI changed between baseline and retry, as did installed skill/backend graph coverage; no isolated causal attribution.",
+    "Original OFF preceded ON by hours; cache state and live server load uncontrolled. Earlier task-informed development/qualification warmed the environment.",
+    "Source reviewers ran after the timed chat; the benchmark itself did no runtime tests.",
+    "Native MCP and tool metadata/local paths/platform account and session identifiers remain in complete unedited logs.",
+    "Local reranker compute is outside Codex token counters; total tokens are not dollar cost.",
+    "No recording exists for this automated pair."
+  ],
+  "raw_policy": "Whole unchanged captured native JSONL; byte-identical hashes checked against original sealed snapshots. No trimming, normalization, redaction, repair, or appended notes."
+}

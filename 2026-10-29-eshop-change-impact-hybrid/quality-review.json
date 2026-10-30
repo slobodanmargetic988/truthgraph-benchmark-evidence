@@ -1,0 +1,254 @@
+{
+  "review_type": "Unblinded targeted post-timed source-quality review; not runtime proof or an independent blinded trial.",
+  "repository": "eShop",
+  "source_pin": "913acea66708a59595351174cee9b29f37179d29",
+  "source_reference_hashes_checked": 34,
+  "mismatches": 0,
+  "original_OFF_score": 9.5,
+  "new_ON_score": 9.5,
+  "out_of": 10,
+  "frozen_rubric_sha256": "51dbc4cf52f4c1c963e3c558b9ac8670d849d62568feee1269dd3eb5cf266a1c",
+  "private_original_review_sha256": "bbf7c35dd613e3e96e15ec891c736d4a3a516028e90b8f38a52f93962db2c27e",
+  "criteria": [
+    {
+      "id": "E01",
+      "criterion": "Trace actual checkout UI -> basket checkout -> HTTP order creation and duplicated client/server request contracts; reference must survive explicit request reconstruction without replacing authenticated buyer identity.",
+      "newON": {
+        "score": 1,
+        "reason": "Traces Checkout.razor -> BasketState.CheckoutAsync -> OrderingService, duplicated web/API CreateOrderRequest, and explicit command forwarding; the opening preserves buyer identity independently.",
+        "source_citations": [
+          "src/WebApp/Components/Pages/Checkout/Checkout.razor:80-116",
+          "src/WebApp/Services/BasketState.cs:78-108",
+          "src/WebApp/Services/BasketState.cs:158-172",
+          "src/WebApp/Services/OrderingService.cs:12-18",
+          "src/Ordering.API/Apis/OrdersApi.cs:118-146"
+        ]
+      },
+      "existingOFF": {
+        "score": 1,
+        "provenance": "Unchanged original source grade, masked label B; not regraded."
+      }
+    },
+    {
+      "id": "E02",
+      "criterion": "Keep existing x-requestid GUID duplicate-command semantics, order ID and authentication distinct from nullable checkout_reference; duplicate create returns success without rerunning inner command.",
+      "newON": {
+        "score": 1,
+        "reason": "Preserves x-requestid duplicate suppression, original-reference stability on repeated IDs, and distinct order/buyer/event/tracing identities. Source confirms duplicate creation succeeds without rerunning the inner command.",
+        "source_citations": [
+          "src/Ordering.API/Apis/OrdersApi.cs:118-146",
+          "src/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs:39-48",
+          "src/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs:56-69"
+        ]
+      },
+      "existingOFF": {
+        "score": 1,
+        "provenance": "Unchanged original source grade, masked label B; not regraded."
+      }
+    },
+    {
+      "id": "E03",
+      "criterion": "Trace request->command->handler->Order constructor/domain events/save and identity/field reconstruction; do not assume arbitrary JSON fields are preserved.",
+      "newON": {
+        "score": 1,
+        "reason": "Names API request reconstruction, command constructor copying, handler aggregate creation and save, and setting the field before the started event; identifies pre-save domain dispatch.",
+        "source_citations": [
+          "src/Ordering.API/Apis/OrdersApi.cs:140-155",
+          "src/Ordering.API/Application/Commands/CreateOrderCommand.cs:16-80",
+          "src/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs:29-51",
+          "src/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs:52-65"
+        ]
+      },
+      "existingOFF": {
+        "score": 1,
+        "provenance": "Unchanged original source grade, masked label B; not regraded."
+      }
+    },
+    {
+      "id": "E04",
+      "criterion": "Persistent nullable reference needs aggregate+EF mapping and forward schema migration/compatibility for old orders. HTTP logging scope does not persist through async lifecycle.",
+      "newON": {
+        "score": 1,
+        "reason": "Calls for nullable Order state, EF mapping, migration and snapshot with old rows null; later handlers recover persisted state instead of relying on HTTP scope.",
+        "source_citations": [
+          "src/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs:5-35",
+          "src/Ordering.Infrastructure/EntityConfigurations/OrderEntityTypeConfiguration.cs:3-35",
+          "src/Ordering.Infrastructure/Migrations/OrderingContextModelSnapshot.cs:1-35"
+        ]
+      },
+      "existingOFF": {
+        "score": 1,
+        "provenance": "Unchanged original source grade, masked label B; not regraded."
+      }
+    },
+    {
+      "id": "E05",
+      "criterion": "Find read detail+summary projections and client order-result contract; changing write model alone does not expose reference through existing order-status APIs.",
+      "newON": {
+        "score": 1,
+        "reason": "Identifies both explicit detail/list projections, Order/OrderSummary DTOs, WebApp OrderRecord and mobile Order as separate read boundaries.",
+        "source_citations": [
+          "src/Ordering.API/Application/Queries/OrderQueries.cs:6-48",
+          "src/Ordering.API/Apis/OrdersApi.cs:80-98",
+          "src/WebApp/Services/OrderingService.cs:7-25"
+        ]
+      },
+      "existingOFF": {
+        "score": 1,
+        "provenance": "Unchanged original source grade, masked label B; not regraded."
+      }
+    },
+    {
+      "id": "E06",
+      "criterion": "Follow domain->integration event rebuilds and separate publisher/consumer-local contract copies (at least representative awaiting-validation/paid flows); optional additions must preserve old consumers.",
+      "newON": {
+        "score": 1,
+        "reason": "Traces six status-event producers and independent WebApp/Catalog/PaymentProcessor/Webhooks copies with paid reload-and-copy example and awaiting-validation producer inspection; requires old/new message compatibility.",
+        "source_citations": [
+          "src/Ordering.API/Application/DomainEventHandlers/OrderStatusChangedToAwaitingValidationDomainEventHandler.cs:23-34",
+          "src/Ordering.API/Application/DomainEventHandlers/OrderStatusChangedToPaidDomainEventHandler.cs:22-39",
+          "src/Ordering.API/Application/IntegrationEvents/Events/OrderStatusChangedToPaidIntegrationEvent.cs:3-20",
+          "src/Webhooks.API/IntegrationEvents/OrderStatusChangedToPaidIntegrationEvent.cs:1-3"
+        ]
+      },
+      "existingOFF": {
+        "score": 1,
+        "provenance": "Unchanged original source grade, masked label B; not regraded."
+      }
+    },
+    {
+      "id": "E07",
+      "criterion": "Discover Catalog stock validation and PaymentProcessor success/failure branches reconstructing events from OrderId; persist/reload or explicitly propagate support reference rather than assume request headers span RabbitMQ.",
+      "newON": {
+        "score": 1,
+        "reason": "Names Catalog stock-result and PaymentProcessor outcome reconstruction from IDs and later Order reloads; request state is not presumed to survive messages.",
+        "source_citations": [
+          "src/Catalog.API/IntegrationEvents/EventHandling/OrderStatusChangedToAwaitingValidationIntegrationEventHandler.cs:9-32",
+          "src/PaymentProcessor/IntegrationEvents/EventHandling/OrderStatusChangedToStockConfirmedIntegrationEventHandler.cs:9-32"
+        ]
+      },
+      "existingOFF": {
+        "score": 1,
+        "provenance": "Unchanged original source grade, masked label B; not regraded."
+      }
+    },
+    {
+      "id": "E08",
+      "criterion": "Identify transaction/outbox and publication/logging boundaries with failure paths; integration-event ID and transaction ID are distinct from new reference.",
+      "newON": {
+        "score": 1,
+        "reason": "Identifies commit-before-publish, declared-field event-log serialization, failed publication marking and failure acknowledgement. New reference remains application data rather than event/transport identity.",
+        "source_citations": [
+          "src/Ordering.API/Application/Behaviors/TransactionBehavior.cs:20-61",
+          "src/Ordering.API/Application/IntegrationEvents/OrderingIntegrationEventService.cs:13-40",
+          "src/Ordering.API/Apis/OrdersApi.cs:126-163"
+        ]
+      },
+      "existingOFF": {
+        "score": 1,
+        "provenance": "Unchanged original source grade, masked label B; not regraded."
+      }
+    },
+    {
+      "id": "E09",
+      "criterion": "Actual WebApp status handler notifies buyer-scoped callbacks, while Webhooks wraps paid/shipped event and sends subscriptions; no invented push payload or real payment provider.",
+      "newON": {
+        "score": 1,
+        "reason": "Correctly states buyer-keyed WebApp callbacks/refresh and local paid/shipped Webhooks serialization as an inner JSON string; invents no direct reference-bearing push payload or real payment gateway.",
+        "source_citations": [
+          "src/WebApp/Services/OrderStatus/IntegrationEvents/EventHandling/OrderStatusChangedToPaidIntegrationEventHandler.cs:5-13",
+          "src/WebApp/Services/OrderStatus/OrderStatusNotificationService.cs:9-34",
+          "src/Webhooks.API/IntegrationEvents/OrderStatusChangedToPaidIntegrationEventHandler.cs:8-16",
+          "src/PaymentProcessor/IntegrationEvents/EventHandling/OrderStatusChangedToStockConfirmedIntegrationEventHandler.cs:15-27"
+        ]
+      },
+      "existingOFF": {
+        "score": 1,
+        "provenance": "Unchanged original source grade, masked label B; not regraded."
+      }
+    },
+    {
+      "id": "E10",
+      "criterion": "Cite existing API/idempotency/command tests and propose omitted/supplied references for serialization,persistence/readback,event success/failure and compatible consumers; distinguish current coverage from proposed tests.",
+      "newON": {
+        "score": 0.5,
+        "reason": "Strong proposed omitted/null/supplied persistence, reads, events, compatibility and failure matrix; cites existing API and browser assertions. However existing command/idempotency coverage is asserted without concrete IdentifiedCommandHandlerTest/NewOrderCommandHandlerTest citations, the same material traceability gap penalized in the frozen OFF grade.",
+        "source_citations": [
+          "tests/Ordering.UnitTests/Application/IdentifiedCommandHandlerTest.cs:17-57",
+          "tests/Ordering.UnitTests/Application/NewOrderCommandHandlerTest.cs:1-65",
+          "tests/Ordering.FunctionalTests/OrderingApiTests.cs:119-181"
+        ]
+      },
+      "existingOFF": {
+        "score": 0.5,
+        "provenance": "Unchanged original source grade, masked label B; not regraded."
+      }
+    }
+  ],
+  "targeted_source_checks": [
+    {
+      "claim": "Buyer identity and explicit web checkout request reconstruction",
+      "sources": [
+        "src/WebApp/Services/BasketState.cs:78-108"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "claim": "Duplicate suppression and swallowed inner failure",
+      "sources": [
+        "src/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs:39-48,86-101"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "claim": "Commit precedes publication; failures marked failed",
+      "sources": [
+        "src/Ordering.API/Application/Behaviors/TransactionBehavior.cs:32-61",
+        "src/Ordering.API/Application/IntegrationEvents/OrderingIntegrationEventService.cs:13-40"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "claim": "Mobile creates a mapped checkout but submits original Order",
+      "sources": [
+        "src/ClientApp/ViewModels/CheckoutViewModel.cs:105-133",
+        "src/ClientApp/Services/Order/OrderService.cs:28-39"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "claim": "Both read projections explicitly reconstruct responses",
+      "sources": [
+        "src/Ordering.API/Application/Queries/OrderQueries.cs:6-48"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "claim": "Buyer callbacks carry no payload; webhook Payload is a serialized JSON string",
+      "sources": [
+        "src/WebApp/Services/OrderStatus/OrderStatusNotificationService.cs:9-34",
+        "src/Webhooks.API/Model/WebhookData.cs:11-15"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "claim": "Payment outcome reconstructed from OrderId and stock-rejection cancellation lacks a cancellation event",
+      "sources": [
+        "src/PaymentProcessor/IntegrationEvents/EventHandling/OrderStatusChangedToStockConfirmedIntegrationEventHandler.cs:9-32",
+        "src/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs:155-167"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "claim": "Missing named command/idempotency-test citations are material under unchanged frozen E10",
+      "sources": [
+        "tests/Ordering.UnitTests/Application/IdentifiedCommandHandlerTest.cs:17-57",
+        "tests/Ordering.UnitTests/Application/NewOrderCommandHandlerTest.cs:23-53",
+        "tests/Ordering.FunctionalTests/OrderingApiTests.cs:136-159"
+      ],
+      "verdict": "supported traceability gap"
+    }
+  ],
+  "material_errors_in_checked_new_ON_claims": [],
+  "limits": "Post-timed, targeted and unblinded static review. Original OFF is its unchanged earlier frozen grade; not newly regraded. No runtime/test proof. This derived selection contains only the published pair."
+}
