@@ -1,0 +1,288 @@
+{
+  "schema_version": 2,
+  "case_date_utc": "2026-10-30",
+  "prepared_local_date": "2026-10-31",
+  "published_at": null,
+  "selected_comparison": true,
+  "selection": "Selected individual output-token win with acceptable static answer review; owner evaluation gives cached input zero weight. No universal pricing/dollar claim or representative suite success rate.",
+  "source": {
+    "repository": "https://github.com/open-telemetry/opentelemetry-demo",
+    "commit": "d306972ec1d91c7d01ec788e7e98e90535570a4c",
+    "indexed_repository_id": "github-open-telemetry-opentelemetry-demo-1c508b01"
+  },
+  "controls": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "ultra",
+    "provider": "openai",
+    "context_capabilities_version": "2026.10.30.1",
+    "on_server": "truthgraph_test_customer",
+    "on_endpoint": "https://truthgraph-test-6f8d2a10.redu.cloud/api/mcp",
+    "backend_runtime": "544318527289b532226a0ff9f1641107b34b2b77",
+    "generation": "d99d4b50-488e-46af-97e8-c5f5dc821c29",
+    "skill": "2026.10.30.2",
+    "host": "Redu2vCPU/4GiB/queryencoder2threads",
+    "preparation": "Task-relevant readiness and ownership query before timed run; direct read-only stored-evidence integrity check. Earlier versioned ownership qualification also warmed graph data; baseline preparation/cache/load uncontrolled.",
+    "source_task_identical": true,
+    "original_OFF_rerun": false,
+    "ownership_ordering": "source-relevance-v3",
+    "additional_condition_changes": [
+      "Test skill2026.10.30.2; same customerguidance2026.10.30.1.",
+      "Ownership source-relevance-v3 prioritizes requested-subject wiring, local calls/symbol definitions, then supporting declarations.",
+      "Task-relevant readiness/ownership and guarded store-integrity qualification before timing; warmed state disclosed.",
+      "Previous non-winning model attempts and failed bounded qualification remain preserved; this is a selected-development comparison, not randomized proof."
+    ],
+    "fallback_assisted": true
+  },
+  "runs": {
+    "off": {
+      "thread_id": "01a186ce-66a2-7300-aa04-c8e8417263f9",
+      "condition": "off",
+      "cli_version": "0.164.0-alpha.11.1",
+      "file": "logs/01-original-off.jsonl",
+      "sha256": "b6af8b789e591d240985947820be6baba67a01525823bb802eb0747052aca645",
+      "bytes": 1273356,
+      "prompt_file": "prompts/off.txt",
+      "prompt_sha256": "820f6b9bca5fca8f25cbf07a1d2fcea930f3c959b2a5f9991cec25a3a74dc0fc",
+      "measured": {
+        "usage": {
+          "input_tokens": 1358312,
+          "cached_input_tokens": 1234944,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 12176,
+          "reasoning_output_tokens": 4670,
+          "total_tokens": 1370488
+        },
+        "duration_ms": 374683,
+        "model_responses": 14,
+        "local_commands": 36,
+        "native_mcp_calls": 0,
+        "nonzero_local_command_exits": 4
+      }
+    },
+    "on": {
+      "thread_id": "01a18f23-261c-7bf3-b009-3f743fef7c35",
+      "condition": "on",
+      "cli_version": "0.166.0-alpha.5.1",
+      "file": "logs/02-with-test-skill-lexical-fallback.jsonl",
+      "sha256": "230844522a14202bf12ad65e11cd910fd2ec0d60cda8362dbe43f4e27c84b379",
+      "bytes": 1486913,
+      "prompt_file": "prompts/on.txt",
+      "prompt_sha256": "23925b3183cc7ed926624148ff24f736e8c48247158dc4734beee4a4130d4775",
+      "measured": {
+        "usage": {
+          "input_tokens": 1914876,
+          "cached_input_tokens": 1734272,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10620,
+          "reasoning_output_tokens": 3471,
+          "total_tokens": 1925496
+        },
+        "duration_ms": 269443,
+        "model_responses": 18,
+        "local_commands": 91,
+        "native_mcp_calls": 5,
+        "nonzero_local_command_exits": 3
+      },
+      "retrieval": {
+        "searches": [
+          {
+            "requested_mode": "hybrid",
+            "mode": "lexical",
+            "semantic_state": "unavailable",
+            "reranking_status": "not_requested",
+            "phases": [
+              {
+                "phase": "source_lexical",
+                "outcome": "ok",
+                "elapsed_ms": 5052,
+                "budget_ms": 15000,
+                "strategy": "customer_fields_v1"
+              },
+              {
+                "phase": "semantic_readiness",
+                "outcome": "ok",
+                "elapsed_ms": 1335,
+                "budget_ms": 15000
+              },
+              {
+                "phase": "embedding",
+                "outcome": "failed",
+                "elapsed_ms": 3004,
+                "budget_ms": 3000,
+                "error_code": "deadline_exceeded"
+              },
+              {
+                "phase": "ranking_evidence",
+                "outcome": "ok",
+                "elapsed_ms": 7442,
+                "budget_ms": 15000
+              }
+            ],
+            "fallback": null
+          }
+        ],
+        "impacts": [
+          {
+            "root": "symbol:github-open-telemetry-opentelemetry-demo-1c508b01:src/checkout/main.go.checkout.PlaceOrder",
+            "full_impact_present": true,
+            "confirmed_count": 1,
+            "edge_count": 11,
+            "summary_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+            "delivery": {
+              "mode": "full",
+              "result_id": null,
+              "all_details_included": true,
+              "summary_complete": null
+            }
+          },
+          {
+            "root": "contract:github-open-telemetry-opentelemetry-demo-1c508b01:protobuf:pb/demo.proto:oteldemo.OrderResult",
+            "full_impact_present": false,
+            "confirmed_count": null,
+            "edge_count": null,
+            "summary_sha256": "9db7bb0950e49dae3e10aeacde2c17f1c50e65683db3f476b08014fc70cf6a7e",
+            "delivery": {
+              "mode": "file_summary",
+              "result_id": "3Zc-ZLGnu9hThUU3m2WsTLgFYj5Ix1-9",
+              "all_details_included": false,
+              "summary_complete": true
+            }
+          }
+        ],
+        "ownership": [
+          {
+            "root": "endpoint:github-open-telemetry-opentelemetry-demo-1c508b01:protobuf:pb/demo.proto:oteldemo.CheckoutService.PlaceOrder",
+            "retrieval": {
+              "all_scope_evidence_in_this_response": false,
+              "complete_change_impact": false,
+              "complete_within_requested_depth": false,
+              "completeness_scope": "all pages cover indexed ownership-relevant relations within three hops; inventory bridges and unresolved external expansion are excluded; not change-impact completeness",
+              "continuation": "Repeat the same ownership query, repository, revision and limit with next_cursor. Merge graph records by id; repeated root/endpoint entities are anchors, evidence edges do not repeat. An expired or evicted cursor must be restarted explicitly.",
+              "cumulative_edges": 8,
+              "cursor_expires_at": "2026-10-30T23:32:30Z",
+              "frontier_queries": 7,
+              "graph_snapshot": "repeatable_read",
+              "has_more": true,
+              "indexed_head": "d306972ec1d91c7d01ec788e7e98e90535570a4c",
+              "max_entities_per_page": 201,
+              "max_frontier_queries_per_page": 32,
+              "max_scanned_edges_per_page": 256,
+              "next_cursor": "8e5fad653d65ad371d4f36f9962d516c5a1065a8a485a21b8805ffb7a02fe3cc",
+              "ordering_version": "source-relevance-v3",
+              "page": 1,
+              "page_limit": 8,
+              "page_limit_unit": "ownership_evidence_edges",
+              "page_relevance_counts": {
+                "contract_service_wiring": 5,
+                "source_local_production": 3
+              },
+              "pending_frontier_relevance_counts": {
+                "contract_service_wiring": 2,
+                "source_local_production": 1,
+                "supporting_structure": 4,
+                "tests_support": 1
+              },
+              "relevance_counts_scope": "page counts describe returned evidence; frontier counts describe pending nodes by their next priority lower bound, not unseen edge totals",
+              "remaining_frontier_nodes": 8,
+              "requested_depth": 3,
+              "returned_edges": 8,
+              "returned_entities": 9,
+              "revision_mode": "immutable_authenticated_generation",
+              "scanned_edges": 27,
+              "scope": "paged_relevant_ownership",
+              "selection_policy": "requested-subject contract/service wiring, source-backed local production relations, supporting structure, tests/support, then unresolved external evidence; shared-schema sibling declarations remain pageable after implementation calls; relevance orders all ownership views without removing evidence; do not expand inventory, external placeholders or reverse-definition file containers",
+              "traversal_complete": false,
+              "truncated": true,
+              "unexpanded_external_references": 0,
+              "unexpanded_inventory_containers": 0,
+              "representation": "customer_ownership_page_v1",
+              "typed_lists_are_graph_references": true,
+              "projection_truncated": false,
+              "continuation_request": {
+                "query": "endpoint:github-open-telemetry-opentelemetry-demo-1c508b01:protobuf:pb/demo.proto:oteldemo.CheckoutService.PlaceOrder",
+                "repositoryId": "github-open-telemetry-opentelemetry-demo-1c508b01",
+                "intent": "ownership",
+                "limit": 8,
+                "cursor": "8e5fad653d65ad371d4f36f9962d516c5a1065a8a485a21b8805ffb7a02fe3cc"
+              }
+            },
+            "returned_evidence": {
+              "scope": "this_response_only",
+              "graph_available": true,
+              "inventory_only": false,
+              "symbol_count": 3,
+              "call_edge_count": 2,
+              "relationship_types": [
+                "CALLS",
+                "DEFINES",
+                "DEPENDS_ON",
+                "EXPOSES_ENDPOINT",
+                "IMPLEMENTS_CONTRACT",
+                "USES_CONTRACT"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "input_tokens": {
+      "off": 1358312,
+      "on": 1914876,
+      "difference": 556564,
+      "percent_change": 40.97468033853784
+    },
+    "cached_input_tokens": {
+      "off": 1234944,
+      "on": 1734272,
+      "difference": 499328,
+      "percent_change": 40.433250414593694
+    },
+    "uncached_input_tokens": {
+      "off": 123368,
+      "on": 180604,
+      "difference": 57236,
+      "percent_change": 46.39452694377797
+    },
+    "output_tokens": {
+      "off": 12176,
+      "on": 10620,
+      "difference": -1556,
+      "percent_change": -12.779237844940871
+    },
+    "reasoning_output_tokens": {
+      "off": 4670,
+      "on": 3471,
+      "difference": -1199,
+      "percent_change": -25.6745182012848
+    },
+    "total_tokens": {
+      "off": 1370488,
+      "on": 1925496,
+      "difference": 555008,
+      "percent_change": 40.49710759962875
+    },
+    "elapsed_ms": {
+      "off": 374683,
+      "on": 269443,
+      "difference": -105240,
+      "percent_change": -28.08774350584361
+    }
+  },
+  "quality": {
+    "on_score": 9.5,
+    "original_off_score": 8.5,
+    "maximum": 10,
+    "new_review": "unblinded targeted static review"
+  },
+  "limitations": [
+    "One selected ON versus one historical OFF; no variance estimate or causal isolation.",
+    "All original logs retained unchanged; other development attempts are not reclassified as wins.",
+    "Client/skill/backend/testidentity/cache/load/hardware differ.",
+    "Cached input is included in input; reasoning is included in output.",
+    "No recording exists for this automated pair; no application tests or runtime propagation verification ran."
+  ],
+  "this_redu_cycle_on_chat_count": 4,
+  "archive_state": "Committed locally on an additive branch in the existing evidence repository; no public upload by this task."
+}

@@ -1,0 +1,27 @@
+{
+  "publication_authorization": "Owner explicitly accepted the Microservices output-token win and requested archiving its raw materials in the existing benchmark Git repository. A later continuation authorized full task permissions after the public-disclosure boundary was explained. This preparation is local and has not itself pushed or disclosed anything; publication state is recorded separately.",
+  "selection_disclosure": "Output -14.13%, uncached input -8.44%, cached input +18.03%, total +14.71%, time -23.67%; n=1 historical pair.",
+  "known_credential_scan": {
+    "off": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "on": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    }
+  },
+  "scope_review": "Native executed commands and MCP arguments were limited to the pinned public source, installed test-skill guidance and authorized read-only customer calls. No concrete credential literal or unrelated private third-party source/message was found. Native paths/account/session/tool metadata and endpoint identifiers remain in unchanged logs. Pattern scans do not prove all possible secret formats absent.",
+  "whole_raw_byte_identity_verified": true,
+  "original_logs_changed": false,
+  "other_case_raw_files_added": 0,
+  "case_date": "2026-10-30",
+  "publication_date": null,
+  "remaining_benchmarks": "OpenTelemetry demo and Spring Petclinic; eShop is already recorded as a separate selected win.",
+  "full_candidate_tree_scan": "No known credential-pattern matches in non-Git candidate files; values never printed.",
+  "previous_tracked_file_count": 28,
+  "prior_case_files_byte_identical": true,
+  "publication_state": "Local Git archive only. Public upload held after earlier automatic approval review identified native account/session/path metadata. No public publication receipt exists."
+}

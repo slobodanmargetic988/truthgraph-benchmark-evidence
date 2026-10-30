@@ -1,0 +1,46 @@
+{
+  "preparation": "Local isolated clone only; no public push performed by this script.",
+  "owner_authorization_context": "Owner requested archiving successful benchmark raw materials in the existing evidence Git; subsequently authorized full task continuation without routine approvals. Earlier public-disclosure review and later authorization remain recorded in the task.",
+  "raw_unchanged": true,
+  "known_credential_pattern_scan": {
+    "off": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "on": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    }
+  },
+  "private_data_excluded": [
+    "database/graph dumps",
+    "testclientconfig",
+    "account passwords",
+    "provider/APIkeys",
+    "billing/mailcredentials"
+  ],
+  "native_metadata_disclosure": "Whole logs contain native local paths, account/session/tool metadata and endpoint identifiers; not trimmed or redacted.",
+  "publication_state": "Local Git archive only. Public upload held after earlier automatic approval review identified native account/session/path metadata. No public publication receipt exists."
+}
