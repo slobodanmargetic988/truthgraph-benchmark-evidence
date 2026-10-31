@@ -4,7 +4,7 @@ The owner selected this single WITH-TruthGraph attempt because **output tokens f
 
 The owner assigns cached input zero weight in that evaluation. That preference is not a claim that cached input is universally free or that provider dollar cost was measured. With applicable rates Pi/Pc/Po per million uncached/cached/output tokens, the cost difference would be `(-9293*Pi + 153728*Pc - 1380*Po) / 1000000`. Applicable billing was not verified. Reasoning is already included in output, and cached input is already included in input; neither is added again.
 
-This is one selected historical comparison, not a complete suite, representative win rate, average, randomized trial or product-wide causal result. Other development attempts exist and are not reclassified as successes. The eShop win remains separately published; OpenTelemetry and Petclinic remain outside this selected case. No recording exists for this automated pair.
+This is one selected historical comparison, not a complete suite, representative win rate, average, randomized trial or product-wide causal result. Other development attempts exist and are not reclassified as successes. The eShop case remains separately published; OpenTelemetry and Petclinic have their own selected-case folders in this repository. No recording exists for this automated pair.
 
 ## Task and exact conditions
 

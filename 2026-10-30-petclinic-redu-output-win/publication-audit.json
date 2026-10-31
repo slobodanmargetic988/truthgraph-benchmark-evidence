@@ -1,6 +1,6 @@
 {
-  "preparation": "Local isolated clone only; no public push performed by this script.",
-  "owner_authorization_context": "Owner requested archiving successful benchmark raw materials in the existing evidence Git; subsequently authorized full task continuation without routine approvals. Earlier public-disclosure review and later authorization remain recorded in the task.",
+  "preparation": "Prepared in an isolated local clone, using the existing benchmark repository format.",
+  "owner_authorization_context": "Owner explicitly accepted these results and requested saving them with their baselines in the public benchmark repository, including raw session JSONL files (31 October 2026, Europe/Belgrade). This supersedes the prior public-disclosure hold; raw native paths/account/session/tool metadata remain unchanged.",
   "raw_unchanged": true,
   "known_credential_pattern_scan": {
     "off": {
@@ -42,5 +42,11 @@
     "billing/mailcredentials"
   ],
   "native_metadata_disclosure": "Whole logs contain native local paths, account/session/tool metadata and endpoint identifiers; not trimmed or redacted.",
-  "publication_state": "Local Git archive only. Public upload held after earlier automatic approval review identified native account/session/path metadata. No public publication receipt exists."
+  "publication_state": "Authorized for public release. Public commit/merge identity and post-publication raw-byte verification are recorded in a separate publication receipt.",
+  "publication_authorization": "Owner explicitly accepted these results and requested saving them with their baselines in the public benchmark repository, including raw session JSONL files (31 October 2026, Europe/Belgrade). This supersedes the prior public-disclosure hold; raw native paths/account/session/tool metadata remain unchanged.",
+  "prior_state": "Prepared and committed locally only; public release was held before the owner explicitly requested this publication.",
+  "publication_date": "2026-10-31",
+  "publication_timezone": "Europe/Belgrade",
+  "whole_raw_byte_identity_verified": true,
+  "original_logs_changed": false
 }

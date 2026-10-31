@@ -2,7 +2,6 @@
   "schema_version": 2,
   "case_date_utc": "2026-10-30",
   "prepared_local_date": "2026-10-31",
-  "published_at": null,
   "selected_comparison": true,
   "selection": "Selected individual output-token win with acceptable static answer review; owner evaluation gives cached input zero weight. No universal pricing/dollar claim or representative suite success rate.",
   "source": {
@@ -307,5 +306,7 @@
     "Cached input is included in input; reasoning is included in output.",
     "No recording exists for this automated pair; no application tests or runtime propagation verification ran."
   ],
-  "archive_state": "Committed locally on an additive branch in the existing evidence repository; no public upload by this task."
+  "archive_state": "Authorized public release in the existing benchmark evidence repository; whole raw ON/OFF logs remain unchanged.",
+  "publication_date": "2026-10-31",
+  "publication_timezone": "Europe/Belgrade"
 }

@@ -1,5 +1,5 @@
 {
-  "publication_authorization": "Owner explicitly accepted the Microservices output-token win and requested archiving its raw materials in the existing benchmark Git repository. A later continuation authorized full task permissions after the public-disclosure boundary was explained. This preparation is local and has not itself pushed or disclosed anything; publication state is recorded separately.",
+  "publication_authorization": "Owner explicitly accepted these results and requested saving them with their baselines in the public benchmark repository, including raw session JSONL files (31 October 2026, Europe/Belgrade). This supersedes the prior public-disclosure hold; raw native paths/account/session/tool metadata remain unchanged.",
   "selection_disclosure": "Output -14.13%, uncached input -8.44%, cached input +18.03%, total +14.71%, time -23.67%; n=1 historical pair.",
   "known_credential_scan": {
     "off": {
@@ -18,10 +18,12 @@
   "original_logs_changed": false,
   "other_case_raw_files_added": 0,
   "case_date": "2026-10-30",
-  "publication_date": null,
-  "remaining_benchmarks": "OpenTelemetry demo and Spring Petclinic; eShop is already recorded as a separate selected win.",
+  "publication_date": "2026-10-31",
+  "remaining_benchmarks": "Petclinic and OpenTelemetry are now published as separate selected cases in this same release; eShop remains an existing separate case.",
   "full_candidate_tree_scan": "No known credential-pattern matches in non-Git candidate files; values never printed.",
   "previous_tracked_file_count": 28,
   "prior_case_files_byte_identical": true,
-  "publication_state": "Local Git archive only. Public upload held after earlier automatic approval review identified native account/session/path metadata. No public publication receipt exists."
+  "publication_state": "Authorized for public release. Public commit/merge identity and post-publication raw-byte verification are recorded in a separate publication receipt.",
+  "prior_state": "Prepared and committed locally only; public release was held before the owner explicitly requested this publication.",
+  "publication_timezone": "Europe/Belgrade"
 }
