@@ -1,0 +1,312 @@
+{
+  "schema_version": 2,
+  "case_date_utc": "2026-10-30",
+  "prepared_local_date": "2026-10-31",
+  "selected_comparison": true,
+  "selection": "Selected individual output-token win with acceptable static answer review; owner evaluation gives cached input zero weight. No universal pricing/dollar claim or representative suite success rate.",
+  "source": {
+    "repository": "https://github.com/spring-petclinic/spring-petclinic-microservices",
+    "commit": "e8b747ab522721076cacb5cf688eb8a54ba8c5c9",
+    "indexed_repository_id": "github-spring-petclinic-spring-petclinic-microservices-98fa3703"
+  },
+  "controls": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "ultra",
+    "provider": "openai",
+    "context_capabilities_version": "2026.10.30.1",
+    "on_server": "truthgraph_test_customer",
+    "on_endpoint": "https://truthgraph-test-6f8d2a10.redu.cloud/api/mcp",
+    "backend_runtime": "3ecddc8e95ff804dc5a8fad53d9516c65dd9d91c",
+    "generation": "d99d4b50-488e-46af-97e8-c5f5dc821c29",
+    "skill": "Initial test wrapper; customer guidance2026.10.30.1",
+    "host": "Redu2vCPU/4GiB/queryencoder2threads",
+    "preparation": "Frozen snapshot readiness checked before timing. Historical cache/load and client conditions are uncontrolled.",
+    "source_task_identical": true,
+    "original_OFF_rerun": false
+  },
+  "runs": {
+    "off": {
+      "thread_id": "01a186ba-0220-7e80-8b8a-fe33027624b9",
+      "condition": "off",
+      "cli_version": "0.164.0-alpha.11.1",
+      "file": "logs/01-original-off.jsonl",
+      "sha256": "bfda44170144dd9afbb27b85b2fd51688161a6c80d38c9cf482b57a50bda6863",
+      "bytes": 1133625,
+      "prompt_file": "prompts/off.txt",
+      "prompt_sha256": "927cb06d4cf85c6ee6b80c9603ec310af0bb5547a09f41523fcb62cb80c86c6a",
+      "measured": {
+        "usage": {
+          "input_tokens": 986953,
+          "cached_input_tokens": 881792,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10258,
+          "reasoning_output_tokens": 3874,
+          "total_tokens": 997211
+        },
+        "duration_ms": 317603,
+        "model_responses": 14,
+        "local_commands": 54,
+        "native_mcp_calls": 0,
+        "nonzero_local_command_exits": 0
+      }
+    },
+    "on": {
+      "thread_id": "01a18ef8-a255-78b1-8e88-83d0aad34453",
+      "condition": "on",
+      "cli_version": "0.166.0-alpha.5.1",
+      "file": "logs/02-with-test-skill-hybrid.jsonl",
+      "sha256": "54b2e320683f606ee3413ca8a6d09d9d6af6b7177fe553c1ed62bbc56db0141b",
+      "bytes": 1172958,
+      "prompt_file": "prompts/on.txt",
+      "prompt_sha256": "df82aad05088e4fabaa9604b3a71b7fe509834f5d255af7732ae427ae23ce32c",
+      "measured": {
+        "usage": {
+          "input_tokens": 988494,
+          "cached_input_tokens": 892928,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 9506,
+          "reasoning_output_tokens": 2645,
+          "total_tokens": 998000
+        },
+        "duration_ms": 200659,
+        "model_responses": 14,
+        "local_commands": 16,
+        "native_mcp_calls": 7,
+        "nonzero_local_command_exits": 0
+      },
+      "retrieval": {
+        "searches": [
+          {
+            "requested_mode": "hybrid",
+            "mode": "hybrid",
+            "semantic_state": "ready",
+            "reranking_status": "not_requested",
+            "phases": [
+              {
+                "phase": "source_lexical",
+                "outcome": "ok",
+                "elapsed_ms": 742,
+                "budget_ms": 15000,
+                "strategy": "customer_fields_v1"
+              },
+              {
+                "phase": "semantic_readiness",
+                "outcome": "ok",
+                "elapsed_ms": 504,
+                "budget_ms": 15000
+              },
+              {
+                "phase": "embedding",
+                "outcome": "ok",
+                "elapsed_ms": 461,
+                "budget_ms": 3000
+              },
+              {
+                "phase": "semantic_retrieval",
+                "outcome": "ok",
+                "elapsed_ms": 708,
+                "budget_ms": 15000,
+                "pool_acquire_ms": 0,
+                "database_work_ms": 708
+              },
+              {
+                "phase": "ranking_evidence",
+                "outcome": "ok",
+                "elapsed_ms": 468,
+                "budget_ms": 15000
+              }
+            ],
+            "fallback": null
+          },
+          {
+            "requested_mode": "hybrid",
+            "mode": "hybrid",
+            "semantic_state": "ready",
+            "reranking_status": "not_requested",
+            "phases": [
+              {
+                "phase": "source_lexical",
+                "outcome": "ok",
+                "elapsed_ms": 696,
+                "budget_ms": 15000,
+                "strategy": "customer_fields_v1"
+              },
+              {
+                "phase": "semantic_readiness",
+                "outcome": "ok",
+                "elapsed_ms": 1042,
+                "budget_ms": 15000
+              },
+              {
+                "phase": "embedding",
+                "outcome": "ok",
+                "elapsed_ms": 397,
+                "budget_ms": 3000
+              },
+              {
+                "phase": "semantic_retrieval",
+                "outcome": "ok",
+                "elapsed_ms": 350,
+                "budget_ms": 15000,
+                "pool_acquire_ms": 0,
+                "database_work_ms": 350
+              },
+              {
+                "phase": "ranking_evidence",
+                "outcome": "ok",
+                "elapsed_ms": 379,
+                "budget_ms": 15000
+              }
+            ],
+            "fallback": null
+          }
+        ],
+        "impacts": [
+          {
+            "root": "symbol:github-spring-petclinic-spring-petclinic-microservices-98fa3703:spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java.ApiGatewayController.ApiGatewayController",
+            "confirmed_count": 0,
+            "edge_count": 3
+          },
+          {
+            "root": "symbol:github-spring-petclinic-spring-petclinic-microservices-98fa3703:spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java.ApiGatewayController.getOwnerDetails",
+            "confirmed_count": 0,
+            "edge_count": 3
+          },
+          {
+            "root": "symbol:github-spring-petclinic-spring-petclinic-microservices-98fa3703:spring-petclinic-genai-service/src/main/java/org/springframework/samples/petclinic/genai/AIDataProvider.java.AIDataProvider.getAllOwners",
+            "confirmed_count": 1,
+            "edge_count": 7
+          }
+        ],
+        "ownership": [
+          {
+            "root": "symbol:github-spring-petclinic-spring-petclinic-microservices-98fa3703:spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java.ApiGatewayController.getOwnerDetails",
+            "retrieval": {
+              "all_scope_evidence_in_this_response": false,
+              "complete_change_impact": false,
+              "complete_within_requested_depth": false,
+              "completeness_scope": "all pages cover indexed ownership-relevant relations within three hops; inventory bridges and unresolved external expansion are excluded; not change-impact completeness",
+              "continuation": "Repeat the same ownership query, repository, revision and limit with next_cursor. Merge graph records by id; repeated root/endpoint entities are anchors, evidence edges do not repeat. An expired or evicted cursor must be restarted explicitly.",
+              "cumulative_edges": 8,
+              "cursor_expires_at": "2026-10-30T22:46:18Z",
+              "frontier_queries": 10,
+              "graph_snapshot": "repeatable_read",
+              "has_more": true,
+              "indexed_head": "e8b747ab522721076cacb5cf688eb8a54ba8c5c9",
+              "max_entities_per_page": 201,
+              "max_frontier_queries_per_page": 32,
+              "max_scanned_edges_per_page": 256,
+              "next_cursor": "2872a180ab159124cf831df3bedd5c9ee9ecb2014f19b0394d61732b1bed3424",
+              "ordering_version": "source-relevance-v1",
+              "page": 1,
+              "page_limit": 8,
+              "page_limit_unit": "ownership_evidence_edges",
+              "page_relevance_counts": {
+                "source_local_production": 8
+              },
+              "pending_frontier_relevance_counts": {
+                "source_local_production": 3,
+                "tests_support": 2,
+                "unresolved_external": 1
+              },
+              "relevance_counts_scope": "page counts describe returned evidence; frontier counts describe pending nodes by their next priority lower bound, not unseen edge totals",
+              "remaining_frontier_nodes": 6,
+              "requested_depth": 3,
+              "returned_edges": 8,
+              "returned_entities": 9,
+              "revision_mode": "immutable_authenticated_generation",
+              "scanned_edges": 43,
+              "scope": "paged_relevant_ownership",
+              "selection_policy": "requested contract/service wiring, source-backed local production relations, tests/support, then unresolved external evidence; relevance orders all ownership views without removing evidence; do not expand inventory, external placeholders or reverse-definition file containers",
+              "traversal_complete": false,
+              "truncated": true,
+              "unexpanded_external_references": 0,
+              "unexpanded_inventory_containers": 0,
+              "representation": "customer_ownership_page_v1",
+              "typed_lists_are_graph_references": true,
+              "projection_truncated": false,
+              "continuation_request": {
+                "query": "symbol:github-spring-petclinic-spring-petclinic-microservices-98fa3703:spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java.ApiGatewayController.getOwnerDetails",
+                "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703",
+                "intent": "ownership",
+                "limit": 8,
+                "cursor": "2872a180ab159124cf831df3bedd5c9ee9ecb2014f19b0394d61732b1bed3424"
+              }
+            },
+            "returned_evidence": {
+              "scope": "this_response_only",
+              "graph_available": true,
+              "inventory_only": false,
+              "symbol_count": 6,
+              "call_edge_count": 5,
+              "relationship_types": [
+                "CALLS",
+                "DEFINES"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "input_tokens": {
+      "off": 986953,
+      "on": 988494,
+      "difference": 1541,
+      "percent_change": 0.15613712101791855
+    },
+    "cached_input_tokens": {
+      "off": 881792,
+      "on": 892928,
+      "difference": 11136,
+      "percent_change": 1.2628828567281092
+    },
+    "uncached_input_tokens": {
+      "off": 105161,
+      "on": 95566,
+      "difference": -9595,
+      "percent_change": -9.124104943848
+    },
+    "output_tokens": {
+      "off": 10258,
+      "on": 9506,
+      "difference": -752,
+      "percent_change": -7.330863716124004
+    },
+    "reasoning_output_tokens": {
+      "off": 3874,
+      "on": 2645,
+      "difference": -1229,
+      "percent_change": -31.72431595250387
+    },
+    "total_tokens": {
+      "off": 997211,
+      "on": 998000,
+      "difference": 789,
+      "percent_change": 0.0791206675417655
+    },
+    "elapsed_ms": {
+      "off": 317603,
+      "on": 200659,
+      "difference": -116944,
+      "percent_change": -36.82081088654704
+    }
+  },
+  "quality": {
+    "on_score": 9.0,
+    "original_off_score": 9,
+    "maximum": 10,
+    "new_review": "unblinded targeted static review"
+  },
+  "limitations": [
+    "One selected ON versus one historical OFF; no variance estimate or causal isolation.",
+    "All original logs retained unchanged; other development attempts are not reclassified as wins.",
+    "Client/skill/backend/testidentity/cache/load/hardware differ.",
+    "Cached input is included in input; reasoning is included in output.",
+    "No recording exists for this automated pair; no application tests or runtime propagation verification ran."
+  ],
+  "archive_state": "Authorized public release in the existing benchmark evidence repository; whole raw ON/OFF logs remain unchanged.",
+  "publication_date": "2026-10-31",
+  "publication_timezone": "Europe/Belgrade"
+}

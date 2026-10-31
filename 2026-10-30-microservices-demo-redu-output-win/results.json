@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "published_date": "2026-10-31",
+  "selected_comparison": true,
+  "selection": "Owner selected this single Redu WITH attempt for lower output and uncached input, with cached input given zero weight in their evaluation. This is not a claim cached input is universally free, that total tokens declined, or that verified dollar cost declined.",
+  "evaluation_policy": {
+    "cached_input_weight": 0,
+    "scope": "owner evaluation preference, not provider billing policy"
+  },
+  "source": {
+    "repository": "https://github.com/GoogleCloudPlatform/microservices-demo",
+    "commit": "38e7348eb289eb5b87c0c6e8cb19ced0449dc389",
+    "indexed_repository_id": "github-GoogleCloudPlatform-microservices-demo-1ae34901"
+  },
+  "task": "Read-only change-impact plan for optional checkout_reference through callers, downstream work, confirmation, errors and logs, preserving compatibility and existing identities.",
+  "controls": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "ultra",
+    "provider": "openai",
+    "same_source_pin": true,
+    "same_task_questions": true,
+    "fresh_projectless_desktop_chats": true,
+    "different_cli_versions": true,
+    "configured_service_tier": "default; native turn context does not independently record a tier",
+    "prompt_transport": "Native codex_delegation input XML decoded once; exact prompt bytes retained.",
+    "on_server": "truthgraph_test_customer",
+    "on_endpoint": "https://truthgraph-test-6f8d2a10.redu.cloud/api/mcp",
+    "on_skill": "truthgraph-test-context (customer guidance 2026.10.30.1)",
+    "backend_runtime": "3ecddc8",
+    "generation": "d99d4b50-488e-46af-97e8-c5f5dc821c29",
+    "host": "Redu m1.medium: 2 vCPU, 4 GiB RAM; query encoder 2 threads",
+    "fixture": "Authorized isolated clone of benchmark graph/source/embedding snapshot; separate sandbox account and test credentials",
+    "preparation": "Generic hybrid qualification before final service restart; no task-specific warm query. Cache/load and historical conditions are not controlled."
+  },
+  "runs": {
+    "off": {
+      "thread_id": "01a186c8-7ddf-7b92-adfe-3fcae9d7f6b4",
+      "condition": "off",
+      "cli_version": "0.164.0-alpha.11.1",
+      "file": "logs/01-original-off.jsonl",
+      "sha256": "ccad25cfd557bfc7bead73d58561e90de585231ce74fd55ac5cdba995a895081",
+      "bytes": 1022768,
+      "prompt_file": "prompts/off.txt",
+      "prompt_sha256": "541c09d4214a0fa6f930435538633eb31c4b774a31e7e157bb9295ec6e045a64",
+      "measured": {
+        "usage": {
+          "input_tokens": 962651,
+          "cached_input_tokens": 852608,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 9767,
+          "reasoning_output_tokens": 4613,
+          "total_tokens": 972418
+        },
+        "duration_ms": 342937,
+        "model_responses": 12,
+        "local_commands": 22,
+        "native_mcp_calls": 0,
+        "nonzero_local_command_exits": 2
+      }
+    },
+    "on": {
+      "thread_id": "01a18cf9-9b36-7c20-b17c-33619e869485",
+      "condition": "on",
+      "cli_version": "0.165.0-alpha.1.2",
+      "file": "logs/02-with-test-skill-hybrid.jsonl",
+      "sha256": "13a1fa463762124d16978189ac753df0a83055af773c2c11ea1f6cb669f72c73",
+      "bytes": 1102001,
+      "prompt_file": "prompts/on.txt",
+      "prompt_sha256": "531a485dcaac9778e5a2651f10353fbc97a9aa3cdde7d8c4cd296be22cb04389",
+      "measured": {
+        "usage": {
+          "input_tokens": 1107086,
+          "cached_input_tokens": 1006336,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 8387,
+          "reasoning_output_tokens": 2694,
+          "total_tokens": 1115473
+        },
+        "duration_ms": 261751,
+        "model_responses": 13,
+        "local_commands": 16,
+        "native_mcp_calls": 4,
+        "nonzero_local_command_exits": 0
+      }
+    }
+  },
+  "comparison": {
+    "input_tokens": {
+      "off": 962651,
+      "on": 1107086,
+      "difference": 144435,
+      "percent_change": 15.00387991078802
+    },
+    "cached_input_tokens": {
+      "off": 852608,
+      "on": 1006336,
+      "difference": 153728,
+      "percent_change": 18.030325776910374
+    },
+    "uncached_input_tokens": {
+      "off": 110043,
+      "on": 100750,
+      "difference": -9293,
+      "percent_change": -8.444880637568952
+    },
+    "output_tokens": {
+      "off": 9767,
+      "on": 8387,
+      "difference": -1380,
+      "percent_change": -14.129210607146515
+    },
+    "reasoning_output_tokens": {
+      "off": 4613,
+      "on": 2694,
+      "difference": -1919,
+      "percent_change": -41.59982657706481
+    },
+    "total_tokens": {
+      "off": 972418,
+      "on": 1115473,
+      "difference": 143055,
+      "percent_change": 14.711266142749313
+    },
+    "elapsed_ms": {
+      "off": 342937,
+      "on": 261751,
+      "difference": -81186,
+      "percent_change": -23.673735992325117
+    }
+  },
+  "retrieval": {
+    "status": {
+      "generation": "d99d4b50-488e-46af-97e8-c5f5dc821c29",
+      "indexed_revision": "38e7348eb289eb5b87c0c6e8cb19ced0449dc389",
+      "spec_id": "qwen3-embedding-0.6b-q8-1024-source-v1",
+      "configured": true,
+      "capture_complete": true,
+      "complete": true,
+      "eligible_documents": 4917,
+      "embedded_documents": 4917,
+      "pending_documents": 0,
+      "failed_documents": 0,
+      "missing_capture_files": 0,
+      "missing_job_documents": 0,
+      "excluded_files": 30
+    },
+    "search": {
+      "requested_mode": "hybrid",
+      "mode": "hybrid",
+      "semantic_state": "ready",
+      "reranking_status": "not_requested",
+      "phases": [
+        {
+          "phase": "source_lexical",
+          "outcome": "ok",
+          "elapsed_ms": 2052,
+          "budget_ms": 15000,
+          "strategy": "customer_fields_v1"
+        },
+        {
+          "phase": "semantic_readiness",
+          "outcome": "ok",
+          "elapsed_ms": 2617,
+          "budget_ms": 15000
+        },
+        {
+          "phase": "embedding",
+          "outcome": "ok",
+          "elapsed_ms": 414,
+          "budget_ms": 3000
+        },
+        {
+          "phase": "semantic_retrieval",
+          "outcome": "ok",
+          "elapsed_ms": 5464,
+          "budget_ms": 15000,
+          "pool_acquire_ms": 0,
+          "database_work_ms": 5464
+        },
+        {
+          "phase": "ranking_evidence",
+          "outcome": "ok",
+          "elapsed_ms": 3917,
+          "budget_ms": 15000
+        }
+      ],
+      "fallback": null
+    }
+  },
+  "limitations": [
+    "One selected historical comparison per condition; no variance estimate or suite success-rate claim.",
+    "Original OFF was run 2026-10-29 on CLI 0.164.0-alpha.11.1; Redu ON ran 2026-10-30 on CLI 0.165.0-alpha.1.2.",
+    "Test skill/server/endpoint, sandbox identity, runtime, hardware, cache state, prompt scaffolding and load differ.",
+    "Cached input is included in input; reasoning is included in output; no double counting.",
+    "Total counted tokens increased 14.71%; cached input increased 18.03%.",
+    "No recording exists for this automated comparison.",
+    "No graph/database dump, credentials, test client configuration or private fixture source is included."
+  ],
+  "archive_state": "Authorized public release in the existing benchmark evidence repository; whole raw ON/OFF logs remain unchanged.",
+  "publication_date": "2026-10-31",
+  "publication_timezone": "Europe/Belgrade"
+}

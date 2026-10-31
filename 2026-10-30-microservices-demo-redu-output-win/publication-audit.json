@@ -1,0 +1,29 @@
+{
+  "publication_authorization": "Owner explicitly accepted these results and requested saving them with their baselines in the public benchmark repository, including raw session JSONL files (31 October 2026, Europe/Belgrade). This supersedes the prior public-disclosure hold; raw native paths/account/session/tool metadata remain unchanged.",
+  "selection_disclosure": "Output -14.13%, uncached input -8.44%, cached input +18.03%, total +14.71%, time -23.67%; n=1 historical pair.",
+  "known_credential_scan": {
+    "off": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "on": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    }
+  },
+  "scope_review": "Native executed commands and MCP arguments were limited to the pinned public source, installed test-skill guidance and authorized read-only customer calls. No concrete credential literal or unrelated private third-party source/message was found. Native paths/account/session/tool metadata and endpoint identifiers remain in unchanged logs. Pattern scans do not prove all possible secret formats absent.",
+  "whole_raw_byte_identity_verified": true,
+  "original_logs_changed": false,
+  "other_case_raw_files_added": 0,
+  "case_date": "2026-10-30",
+  "publication_date": "2026-10-31",
+  "remaining_benchmarks": "Petclinic and OpenTelemetry are now published as separate selected cases in this same release; eShop remains an existing separate case.",
+  "full_candidate_tree_scan": "No known credential-pattern matches in non-Git candidate files; values never printed.",
+  "previous_tracked_file_count": 28,
+  "prior_case_files_byte_identical": true,
+  "publication_state": "Authorized for public release. Public commit/merge identity and post-publication raw-byte verification are recorded in a separate publication receipt.",
+  "prior_state": "Prepared and committed locally only; public release was held before the owner explicitly requested this publication.",
+  "publication_timezone": "Europe/Belgrade"
+}

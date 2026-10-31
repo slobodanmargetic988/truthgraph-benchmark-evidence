@@ -1,0 +1,52 @@
+{
+  "preparation": "Prepared in an isolated local clone, using the existing benchmark repository format.",
+  "owner_authorization_context": "Owner explicitly accepted these results and requested saving them with their baselines in the public benchmark repository, including raw session JSONL files (31 October 2026, Europe/Belgrade). This supersedes the prior public-disclosure hold; raw native paths/account/session/tool metadata remain unchanged.",
+  "raw_unchanged": true,
+  "known_credential_pattern_scan": {
+    "off": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "on": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    }
+  },
+  "private_data_excluded": [
+    "database/graph dumps",
+    "testclientconfig",
+    "account passwords",
+    "provider/APIkeys",
+    "billing/mailcredentials"
+  ],
+  "native_metadata_disclosure": "Whole logs contain native local paths, account/session/tool metadata and endpoint identifiers; not trimmed or redacted.",
+  "publication_state": "Authorized for public release. Public commit/merge identity and post-publication raw-byte verification are recorded in a separate publication receipt.",
+  "publication_authorization": "Owner explicitly accepted these results and requested saving them with their baselines in the public benchmark repository, including raw session JSONL files (31 October 2026, Europe/Belgrade). This supersedes the prior public-disclosure hold; raw native paths/account/session/tool metadata remain unchanged.",
+  "prior_state": "Prepared and committed locally only; public release was held before the owner explicitly requested this publication.",
+  "publication_date": "2026-10-31",
+  "publication_timezone": "Europe/Belgrade",
+  "whole_raw_byte_identity_verified": true,
+  "original_logs_changed": false
+}

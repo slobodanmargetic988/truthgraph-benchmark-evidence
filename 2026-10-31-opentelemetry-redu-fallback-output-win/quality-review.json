@@ -1,0 +1,378 @@
+{
+  "at": "2026-10-30T23:39:21.652738+00:00",
+  "method": "Unblinded targeted static review by coordinator; no application tests or runtime verification.",
+  "sourceCommit": "d306972ec1d91c7d01ec788e7e98e90535570a4c",
+  "score": 9.5,
+  "maximum": 10,
+  "criteria": [
+    {
+      "id": "otel-01",
+      "score": 0.5,
+      "assessment": "Actual browser/native surfaces and shared tool callers covered; explicit currencyCode removal into query parameters omitted.",
+      "source_criterion": "Actual client surfaces",
+      "source_references": [
+        {
+          "path": "src/frontend/providers/Cart.provider.tsx",
+          "startLine": 59,
+          "endLine": 85,
+          "fileSHA256": "804e8a30b62ffb4e17fe2c00a09bcdae0bfaa4249d243eb91aaacff324788541",
+          "rangeSHA256": "4daf41a6c5cf9aaff485e5690c610434d87c1a3da6791f106b725135f172d6d1"
+        },
+        {
+          "path": "src/frontend/gateways/Api.gateway.ts",
+          "startLine": 55,
+          "endLine": 61,
+          "fileSHA256": "70871abdd9f2aac61f6e0fd2cb4e20794d05899874c1e076c56da0b9898f37ec",
+          "rangeSHA256": "779c0e8c09471f4288f383193ea237613b1d201ed1f00bfe99ea4def0078f4ee"
+        },
+        {
+          "path": "src/react-native-app/providers/Cart.provider.tsx",
+          "startLine": 57,
+          "endLine": 77,
+          "fileSHA256": "9e2ec79628e2935fcf5d978abbb771d476cd1e864bb046353c383d4b096527be",
+          "rangeSHA256": "17991071a7ee905c5af1aba3a5fc420dcde3b73b958828fe58a1071e5150ddd9"
+        },
+        {
+          "path": "src/react-native-app/gateways/Api.gateway.ts",
+          "startLine": 80,
+          "endLine": 89,
+          "fileSHA256": "bb9049b4d8898ab5cbd7773eb5fa4623d25b56357e7934b8f57a1ad43d84a338",
+          "rangeSHA256": "021fbc81318f5ff22d8a14d3b23b912963792db7d34b8e3f61781561c7e5fdfb"
+        }
+      ]
+    },
+    {
+      "id": "otel-02",
+      "score": 1,
+      "assessment": "HTTP\u2192realgRPC, generated codecs and API result reconstruction addressed.",
+      "source_criterion": "HTTP to gRPC and reconstructed result",
+      "source_references": [
+        {
+          "path": "src/frontend/pages/api/checkout.ts",
+          "startLine": 20,
+          "endLine": 68,
+          "fileSHA256": "1643f6c23d3de31ad85900039309107b1fdd10e362d7c21884e2a503db41c354",
+          "rangeSHA256": "347471906eabb0cc1eab4f54818cab5dbd48fc15b4e2b7018fe75bddbb9a0e78"
+        },
+        {
+          "path": "src/frontend/gateways/rpc/Checkout.gateway.ts",
+          "startLine": 5,
+          "endLine": 17,
+          "fileSHA256": "4f752b541370bb6a8175e694ff1dd20dc9afe3acb879b99ae86d816b690eda77",
+          "rangeSHA256": "fd39dbbcba91216b68a6f72cbf029956c40f8f28ca314019f92abc8e359faae4"
+        },
+        {
+          "path": "pb/demo.proto",
+          "startLine": 199,
+          "endLine": 239,
+          "fileSHA256": "28e2c4badedcbed88543afdafc8c60f9d9e9e5cc499ee3b7098a6438d3deaf85",
+          "rangeSHA256": "ad960c774af02b5ba86d36a06c45ab61c926f99482b3f514421212ff4fc9540e"
+        },
+        {
+          "path": "src/frontend/protos/demo.ts",
+          "startLine": 2677,
+          "endLine": 2708,
+          "fileSHA256": "3156a8d68fb51b3ce6910a6e419e4187570c47e8d0bb9abefcc5af5abfd26e67",
+          "rangeSHA256": "737a8333d4aecff5087daea01b8a190de83360eacd010c4937504ee63fafa264"
+        }
+      ]
+    },
+    {
+      "id": "otel-03",
+      "score": 1,
+      "assessment": "Preserves422 PAYMENT_FAILED versus500 and client Error-envelope correlation.",
+      "source_criterion": "Payment and generic failure compatibility",
+      "source_references": [
+        {
+          "path": "src/frontend/pages/api/checkout.ts",
+          "startLine": 14,
+          "endLine": 47,
+          "fileSHA256": "1643f6c23d3de31ad85900039309107b1fdd10e362d7c21884e2a503db41c354",
+          "rangeSHA256": "c83ed50180a650bd5fd30ff2a638cfb00ce7f650650bcc7b26f1aff9ad0f714c"
+        },
+        {
+          "path": "src/frontend/utils/Request.ts",
+          "startLine": 20,
+          "endLine": 42,
+          "fileSHA256": "295dc037720e8d941de451f32095f57dce30ef5724a6d981463c40110401cc7f",
+          "rangeSHA256": "c3d46a6291fdcd289daebaeef10352dae158b97b4bba2752cd7c318009977094"
+        },
+        {
+          "path": "src/frontend/cypress/e2e/CheckoutPaymentFailure.cy.ts",
+          "startLine": 57,
+          "endLine": 82,
+          "fileSHA256": "03ef3576ee61f1d7ece83f5441daf4e1e4c6536554290fbea522b17f9daab7d1",
+          "rangeSHA256": "f6a252345c86b4ba7431686933e371790c757d6a2d9ecb21fe0f4b57a268ff9f"
+        }
+      ]
+    },
+    {
+      "id": "otel-04",
+      "score": 1,
+      "assessment": "Correct preparation/charge/ship/cart/email/conditionalKafka sequence and failure semantics.",
+      "source_criterion": "Actual fan-out and sequencing",
+      "source_references": [
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 339,
+          "endLine": 424,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "9846863374a0d144ed4cb197ab56b5d96865d05bf6fd6db991417aa850e3c9fe"
+        },
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 433,
+          "endLine": 495,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "c81ec0735957dc8cff790a88d0d05d4b61ea794907236a34528ef8f0cfddc142"
+        },
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 531,
+          "endLine": 542,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "e060ebf450fd9459f14b9151b70e3a024d7f94814e146c13a6db8f88d34d9470"
+        }
+      ]
+    },
+    {
+      "id": "otel-05",
+      "score": 1,
+      "assessment": "Actual HTTP Shipping and Email distinguished from proto declarations; Quote HTTP covered.",
+      "source_criterion": "Actual HTTP contracts despite generated RPC definitions",
+      "source_references": [
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 590,
+          "endLine": 619,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "f1c6775776d562859a8aeebeb6ca908f55bc4ef206df78ea047641db6c8078fd"
+        },
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 622,
+          "endLine": 661,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "928eb223e510fa312cc14086b825bd21d3411245bd1302d030185a84560946b7"
+        },
+        {
+          "path": "src/shipping/src/shipping_service/shipping_types.rs",
+          "startLine": 48,
+          "endLine": 57,
+          "fileSHA256": "f10ce359627f5eb1cb5617fd0e15203bf0737cdfc881e762cae67c2a5f969a19",
+          "rangeSHA256": "e4d510114cfff05b5e5157add1b461ff6b616444a83545d798e899f1ae0901fa"
+        },
+        {
+          "path": "src/email/email_server.rb",
+          "startLine": 43,
+          "endLine": 55,
+          "fileSHA256": "327c8fb4ec55c8553036fb8c29a8fece5bd19467ce765ba0f54014d5ed41e88b",
+          "rangeSHA256": "1e1149eda9c3795df34a138f72f3ef0065978df2507c68be458899c6e8f0db43"
+        }
+      ]
+    },
+    {
+      "id": "otel-06",
+      "score": 1,
+      "assessment": "Explicit OrderResult field in Kafka, separate propagation headers and identity semantics.",
+      "source_criterion": "Durable asynchronous boundary and trace context distinction",
+      "source_references": [
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 664,
+          "endLine": 678,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "92a3d3cb4086eb30ca6c1bc9a50ab72856b791703d562bc02bdc6b1a181bd1f2"
+        },
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 730,
+          "endLine": 751,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "8768a6e45c8410a6935c0186de0d43fec279d6f0f836b7e865c179af4c4442b7"
+        },
+        {
+          "path": "src/checkout/kafka/producer.go",
+          "startLine": 13,
+          "endLine": 23,
+          "fileSHA256": "6e1dcf378139ba69cd35e760c115cd08cf1ca38638a278e71288eabbf323f563",
+          "rangeSHA256": "5588e305caf22898340602d68463de669fc8894bb61bf159d8e4572488074f37"
+        },
+        {
+          "path": "pb/demo.proto",
+          "startLine": 208,
+          "endLine": 239,
+          "fileSHA256": "28e2c4badedcbed88543afdafc8c60f9d9e9e5cc499ee3b7098a6438d3deaf85",
+          "rangeSHA256": "acee353b4f5a14a18fbe08dad34d9164b65104aa1490f5fc84cb088ffa2d041c"
+        }
+      ]
+    },
+    {
+      "id": "otel-07",
+      "score": 1,
+      "assessment": "Independent Accounting persistence and Fraud parse/log consumer correctly distinguished.",
+      "source_criterion": "Actual independent consumers",
+      "source_references": [
+        {
+          "path": "src/accounting/Consumer.cs",
+          "startLine": 29,
+          "endLine": 50,
+          "fileSHA256": "525eb175ded5cc5dd30dbaa71830f0e897df120b12b0aba4ab9a65fc9b0c0a55",
+          "rangeSHA256": "9d4e9fd94a03861cc1e13278972736ece61fe2d49e9d3413651214d2419ddcb4"
+        },
+        {
+          "path": "src/accounting/Consumer.cs",
+          "startLine": 83,
+          "endLine": 125,
+          "fileSHA256": "525eb175ded5cc5dd30dbaa71830f0e897df120b12b0aba4ab9a65fc9b0c0a55",
+          "rangeSHA256": "211143fbb4f3a422bfc56b571c8c74bebe1448b6f2a72c0acec04e921dd69a2a"
+        },
+        {
+          "path": "src/fraud-detection/src/main/kotlin/frauddetection/main.kt",
+          "startLine": 26,
+          "endLine": 29,
+          "fileSHA256": "a3362530a0ede639b36bceb6da3fad2dead80e7d380bb0e19c407ab0366a72c4",
+          "rangeSHA256": "451ee8987eab33cf89140d98b35c49f988ce1219ec59d11278529b972318dfb2"
+        },
+        {
+          "path": "src/fraud-detection/src/main/kotlin/frauddetection/main.kt",
+          "startLine": 82,
+          "endLine": 95,
+          "fileSHA256": "a3362530a0ede639b36bceb6da3fad2dead80e7d380bb0e19c407ab0366a72c4",
+          "rangeSHA256": "4b89fdcd4703bcdf0546c15ed10b4d902dac38c2ee717e2255436a20d69824ca"
+        }
+      ]
+    },
+    {
+      "id": "otel-08",
+      "score": 1,
+      "assessment": "Correct nonfatal email/Kafka behavior and explicit overload publishing goroutines; no invented delivery/idempotency guarantee. Producer context-cancellation details are not enumerated, a precision limit rather than a changed failure policy.",
+      "source_criterion": "Consumer/producer failures and bounded side effects",
+      "source_references": [
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 411,
+          "endLine": 424,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "89383ef69a1630f766269473596fef495e796626e4f35eba4ed53e6019398312"
+        },
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 601,
+          "endLine": 617,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "a956762f1abbab5c73557d13ef4cf65cc239d642af411632792eebfdf91f9142"
+        },
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 680,
+          "endLine": 727,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "8e5f62bde9fb29069ac61d1b4a699b4b41f520427ced2998c1b1910a666531b4"
+        },
+        {
+          "path": "src/checkout/main_test.go",
+          "startLine": 29,
+          "endLine": 58,
+          "fileSHA256": "7fe9e2db7ef8b035756e9fb9cf40fac8125cffeccaca4e0d56a39dcc3aba9e81",
+          "rangeSHA256": "7f3f4dc60321538000345dcaa3bb2b113f458894427db40b3183f7327c83a86a"
+        }
+      ]
+    },
+    {
+      "id": "otel-09",
+      "score": 1,
+      "assessment": "Adds distinct demo.checkout.reference to actual telemetry registry/service groups; explicit baggage/log/span distinction, preserves identities and avoids metric-cardinality misuse.",
+      "source_criterion": "Telemetry definitions and identity",
+      "source_references": [
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 306,
+          "endLine": 330,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "53ef4419ce4f53e3449d8dce056006051204ba0031b9c9d54d4f7f2c4957ad87"
+        },
+        {
+          "path": "src/checkout/main.go",
+          "startLine": 366,
+          "endLine": 408,
+          "fileSHA256": "c001e4359dc23854aa8051ebabaa2db9894c385cb3966b816af2db44a5d3503c",
+          "rangeSHA256": "22b04a89e95d4160aa8ff2a32900ebf702d1596d971756e1be93600b58eb5a2e"
+        },
+        {
+          "path": "src/email/email_server.rb",
+          "startLine": 87,
+          "endLine": 96,
+          "fileSHA256": "327c8fb4ec55c8553036fb8c29a8fece5bd19467ce765ba0f54014d5ed41e88b",
+          "rangeSHA256": "682d5fa83b60ead3fa37b4671062153e1e9b062edea8c0ad18b26f0a29c3179f"
+        },
+        {
+          "path": "telemetry-schema/attributes/order.yaml",
+          "startLine": 1,
+          "endLine": 12,
+          "fileSHA256": "ea4c4ad1957d222b790b6a0ec86e1730bd5de0d5f62f8180a0f5da880dbe2bd6",
+          "rangeSHA256": "8fe2bb05af69ef08bf15a37f3fd8c3a04161370407ec9bcc41fcd329c8ce6c29"
+        },
+        {
+          "path": "telemetry-schema/services/checkout.yaml",
+          "startLine": 1,
+          "endLine": 24,
+          "fileSHA256": "c4d62a3db22fa66b27657090d877fa1fda2b9ee1ea52fb08e6ab2d89d6e6fddf",
+          "rangeSHA256": "c4d62a3db22fa66b27657090d877fa1fda2b9ee1ea52fb08e6ab2d89d6e6fddf"
+        },
+        {
+          "path": "AGENTS.md",
+          "startLine": 30,
+          "endLine": 54,
+          "fileSHA256": "8fe14d2719234229ad5554b80260c0a856cc7219d6baccd95fd95c6231976fab",
+          "rangeSHA256": "9cf730e10b2d904027d96bd9e814c1f0225f25e15bffb513c1e370e584d03431"
+        }
+      ]
+    },
+    {
+      "id": "otel-10",
+      "score": 1,
+      "assessment": "Existing Go timeout/health/Cypress and useful codec, legacy, failure, confirmation/consumer tests covered.",
+      "source_criterion": "Existing tests and minimal additional verification",
+      "source_references": [
+        {
+          "path": "src/checkout/main_test.go",
+          "startLine": 29,
+          "endLine": 68,
+          "fileSHA256": "7fe9e2db7ef8b035756e9fb9cf40fac8125cffeccaca4e0d56a39dcc3aba9e81",
+          "rangeSHA256": "7127ad3cd027b05c0063e9ab922d5b27ea6e8f40def824d1a558e451c69ec57d"
+        },
+        {
+          "path": "src/frontend/cypress/e2e/CheckoutPaymentFailure.cy.ts",
+          "startLine": 26,
+          "endLine": 82,
+          "fileSHA256": "03ef3576ee61f1d7ece83f5441daf4e1e4c6536554290fbea522b17f9daab7d1",
+          "rangeSHA256": "c0a6068d0454e7ca59087c2f631876315c34cc701ce206f81e1c15c19c75a7e3"
+        },
+        {
+          "path": "src/frontend/cypress/e2e/Checkout.cy.ts",
+          "startLine": 8,
+          "endLine": 50,
+          "fileSHA256": "a3c1aee4b5006af285b5a5dba1818151e2d9015d3206b689ab902d835e1d9954",
+          "rangeSHA256": "4bce7d96a280f9456d837c3d01f32d24649af62a0b9fb36c9ffa552f3b86f20c"
+        }
+      ]
+    }
+  ],
+  "frozenEvidenceFileHashesMatched": 39,
+  "materialIncorrectClaimFound": false,
+  "answerSHA256": "5d52262d5950c3f6fbcf6033c25a4a3645dcb0347719f89717c7687263026ef5",
+  "limitations": [
+    "Targeted source/citation coverage only, not exhaustive implementation/runtime assurance.",
+    "New review knew condition and measured performance.",
+    "Source code was pinned and frozen evidence-file hashes matched.",
+    "Report uses compact repository-relative citations; formatting and investigation strategy vary across historical runs. No isolated causal claim."
+  ],
+  "reportWordCountWhitespace": 851,
+  "retrievalQualification": "Actual run fell back from hybrid to lexical after query-embedding timeout; source/citation quality does not establish vector retrieval success.",
+  "original_OFF": {
+    "score": 8.5,
+    "provenance": "Existing masked source-quality review labelA; not a new baseline run or new blind grading."
+  },
+  "sourceEvidenceNote": "References from the pre-existing frozen rubric, linked after the run; not supplied to the benchmark subject. File hashes checked against the pinned local source. Targeted static review is not runtime assurance."
+}

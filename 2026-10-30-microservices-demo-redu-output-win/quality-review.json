@@ -1,0 +1,286 @@
+{
+  "at": "2026-10-30T13:31:32.610067+00:00",
+  "method": "Unblinded targeted static rubric/source review by a separate agent; no tests, builds or runtime validation.",
+  "score": 9.5,
+  "maximum": 10,
+  "criteria": [
+    {
+      "id": "micro-01",
+      "score": 1,
+      "assessment": "Correct form, Locust, HTTP route and rebuilt gRPC request.",
+      "source_criterion": "Actual HTTP intake and caller",
+      "source_references": [
+        {
+          "path": "src/frontend/main.go",
+          "startLine": 150,
+          "endLine": 168,
+          "fileSHA256": "b3a1476945d381773b5d3359ec894592af28e7657db2d172b4f86f03e28b4545",
+          "rangeSHA256": "bfb23444c45c76b16d322f84d1cb0c83a15638882dc56ada8e9f99360e3d4650"
+        },
+        {
+          "path": "src/frontend/handlers.go",
+          "startLine": 320,
+          "endLine": 370,
+          "fileSHA256": "eb52a7173055e3a838587f706feab54c75fd519a2922c71d6504d1d03158fd51",
+          "rangeSHA256": "b87c2b7fab3bf89529cc28c15cbc5721ecb51931b6f8b0723a818177443c0423"
+        },
+        {
+          "path": "src/loadgenerator/locustfile.py",
+          "startLine": 58,
+          "endLine": 72,
+          "fileSHA256": "476beb8b4e8ab5fe46d511515cd915b27ef3c7e1d818d482c2301ac2813dd9f3",
+          "rangeSHA256": "9bbca9ffec3365a4e162d07f598e89f1b98c73b029420197aadd24cef1da22a2"
+        }
+      ]
+    },
+    {
+      "id": "micro-02",
+      "score": 1,
+      "assessment": "Separates session, HTTP request, order, payment and shipment identities.",
+      "source_criterion": "Existing identities are separate",
+      "source_references": [
+        {
+          "path": "src/frontend/middleware.go",
+          "startLine": 57,
+          "endLine": 82,
+          "fileSHA256": "f10cefaad03d8538a6b5ffce6089ca47b89a5ad9e1643bfa688a06763e3535be",
+          "rangeSHA256": "bf4f38209c46f91eff381347a5a28b99dcd6861db235eecd07a1e133e908bde0"
+        },
+        {
+          "path": "src/frontend/middleware.go",
+          "startLine": 85,
+          "endLine": 109,
+          "fileSHA256": "f10cefaad03d8538a6b5ffce6089ca47b89a5ad9e1643bfa688a06763e3535be",
+          "rangeSHA256": "2cf41d8685aa1f0a89695e664d4db20ac1fe52ca7ab85084a033ee2547302379"
+        },
+        {
+          "path": "src/frontend/handlers.go",
+          "startLine": 551,
+          "endLine": 564,
+          "fileSHA256": "eb52a7173055e3a838587f706feab54c75fd519a2922c71d6504d1d03158fd51",
+          "rangeSHA256": "ce6436da8db2f695037b1a54513a4f409486166964cc83f798ae44eaed3353f3"
+        },
+        {
+          "path": "src/frontend/templates/footer.html",
+          "startLine": 24,
+          "endLine": 28,
+          "fileSHA256": "da4a66cfc231ea8250c6dc06fabca43da6ef6b00332c3bd1c33bf913eb587d67",
+          "rangeSHA256": "6f260ea65053f755ce1b4b1bd7e42cee6d52b033c26c6b766652ef69eb7e4c21"
+        }
+      ]
+    },
+    {
+      "id": "micro-03",
+      "score": 1,
+      "assessment": "Contracts, compatible tags, regeneration and metadata distinction.",
+      "source_criterion": "Schema and regeneration boundary",
+      "source_references": [
+        {
+          "path": "protos/demo.proto",
+          "startLine": 199,
+          "endLine": 239,
+          "fileSHA256": "b1f2fa42c0a9305211bf51fba7d8b5832cd3defd7b8855c327ebd5b1f0f86884",
+          "rangeSHA256": "ad960c774af02b5ba86d36a06c45ab61c926f99482b3f514421212ff4fc9540e"
+        },
+        {
+          "path": "src/frontend/genproto.sh",
+          "startLine": 17,
+          "endLine": 25,
+          "fileSHA256": "854723fde6c8b3674f49134890b30788cad972a3f7ee32f36c631b4bc5cb881f",
+          "rangeSHA256": "13b9324a9f1a28ee822254b39f7f087cf63dcfe6c96248c11e930da4fe022456"
+        }
+      ]
+    },
+    {
+      "id": "micro-04",
+      "score": 1,
+      "assessment": "Preparation, quote, payment, shipment, cart-empty and confirmation.",
+      "source_criterion": "Unknown downstream dependency scope",
+      "source_references": [
+        {
+          "path": "src/checkoutservice/main.go",
+          "startLine": 230,
+          "endLine": 279,
+          "fileSHA256": "332ba3030a15489d6acb6aa4b7b74d37a2f90a6ed313d5b7738b245e56f38645",
+          "rangeSHA256": "c0b67d06cc11c300b7b74c76caf154c3c28bfdc46dbe64500b83b8cb2120bf7c"
+        },
+        {
+          "path": "src/checkoutservice/main.go",
+          "startLine": 288,
+          "endLine": 376,
+          "fileSHA256": "332ba3030a15489d6acb6aa4b7b74d37a2f90a6ed313d5b7738b245e56f38645",
+          "rangeSHA256": "62f578e3eab64168d223e4386a3e7d0e8f80717eec4c179dcef6a4220846338e"
+        },
+        {
+          "path": "src/checkoutservice/main.go",
+          "startLine": 379,
+          "endLine": 393,
+          "fileSHA256": "332ba3030a15489d6acb6aa4b7b74d37a2f90a6ed313d5b7738b245e56f38645",
+          "rangeSHA256": "f33a9b9302342ddfe2e8bf873c28f89a250d61b36ea077ea4bf58b2389e7b5a5"
+        }
+      ]
+    },
+    {
+      "id": "micro-05",
+      "score": 1,
+      "assessment": "Explicit metadata forwarding and context.TODO() currency loss.",
+      "source_criterion": "Context and rebuilt outbound boundaries",
+      "source_references": [
+        {
+          "path": "src/checkoutservice/main.go",
+          "startLine": 313,
+          "endLine": 336,
+          "fileSHA256": "332ba3030a15489d6acb6aa4b7b74d37a2f90a6ed313d5b7738b245e56f38645",
+          "rangeSHA256": "1337df4c980e80cd6696fc3a02d51417cd9d0bf6f7c11825a56313627e90e8ef"
+        },
+        {
+          "path": "src/checkoutservice/main.go",
+          "startLine": 339,
+          "endLine": 393,
+          "fileSHA256": "332ba3030a15489d6acb6aa4b7b74d37a2f90a6ed313d5b7738b245e56f38645",
+          "rangeSHA256": "be9ea27e72f3c89b2a8217f00167b29983e0d349dcb32e5e3dd40248bc3422e0"
+        }
+      ]
+    },
+    {
+      "id": "micro-06",
+      "score": 1,
+      "assessment": "Shipping after payment, discarded cart-empty errors, tolerated email errors.",
+      "source_criterion": "Nontransactional failure paths",
+      "source_references": [
+        {
+          "path": "src/checkoutservice/main.go",
+          "startLine": 230,
+          "endLine": 279,
+          "fileSHA256": "332ba3030a15489d6acb6aa4b7b74d37a2f90a6ed313d5b7738b245e56f38645",
+          "rangeSHA256": "c0b67d06cc11c300b7b74c76caf154c3c28bfdc46dbe64500b83b8cb2120bf7c"
+        }
+      ]
+    },
+    {
+      "id": "micro-07",
+      "score": 1,
+      "assessment": "Validation, RPC, success and post-order currency/render failures.",
+      "source_criterion": "Response and error reconstruction",
+      "source_references": [
+        {
+          "path": "src/frontend/handlers.go",
+          "startLine": 337,
+          "endLine": 400,
+          "fileSHA256": "eb52a7173055e3a838587f706feab54c75fd519a2922c71d6504d1d03158fd51",
+          "rangeSHA256": "0dbeaa5c485dd14733b8ea7a27defb59d6526a5d76d17bd238ecee957697a635"
+        },
+        {
+          "path": "src/frontend/handlers.go",
+          "startLine": 536,
+          "endLine": 570,
+          "fileSHA256": "eb52a7173055e3a838587f706feab54c75fd519a2922c71d6504d1d03158fd51",
+          "rangeSHA256": "6cea59c46689758ea36c221a0b4b2686d7cfafb8a0e8c5aeb0aa3d8759b3e6fb"
+        }
+      ]
+    },
+    {
+      "id": "micro-08",
+      "score": 1,
+      "assessment": "Actual dummy email behavior; real delivery inactive.",
+      "source_criterion": "Real confirmation behavior and limits",
+      "source_references": [
+        {
+          "path": "src/checkoutservice/main.go",
+          "startLine": 379,
+          "endLine": 383,
+          "fileSHA256": "332ba3030a15489d6acb6aa4b7b74d37a2f90a6ed313d5b7738b245e56f38645",
+          "rangeSHA256": "301717db1fb9d43d2a783dd6bfced1a4c91505fb690f320e1379159eed008d06"
+        },
+        {
+          "path": "src/emailservice/email_server.py",
+          "startLine": 86,
+          "endLine": 111,
+          "fileSHA256": "942ad730bdc04007c84b7cda038b58b68498f344d8233a0384a40991ccd574f4",
+          "rangeSHA256": "fa79c220eb90a2e298560a91e325fbd30f20aa5aaae630cf95906f105cc88d04"
+        },
+        {
+          "path": "src/emailservice/email_server.py",
+          "startLine": 118,
+          "endLine": 126,
+          "fileSHA256": "942ad730bdc04007c84b7cda038b58b68498f344d8233a0384a40991ccd574f4",
+          "rangeSHA256": "0a53e82936fdbc5cad06f8ffe4ed0f905d723c644be1852a74f2cebbba20a256"
+        }
+      ]
+    },
+    {
+      "id": "micro-09",
+      "score": 0.5,
+      "assessment": "Proposes enrichment but omits serialized payment request versus generic shipping logs and payment-data exposure caution.",
+      "source_criterion": "Downstream logging boundaries",
+      "source_references": [
+        {
+          "path": "src/paymentservice/server.js",
+          "startLine": 36,
+          "endLine": 49,
+          "fileSHA256": "5a343b700277f070977293f9dc5ff359405b8a8979478abaa957c60ca95a204d",
+          "rangeSHA256": "90a84ad2aadc188f3b23c55a9e8ed14f914b37cbf2d2970a75f621e2c4e84e0a"
+        },
+        {
+          "path": "src/shippingservice/main.go",
+          "startLine": 119,
+          "endLine": 152,
+          "fileSHA256": "397fdae43e9734e5392ea491b13357a67144beb4821c9d022c8b02eefc1cbccc",
+          "rangeSHA256": "b962bde84985e99f58c6d06c67f777762f00e38f18b3f78d398b5920c10f6ae5"
+        },
+        {
+          "path": "src/checkoutservice/main.go",
+          "startLine": 230,
+          "endLine": 256,
+          "fileSHA256": "332ba3030a15489d6acb6aa4b7b74d37a2f90a6ed313d5b7738b245e56f38645",
+          "rangeSHA256": "9d0f59612b34f51e313209838e8e0d70370aed87a3007caf953dd47db1bb1681"
+        }
+      ]
+    },
+    {
+      "id": "micro-10",
+      "score": 1,
+      "assessment": "Existing coverage and propagation, omission, repetition, failures and concurrency tests.",
+      "source_criterion": "Backward-compatible test plan grounded in existing tests",
+      "source_references": [
+        {
+          "path": "src/frontend/validator/validator.go",
+          "startLine": 42,
+          "endLine": 65,
+          "fileSHA256": "4da50e57896cfce18fd9beb718aa0770c685fb8efae7848c23e6de3b21f7c371",
+          "rangeSHA256": "49c0d6d71291d12caddf6d17412692d74fdaddc2721e1e8d9b6f8d489c39df12"
+        },
+        {
+          "path": "src/frontend/validator/validator_test.go",
+          "startLine": 22,
+          "endLine": 79,
+          "fileSHA256": "fcd04ea0f21cd70947dc9139b5799b9a28ced1d45b3052f2359641e777e1a0a0",
+          "rangeSHA256": "fcf0ecf34481070ad332fb452e0af9699f743a4b53f6b967157dc4a1cd62e448"
+        },
+        {
+          "path": "src/checkoutservice/main.go",
+          "startLine": 230,
+          "endLine": 279,
+          "fileSHA256": "332ba3030a15489d6acb6aa4b7b74d37a2f90a6ed313d5b7738b245e56f38645",
+          "rangeSHA256": "c0b67d06cc11c300b7b74c76caf154c3c28bfdc46dbe64500b83b8cb2120bf7c"
+        }
+      ]
+    }
+  ],
+  "rubric": "/Users/slobodan/projects/Earth/projects/LOGS/TruthGraph/public-complexity-benchmark-20261029/design/micro-otel/microservices-demo-private-rubric.json",
+  "sourceCommit": "38e7348eb289eb5b87c0c6e8cb19ced0449dc389",
+  "rubricEvidenceFileHashes": "all matched",
+  "minorPrecisionGaps": [
+    "Does not explicitly state order UUID allocation precedes preparation.",
+    "Does not name HTTP validation/RPC status codes 422/500."
+  ],
+  "materialIncorrectClaimFound": false,
+  "remainingProductGap": "Impact query returned zero modeled dependents; the answer established actual boundaries through pinned local source.",
+  "original_OFF": {
+    "score": 9.5,
+    "provenance": "Previously recorded frozen targeted static rubric score; not a new baseline run or newly blinded review."
+  },
+  "publication_note": "This is an unblinded targeted static review, not runtime correctness or exhaustive coverage proof.",
+  "answerSHA256": "f2dbe75de5a0c82c8858b18d5270546b6c89cb53932d84d99dd639c082330022",
+  "sourceEvidenceNote": "References from the pre-existing frozen rubric, linked after the run; not supplied to the benchmark subject. File hashes checked against the pinned local source. Targeted static review is not runtime assurance."
+}

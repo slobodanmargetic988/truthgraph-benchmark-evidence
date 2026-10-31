@@ -1,0 +1,362 @@
+{
+  "at": "2026-10-30T23:08:56.187881+00:00",
+  "method": "Unblinded targeted static review by coordinating agent; no application tests/runtime verification.",
+  "score": 9.0,
+  "maximum": 10,
+  "criteria": [
+    {
+      "id": "P01",
+      "score": 0.5,
+      "assessment": "Browser helper and ChatBox correctly identified; exact OwnerDetailsPage.setup/useRequest caller remains implicit.",
+      "source_criterion": "Find browser request helper and actual owner-detail/chat callers; helper returns decoded payload only and reconstructs ApiError, so response correlation headers need explicit inspection.",
+      "source_references": [
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/static/scripts/api/client.js",
+          "start_line": 49,
+          "end_line": 98,
+          "file_sha256": "4c9ff1ca87ac6f960d77b7fddfb33993556b6716f8276877ec278860142b6c35",
+          "range_sha256": "cba5adf8ce64d8011056b176c38333da8ca7acfb0c1eb174259aee757520448b"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/static/scripts/pages/OwnerDetailsPage.js",
+          "start_line": 1,
+          "end_line": 20,
+          "file_sha256": "712a93e23a773c3ff12b617523a874ef2042b027f07a2e964cc75153d12e836c",
+          "range_sha256": "ec779bf87c892833bc43ae98b18841de890c0861057cf2a3e8fa952b7ab7eca1"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/static/scripts/components/ChatBox.js",
+          "start_line": 32,
+          "end_line": 57,
+          "file_sha256": "70ebbe2919fe320db73a2938c97fb8efa64ae5e04d62e3f1c5d33d92bab4a978",
+          "range_sha256": "ad2291d9d7735e4277a8dc84961b3df39682caa0bda68b72712e33b59dd6b92a"
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "score": 1,
+      "assessment": "Four StripPrefix proxy routes distinguished from custom aggregation.",
+      "source_criterion": "Distinguish four declarative direct routes with StripPrefix from custom /api/gateway aggregation. Cover both proxy and programmatic client propagation.",
+      "source_references": [
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/application.yml",
+          "start_line": 20,
+          "end_line": 45,
+          "file_sha256": "6cc8fcf6d3cf9ae4ac1416ed9ae7fea2e056462c88959fb2b83ed5ccdf887a30",
+          "range_sha256": "9479b9eb719fab56d6b38c376525ffedcb4490549c443575e5fd6a04c904ea7d"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java",
+          "start_line": 36,
+          "end_line": 64,
+          "file_sha256": "bb815e3727be7e56330072d54774944ef5029d66d2d7e56976d7c60dbeafbb21",
+          "range_sha256": "3c5a203741cc579ed0637de9ef67a50bfe5d598ec351bf2b6109a158082fbe4b"
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "score": 1,
+      "assessment": "Customer lookup then pet visits and correct visits-only empty fallback.",
+      "source_criterion": "Trace owner fetch->pet-ID visits call->merged owner response. Only visits call is inside empty-visits fallback, not customer fetch errors.",
+      "source_references": [
+        {
+          "path": "spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java",
+          "start_line": 54,
+          "end_line": 81,
+          "file_sha256": "bb815e3727be7e56330072d54774944ef5029d66d2d7e56976d7c60dbeafbb21",
+          "range_sha256": "9f723d4284942bb0a19d4b16a59c7a54e3900aac148e6944d9176b87c766d6fc"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/application/CustomersServiceClient.java",
+          "start_line": 35,
+          "end_line": 39,
+          "file_sha256": "e143b78217975d0a6c2d0da704e483cd931180c7bb95cc76cad3807cc852e4f5",
+          "range_sha256": "fb2469c7b574a238824e31db0a3a2bd2075d415f37d1c5876ff8602337f8cdbd"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/application/VisitsServiceClient.java",
+          "start_line": 42,
+          "end_line": 51,
+          "file_sha256": "d7d1437c4dce96d4de5f636511d3bcf5549df4a11b7826fde0375bce358f1e13",
+          "range_sha256": "2573f9e6fa08191ac9eb293cf62d68348d9d2d3594cae5557141d47e2181c3d5"
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "score": 1,
+      "assessment": "Per-request Reactor propagation, custom logging bridge, cleanup/concurrency without mutable singleton headers.",
+      "source_criterion": "Identify reactive/load-balanced WebClient boundaries and Reactor context propagation config; header capture must survive async execution with concurrent-request isolation, not global mutable state or assumed builder header forwarding.",
+      "source_references": [
+        {
+          "path": "spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/ApiGatewayApplication.java",
+          "start_line": 52,
+          "end_line": 61,
+          "file_sha256": "a6d485fdb94ab2d828cd8b0bf87bcac042358d804c7b40938c20fdebbe387f53",
+          "range_sha256": "d1e7850491e18549654e051b003ba5a613c0826e153877971a9f21b47ffd6fd2"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/application.yml",
+          "start_line": 46,
+          "end_line": 47,
+          "file_sha256": "6cc8fcf6d3cf9ae4ac1416ed9ae7fea2e056462c88959fb2b83ed5ccdf887a30",
+          "range_sha256": "9da59b39e81b5ba66006cb6f4e5c80b229059eeb5510aa0894d670c2f833a8e0"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/application/CustomersServiceClient.java",
+          "start_line": 35,
+          "end_line": 39,
+          "file_sha256": "e143b78217975d0a6c2d0da704e483cd931180c7bb95cc76cad3807cc852e4f5",
+          "range_sha256": "fb2469c7b574a238824e31db0a3a2bd2075d415f37d1c5876ff8602337f8cdbd"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/application/VisitsServiceClient.java",
+          "start_line": 42,
+          "end_line": 47,
+          "file_sha256": "d7d1437c4dce96d4de5f636511d3bcf5549df4a11b7826fde0375bce358f1e13",
+          "range_sha256": "cd8877215eabbd0d7787befecf4e6efbc433a263fb8ccc9b81d5a084f2ede7f9"
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "score": 0.5,
+      "assessment": "POST503 retry, fallback response and differences covered; configured10-second TimeLimiter omitted.",
+      "source_criterion": "Separate default route CircuitBreaker/POST503 retry, GenAI route breaker, generic503fallback, controller empty-visits success fallback and10s TimeLimiter; plan consistent echo across these paths without claiming runtime verification.",
+      "source_references": [
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/application.yml",
+          "start_line": 10,
+          "end_line": 19,
+          "file_sha256": "6cc8fcf6d3cf9ae4ac1416ed9ae7fea2e056462c88959fb2b83ed5ccdf887a30",
+          "range_sha256": "b18da074ac2b8cbb7b15c826317cee095e5ac5ea96fa180fd477769f7e267fab"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/application.yml",
+          "start_line": 39,
+          "end_line": 45,
+          "file_sha256": "6cc8fcf6d3cf9ae4ac1416ed9ae7fea2e056462c88959fb2b83ed5ccdf887a30",
+          "range_sha256": "1595711700af57fd5bd2fc787b6f441cb7f2af2692a9ef00775bacc8e136d877"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/boundary/web/FallbackController.java",
+          "start_line": 12,
+          "end_line": 16,
+          "file_sha256": "527ddcbf17597319d5d4fd76f25f0a8c59b9830203a94cd493d0d8095cf80b56",
+          "range_sha256": "b0209c78c2e744581a6350117eb7cfff2391cd28dd57b93959b19cb96fc52974"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java",
+          "start_line": 58,
+          "end_line": 81,
+          "file_sha256": "bb815e3727be7e56330072d54774944ef5029d66d2d7e56976d7c60dbeafbb21",
+          "range_sha256": "61e6781d5e2de8309b608902a592e8495e84dc416df36be8f093e6b8610f543b"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/ApiGatewayApplication.java",
+          "start_line": 84,
+          "end_line": 89,
+          "file_sha256": "a6d485fdb94ab2d828cd8b0bf87bcac042358d804c7b40938c20fdebbe387f53",
+          "range_sha256": "0f7ea35c476cd6d9ea924935a3475e9940a9499ccdf7653b15e6e45ba133e538"
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "score": 1,
+      "assessment": "Chat\u2192tool callbacks\u2192separate RestClient with request-context and chat identity separation.",
+      "source_criterion": "Trace browser->routed chat endpoint->SpringAItool callbacks->AIDataProvider customer RestClient operations; request context/header must bridge blocking callbacks, not become prompt or chat-memory identity.",
+      "source_references": [
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/static/scripts/components/ChatBox.js",
+          "start_line": 45,
+          "end_line": 50,
+          "file_sha256": "70ebbe2919fe320db73a2938c97fb8efa64ae5e04d62e3f1c5d33d92bab4a978",
+          "range_sha256": "53adfdbe27e95f110f77253f0376e3747ee04c777d4931b4cf8f914d9dae34e0"
+        },
+        {
+          "path": "spring-petclinic-genai-service/src/main/java/org/springframework/samples/petclinic/genai/PetclinicChatClient.java",
+          "start_line": 31,
+          "end_line": 69,
+          "file_sha256": "434546a64aab15cd508738f4c83d891830ebc6a7c9372cae138b0d94a84f2ccf",
+          "range_sha256": "b16767ae9067d649a94384cfeb218f07685fcc7c7005886a2148faf71e0af23d"
+        },
+        {
+          "path": "spring-petclinic-genai-service/src/main/java/org/springframework/samples/petclinic/genai/PetclinicTools.java",
+          "start_line": 28,
+          "end_line": 73,
+          "file_sha256": "568f44a01d0f40e62813d6ea8209106f7ee63badbf16bc484d7b81b2f51816dd",
+          "range_sha256": "14929b47646263bb368cfb17ad878fd8e2b2cd079555c6b0a77bf1247d4e6455"
+        },
+        {
+          "path": "spring-petclinic-genai-service/src/main/java/org/springframework/samples/petclinic/genai/AIDataProvider.java",
+          "start_line": 36,
+          "end_line": 48,
+          "file_sha256": "ca097a1a1ac235ff70d21bbc9d47ea5f694a20abe41aad5efa04850fbeb0d41e",
+          "range_sha256": "e5d6fe41909789a937e0455a81cb090921d9cb8c859c612e2e75a8420db321b4"
+        },
+        {
+          "path": "spring-petclinic-genai-service/src/main/java/org/springframework/samples/petclinic/genai/AIDataProvider.java",
+          "start_line": 70,
+          "end_line": 90,
+          "file_sha256": "ca097a1a1ac235ff70d21bbc9d47ea5f694a20abe41aad5efa04850fbeb0d41e",
+          "range_sha256": "b88ea40571c0a1208335e1f00c9f19beb64cb5bc5d131bcac7bd542f9d5a3785"
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "score": 1,
+      "assessment": "Vets local vector retrieval distinguished from conditional startup HTTP preload; no visits tool invented.",
+      "source_criterion": "Do not invent per-chat visits/vets HTTP tools: vets lookup is vectorStore.similaritySearch; vets HTTP preload runs at startup only if bundled vector data absent. Separate request context from background work.",
+      "source_references": [
+        {
+          "path": "spring-petclinic-genai-service/src/main/java/org/springframework/samples/petclinic/genai/AIDataProvider.java",
+          "start_line": 51,
+          "end_line": 67,
+          "file_sha256": "ca097a1a1ac235ff70d21bbc9d47ea5f694a20abe41aad5efa04850fbeb0d41e",
+          "range_sha256": "497743f64e4eedd28774a64a1082f3269e8b211321e7107272f946a1252ab065"
+        },
+        {
+          "path": "spring-petclinic-genai-service/src/main/java/org/springframework/samples/petclinic/genai/PetclinicTools.java",
+          "start_line": 38,
+          "end_line": 73,
+          "file_sha256": "568f44a01d0f40e62813d6ea8209106f7ee63badbf16bc484d7b81b2f51816dd",
+          "range_sha256": "45d3d7111194101f61f745a8e123aadd5324cf99705e7cc93196369317d556ac"
+        },
+        {
+          "path": "spring-petclinic-genai-service/src/main/java/org/springframework/samples/petclinic/genai/VectorStoreController.java",
+          "start_line": 49,
+          "end_line": 80,
+          "file_sha256": "970113aceee8402189c83baeb6ab796f4cec0f3fa1582c05bb82d35bac4d7587",
+          "range_sha256": "8879f95069c0ecde19e54eabc03f85f365689f71208ff2b37a4558da8b5a7778"
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "score": 1,
+      "assessment": "Direct downstream controllers, optional header capture and separate logging; no unnecessary business schema change.",
+      "source_criterion": "Identify downstream controllers/logging for direct calls/mutations and optional header handling without unnecessary business DTO/schema changes. Framework tracing is not proof of arbitrary-header echo/logging.",
+      "source_references": [
+        {
+          "path": "spring-petclinic-customers-service/src/main/java/org/springframework/samples/petclinic/customers/web/OwnerResource.java",
+          "start_line": 39,
+          "end_line": 90,
+          "file_sha256": "c72a9c611a46ab96db76421646fdde93ff8b1530bfb57ff29b847ed9e7b8d2fe",
+          "range_sha256": "5eb52bb5388d06bf0c53e645082486c9b7a865c68b8e0bb50c027add9b8df8f8"
+        },
+        {
+          "path": "spring-petclinic-customers-service/src/main/java/org/springframework/samples/petclinic/customers/web/PetResource.java",
+          "start_line": 55,
+          "end_line": 85,
+          "file_sha256": "edf77e98418a184a944f0ecfe7d9aaaa4e4f5a5dd76725cc80a82044aa647f5a",
+          "range_sha256": "13c1fe4f4e64f0deb99e1527ae708d4e26b14eb2e6eca8de3826912fce91eea0"
+        },
+        {
+          "path": "spring-petclinic-visits-service/src/main/java/org/springframework/samples/petclinic/visits/web/VisitResource.java",
+          "start_line": 48,
+          "end_line": 76,
+          "file_sha256": "0bf7d4638add57363cde29b964d9fcc44ac55da9df320ff1ebfebc5c9f0786cd",
+          "range_sha256": "c5e217735ac5480a3adcdd1c72d84ca2ad722a90b1effe748f1f7c6d700b601d"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/logback-spring.xml",
+          "start_line": 1,
+          "end_line": 6,
+          "file_sha256": "457ac6aa96bbcb5f814d61be22be737e423cfcc355abeb7812b23a60c78d295f",
+          "range_sha256": "0feff2417ea5028ac491f4c5df4ec4a3f61c020a436439dc300390f53312853d"
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "score": 1,
+      "assessment": "Chat exceptions remain text success return, response headers lost by client, identities preserved.",
+      "source_criterion": "GenAI catches exception and returns an error string, not necessarily retryable503; frontend error handling currently drops response headers. Keep caller correlation distinct from business/tracing/chat identities.",
+      "source_references": [
+        {
+          "path": "spring-petclinic-genai-service/src/main/java/org/springframework/samples/petclinic/genai/PetclinicChatClient.java",
+          "start_line": 57,
+          "end_line": 70,
+          "file_sha256": "434546a64aab15cd508738f4c83d891830ebc6a7c9372cae138b0d94a84f2ccf",
+          "range_sha256": "fdde8fad0e03e2ef7e134f5edd79cbfcead3cf0a2cf28af932247732a7432032"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/static/scripts/api/client.js",
+          "start_line": 8,
+          "end_line": 16,
+          "file_sha256": "4c9ff1ca87ac6f960d77b7fddfb33993556b6716f8276877ec278860142b6c35",
+          "range_sha256": "833a4a5b67c907d614895dd284bbfa574e74a726f0ef39d77a2d36ed456159d9"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/static/scripts/api/client.js",
+          "start_line": 68,
+          "end_line": 88,
+          "file_sha256": "4c9ff1ca87ac6f960d77b7fddfb33993556b6716f8276877ec278860142b6c35",
+          "range_sha256": "506d1c62719f99043fb00fcb8855cc7bbcd03ed30816530d8aa04d96f4740cbb"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/main/resources/application.yml",
+          "start_line": 15,
+          "end_line": 19,
+          "file_sha256": "6cc8fcf6d3cf9ae4ac1416ed9ae7fea2e056462c88959fb2b83ed5ccdf887a30",
+          "range_sha256": "d1b0f70c520a5f53bbe26ea1367b6591151cb566112aef1db5b65fbce9fef5a4"
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "score": 1,
+      "assessment": "Existing aggregate/fallback/client/downstream tests and useful compatibility/concurrency/failure additions.",
+      "source_criterion": "Cite tests for aggregate success/visits failure,fallback,HTTP client/downstream mutation; propose omitted/suppliedID,concurrency,retry,tool-call,response/error/fallback tests. No claim current tests establish new feature.",
+      "source_references": [
+        {
+          "path": "spring-petclinic-api-gateway/src/test/java/org/springframework/samples/petclinic/api/boundary/web/ApiGatewayControllerTest.java",
+          "start_line": 38,
+          "end_line": 94,
+          "file_sha256": "db6d79b846a8b6ae2932376675fe27cfc1da4a26889f59f09ce2495c2c12afa7",
+          "range_sha256": "edc78d05cacb399a2786e98f6533f8a63e78577cbd2755792a5bea890f26ba58"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/test/java/org/springframework/samples/petclinic/api/boundary/web/FallbackControllerTest.java",
+          "start_line": 1,
+          "end_line": 18,
+          "file_sha256": "dc7d98c094910ee40201cd765571b4a0cfd48e20a2ba81fb2371a8559f26bd58",
+          "range_sha256": "dd639d53bbd5331d16617166e9557d11a26d491626e58b1cbb71abf8965c139d"
+        },
+        {
+          "path": "spring-petclinic-api-gateway/src/test/java/org/springframework/samples/petclinic/api/application/VisitsServiceClientIntegrationTest.java",
+          "start_line": 1,
+          "end_line": 50,
+          "file_sha256": "af1fab7e0f690b320e27003d4f77eb79870b4ecbe73dd0c4408845810433e869",
+          "range_sha256": "4477f819b0102056874823d7f4b41289e541c051e9cb4ce33e4351276f41373a"
+        },
+        {
+          "path": "spring-petclinic-customers-service/src/test/java/org/springframework/samples/petclinic/customers/web/PetResourceTest.java",
+          "start_line": 1,
+          "end_line": 40,
+          "file_sha256": "171dfa68b75e551980152f71df1a3063b2a838779c3bd17c375c149f7ff73e36",
+          "range_sha256": "4a88f49ff000e3bb18d9093b27a40498249f8708fda531fad5f01bfc926febee"
+        }
+      ]
+    }
+  ],
+  "sourceCommit": "e8b747ab522721076cacb5cf688eb8a54ba8c5c9",
+  "frozenEvidenceFileHashesMatched": 37,
+  "materialIncorrectClaimFound": false,
+  "answerSHA256": "ef4643a3898884552af9c638b08e7851e7ee109164e4164bc4c7a2131c09a6de",
+  "limits": [
+    "Sampled static source/citation review, not exhaustive verification.",
+    "No deployed/framework behavior or propagation was executed.",
+    "New review was unblinded and knew the condition/results."
+  ],
+  "original_OFF": {
+    "score": 9,
+    "method": "Existing masked static source review, labelB in frozen mapping; baseline not rerun.",
+    "gradePath": "/Users/slobodan/projects/Earth/truthgraph-marketing-media/subgoal1k/bench/evidence/20261029T075735Z-four-public-change-impact-v1/analysis/quality-packets/spring-petclinic-microservices/grade.json"
+  },
+  "sourceEvidenceNote": "References from the pre-existing frozen rubric, linked after the run; not supplied to the benchmark subject. File hashes checked against the pinned local source. Targeted static review is not runtime assurance."
+}
