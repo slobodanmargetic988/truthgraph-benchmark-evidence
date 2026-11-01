@@ -1,0 +1,180 @@
+{
+  "owner_authorization": "Owner accepted this files-only result and explicitly requested saving it and the priced three-way analysis in the public benchmark Git, with the previously established full native JSONL format.",
+  "publication_date": "2026-11-01",
+  "raw_unchanged": true,
+  "source_hashes": {
+    "off": "b6af8b789e591d240985947820be6baba67a01525823bb802eb0747052aca645",
+    "previous_on": "230844522a14202bf12ad65e11cd910fd2ec0d60cda8362dbe43f4e27c84b379",
+    "files_only_on": "590a1a32af5a9d639ada292a4208d4b0cf7deb00fd941d5e6188d1bddbe771a1"
+  },
+  "known_credential_pattern_scan": {
+    "quality-review.json": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "results.json": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "ANALYSIS.md": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "README.md": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "verify.py": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "logs/01-original-off.jsonl": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "logs/03-on-files-only.jsonl": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "logs/02-previous-on-with-evidence.jsonl": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "prompts/off.txt": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "prompts/previous_on.txt": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    },
+    "prompts/files_only_on.txt": {
+      "status": "no_known_pattern_matches",
+      "matchCount": 0,
+      "patternCounts": {
+        "truthgraph_customer_key": 0,
+        "private_key_header": 0,
+        "age_secret_key": 0,
+        "provider_sk_key": 0,
+        "github_token": 0,
+        "jwt": 0,
+        "bearer_literal": 0,
+        "named_credential_literal": 0
+      },
+      "limitations": "Heuristic signatures only; counts may overlap or include examples, and unknown credential formats may be missed. Actual matches are flagged for review without changing raw evidence. No matched values are stored here."
+    }
+  },
+  "screening_limits": "Heuristic screening cannot prove all secret formats absent. No concrete credential, unrelated private source or private third-party messages observed; native paths/account/session/tool metadata remain intentionally.",
+  "no_recording": true,
+  "public_receipt": "Exact public commit/PR and anonymous raw-byte verification recorded separately."
+}
