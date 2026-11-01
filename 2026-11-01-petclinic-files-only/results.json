@@ -1,0 +1,830 @@
+{
+  "schema_version": 3,
+  "publication_date": "2026-11-01",
+  "publication_timezone": "Europe/Belgrade",
+  "source": {
+    "repository": "https://github.com/spring-petclinic/spring-petclinic-microservices",
+    "commit": "e8b747ab522721076cacb5cf688eb8a54ba8c5c9",
+    "indexed_repository_id": "github-spring-petclinic-spring-petclinic-microservices-98fa3703"
+  },
+  "controls": {
+    "model": "gpt-6.1-sol",
+    "effort": "ultra",
+    "provider": "openai",
+    "original_OFF_rerun": false,
+    "new_attempts": 1,
+    "predeclared_one_run_per_repository": true,
+    "outcome_based_retries": 0,
+    "on_endpoint": "https://truthgraph-test-6f8d2a10.redu.cloud/api/mcp",
+    "on_server": "truthgraph_test_customer",
+    "source_task_identical": true,
+    "previous_on_backend": "3ecddc8e95ff804dc5a8fad53d9516c65dd9d91c",
+    "previous_on_environment": "Redu test VM, evidence-bearing responses (selected run, 30 Oct)",
+    "files_only_backend": "2ed2413763be631bc4474b077820c5de0b773053",
+    "files_only_test_skill": "2026.11.01.1",
+    "fixture_generation": "d99d4b50-488e-46af-97e8-c5f5dc821c29",
+    "cli_versions": {
+      "off": "0.164.0-alpha.11.1",
+      "previous_on": "0.166.0-alpha.5.1",
+      "files_only_on": "0.166.0-alpha.5.1"
+    },
+    "production_status": "Files-only mode runs on the isolated test environment only; production main/prerelease remain at 59ce0f4."
+  },
+  "pricing": {
+    "source": "Owner-supplied API pricing screenshot; stipulated rates, not a verified invoice.",
+    "currency": "USD",
+    "unit": "per1000000tokens",
+    "usd_per_million_tokens": {
+      "uncached_input": "2",
+      "cached_input": "0.10",
+      "output": "10"
+    },
+    "cache_write_tokens": 0,
+    "cached_input_is_subset_of_input": true,
+    "reasoning_is_subset_of_output": true,
+    "infrastructure_included": false
+  },
+  "runs": {
+    "off": {
+      "file": "logs/01-original-off.jsonl",
+      "sha256": "bfda44170144dd9afbb27b85b2fd51688161a6c80d38c9cf482b57a50bda6863",
+      "bytes": 1133625,
+      "prompt_file": "prompts/off.txt",
+      "prompt_sha256": "927cb06d4cf85c6ee6b80c9603ec310af0bb5547a09f41523fcb62cb80c86c6a",
+      "measured": {
+        "thread_id": "01a186ba-0220-7e80-8b8a-fe33027624b9",
+        "cli_version": "0.164.0-alpha.11.1",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 986953,
+          "cached_input_tokens": 881792,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10258,
+          "reasoning_output_tokens": 3874,
+          "total_tokens": 997211
+        },
+        "duration_ms": 317603,
+        "model_responses": 14,
+        "local_commands": 54,
+        "nonzero_commands": 0,
+        "native_calls": [],
+        "answer_sha256": "7c6fa528367abb8473656531e2044845cd7908bea41bf394be9781bba2a0f3a3"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.210322",
+        "cached_input": "0.0881792",
+        "output": "0.10258",
+        "total": "0.4010812"
+      }
+    },
+    "previous_on": {
+      "file": "logs/02-previous-on-with-evidence.jsonl",
+      "sha256": "54b2e320683f606ee3413ca8a6d09d9d6af6b7177fe553c1ed62bbc56db0141b",
+      "bytes": 1172958,
+      "prompt_file": "prompts/previous_on.txt",
+      "prompt_sha256": "df82aad05088e4fabaa9604b3a71b7fe509834f5d255af7732ae427ae23ce32c",
+      "measured": {
+        "thread_id": "01a18ef8-a255-78b1-8e88-83d0aad34453",
+        "cli_version": "0.166.0-alpha.5.1",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 988494,
+          "cached_input_tokens": 892928,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 9506,
+          "reasoning_output_tokens": 2645,
+          "total_tokens": 998000
+        },
+        "duration_ms": 200659,
+        "model_responses": 14,
+        "local_commands": 16,
+        "nonzero_commands": 0,
+        "native_calls": [
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_index_status",
+            "arguments": {
+              "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": null,
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": "e8b747ab522721076cacb5cf688eb8a54ba8c5c9",
+            "structured_payload_bytes": 3591
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_search",
+            "arguments": {
+              "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703",
+              "q": "ApiGatewayController",
+              "mode": "hybrid",
+              "limit": 4
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "hybrid",
+              "mode": "hybrid",
+              "resolution_status": "ranked_candidates",
+              "embedding_spec_id": "qwen3-embedding-0.6b-q8-1024-source-v1",
+              "semantic_state": "ready",
+              "eligible_documents": 2178,
+              "ready_documents": 2178,
+              "excluded_documents": 17,
+              "excluded_documents_unit": "source_entity_exclusions",
+              "source_capture_complete": true,
+              "source_capture_state": "complete",
+              "candidate_limit": 4,
+              "returned_count": 4,
+              "candidates_truncated": true,
+              "approximate": false,
+              "ranking": "customer_local_evidence_v2",
+              "lexical_query_terms": [
+                "api",
+                "apigatewaycontroller",
+                "controller",
+                "gateway"
+              ],
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 742,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "semantic_readiness",
+                  "outcome": "ok",
+                  "elapsed_ms": 504,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "embedding",
+                  "outcome": "ok",
+                  "elapsed_ms": 461,
+                  "budget_ms": 3000
+                },
+                {
+                  "phase": "semantic_retrieval",
+                  "outcome": "ok",
+                  "elapsed_ms": 708,
+                  "budget_ms": 15000,
+                  "pool_acquire_ms": 0,
+                  "database_work_ms": 708
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 468,
+                  "budget_ms": 15000
+                }
+              ],
+              "ranking_version": "customer-local-evidence/v2",
+              "ranking_intent": "neutral",
+              "ranking_query_terms": [
+                "api",
+                "apigatewaycontroller",
+                "controller",
+                "gateway"
+              ],
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 4,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 17459
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703",
+              "query": "symbol:github-spring-petclinic-spring-petclinic-microservices-98fa3703:spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java.ApiGatewayController.ApiGatewayController",
+              "intent": "impact",
+              "limit": 5
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_complete": false,
+              "source_capture_state": "not_checked",
+              "candidate_limit": 5,
+              "returned_count": 1,
+              "candidates_truncated": false,
+              "approximate": false,
+              "ranking": "lexical",
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 1,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 19969
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_search",
+            "arguments": {
+              "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703",
+              "q": "getOwnerDetails",
+              "mode": "hybrid",
+              "limit": 3
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "hybrid",
+              "mode": "hybrid",
+              "resolution_status": "ranked_candidates",
+              "embedding_spec_id": "qwen3-embedding-0.6b-q8-1024-source-v1",
+              "semantic_state": "ready",
+              "eligible_documents": 2178,
+              "ready_documents": 2178,
+              "excluded_documents": 17,
+              "excluded_documents_unit": "source_entity_exclusions",
+              "source_capture_complete": true,
+              "source_capture_state": "complete",
+              "candidate_limit": 3,
+              "returned_count": 3,
+              "candidates_truncated": true,
+              "approximate": false,
+              "ranking": "customer_local_evidence_v2",
+              "lexical_query_terms": [
+                "details",
+                "get",
+                "getownerdetails",
+                "owner"
+              ],
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 696,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "semantic_readiness",
+                  "outcome": "ok",
+                  "elapsed_ms": 1042,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "embedding",
+                  "outcome": "ok",
+                  "elapsed_ms": 397,
+                  "budget_ms": 3000
+                },
+                {
+                  "phase": "semantic_retrieval",
+                  "outcome": "ok",
+                  "elapsed_ms": 350,
+                  "budget_ms": 15000,
+                  "pool_acquire_ms": 0,
+                  "database_work_ms": 350
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 379,
+                  "budget_ms": 15000
+                }
+              ],
+              "ranking_version": "customer-local-evidence/v2",
+              "ranking_intent": "neutral",
+              "ranking_query_terms": [
+                "details",
+                "get",
+                "getownerdetails",
+                "owner"
+              ],
+              "duplicate_groups_collapsed": 1,
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 3,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 12755
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703",
+              "query": "symbol:github-spring-petclinic-spring-petclinic-microservices-98fa3703:spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java.ApiGatewayController.getOwnerDetails",
+              "intent": "impact",
+              "limit": 5
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_complete": false,
+              "source_capture_state": "not_checked",
+              "candidate_limit": 5,
+              "returned_count": 1,
+              "candidates_truncated": false,
+              "approximate": false,
+              "ranking": "lexical",
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 1,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 19348
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703",
+              "query": "symbol:github-spring-petclinic-spring-petclinic-microservices-98fa3703:spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/boundary/web/ApiGatewayController.java.ApiGatewayController.getOwnerDetails",
+              "intent": "ownership",
+              "limit": 8
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_complete": false,
+              "source_capture_state": "not_checked",
+              "candidate_limit": 8,
+              "returned_count": 1,
+              "candidates_truncated": false,
+              "approximate": false,
+              "ranking": "lexical",
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 1,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 29915
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703",
+              "query": "symbol:github-spring-petclinic-spring-petclinic-microservices-98fa3703:spring-petclinic-genai-service/src/main/java/org/springframework/samples/petclinic/genai/AIDataProvider.java.AIDataProvider.getAllOwners",
+              "intent": "impact",
+              "limit": 5
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_complete": false,
+              "source_capture_state": "not_checked",
+              "candidate_limit": 5,
+              "returned_count": 1,
+              "candidates_truncated": false,
+              "approximate": false,
+              "ranking": "lexical",
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 1,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 25117
+          }
+        ],
+        "answer_sha256": "ef4643a3898884552af9c638b08e7851e7ee109164e4164bc4c7a2131c09a6de"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.191132",
+        "cached_input": "0.0892928",
+        "output": "0.09506",
+        "total": "0.3754848"
+      }
+    },
+    "files_only_on": {
+      "file": "logs/03-on-files-only.jsonl",
+      "sha256": "00d5014c14a265a91c2be0017a200c8f9c19b1b30aa588f8d50895148c27dade",
+      "bytes": 693104,
+      "prompt_file": "prompts/files_only_on.txt",
+      "prompt_sha256": "df82aad05088e4fabaa9604b3a71b7fe509834f5d255af7732ae427ae23ce32c",
+      "measured": {
+        "thread_id": "01a1964d-5b4d-7df0-a211-2b88d1ce41d1",
+        "cli_version": "0.166.0-alpha.5.1",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 553675,
+          "cached_input_tokens": 495616,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7769,
+          "reasoning_output_tokens": 2377,
+          "total_tokens": 561444
+        },
+        "duration_ms": 152365,
+        "model_responses": 11,
+        "local_commands": 10,
+        "nonzero_commands": 0,
+        "native_calls": [
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_index_status",
+            "arguments": {
+              "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": null,
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": "e8b747ab522721076cacb5cf688eb8a54ba8c5c9",
+            "structured_payload_bytes": 3697
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_search",
+            "arguments": {
+              "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703",
+              "q": "API gateway routes owner details chat tools WebClient",
+              "mode": "hybrid",
+              "limit": 5,
+              "view": "files"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "hybrid",
+              "mode": "hybrid",
+              "resolution_status": "ranked_candidates",
+              "semantic_state": "ready",
+              "source_capture_state": "complete",
+              "candidates_truncated": true,
+              "returned_count": 5,
+              "reranking_status": "complete",
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 1027,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "semantic_readiness",
+                  "outcome": "ok",
+                  "elapsed_ms": 1076,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "embedding",
+                  "outcome": "ok",
+                  "elapsed_ms": 896,
+                  "budget_ms": 3000
+                },
+                {
+                  "phase": "semantic_retrieval",
+                  "outcome": "ok",
+                  "elapsed_ms": 1130,
+                  "budget_ms": 15000,
+                  "pool_acquire_ms": 0,
+                  "database_work_ms": 1130
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 583,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "local_reranking",
+                  "outcome": "ok",
+                  "elapsed_ms": 1293,
+                  "budget_ms": 5000
+                }
+              ]
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "no_omissions_recorded",
+              "source_omissions": {
+                "count": 0,
+                "pathsTruncated": false
+              },
+              "unlocated_subjects": 0
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 4050
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703",
+              "query": "symbol:github-spring-petclinic-spring-petclinic-microservices-98fa3703:spring-petclinic-api-gateway/src/main/java/org/springframework/samples/petclinic/api/application/CustomersServiceClient.java.CustomersServiceClient.getOwner",
+              "intent": "impact",
+              "view": "files",
+              "limit": 5
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_state": "not_checked",
+              "candidates_truncated": false,
+              "returned_count": 1,
+              "reranking_status": "not_requested"
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "no_omissions_recorded",
+              "source_omissions": {
+                "count": 0,
+                "pathsTruncated": false
+              },
+              "unlocated_subjects": 3,
+              "traversal_complete": true,
+              "impact_scope": "symbol"
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 3934
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-spring-petclinic-spring-petclinic-microservices-98fa3703",
+              "query": "symbol:github-spring-petclinic-spring-petclinic-microservices-98fa3703:spring-petclinic-genai-service/src/main/java/org/springframework/samples/petclinic/genai/AIDataProvider.java.AIDataProvider.getAllOwners",
+              "intent": "impact",
+              "view": "files",
+              "limit": 5
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_state": "not_checked",
+              "candidates_truncated": false,
+              "returned_count": 1,
+              "reranking_status": "not_requested"
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "no_omissions_recorded",
+              "source_omissions": {
+                "count": 0,
+                "pathsTruncated": false
+              },
+              "unlocated_subjects": 3,
+              "traversal_complete": true,
+              "impact_scope": "symbol"
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 3186
+          }
+        ],
+        "answer_sha256": "a1156d33833a86b6642d4fad3accf7c2ee8441cbba2c3c085c8a83c8d6c5fcc2"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.116118",
+        "cached_input": "0.0495616",
+        "output": "0.07769",
+        "total": "0.2433696"
+      }
+    }
+  },
+  "comparisons": {
+    "previous_on_vs_off": {
+      "baseline_run": "off",
+      "new_run": "previous_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 986953,
+          "new": 988494,
+          "difference": 1541,
+          "percent_change": 0.15613712101791855
+        },
+        "cached_input_tokens": {
+          "baseline": 881792,
+          "new": 892928,
+          "difference": 11136,
+          "percent_change": 1.2628828567281092
+        },
+        "output_tokens": {
+          "baseline": 10258,
+          "new": 9506,
+          "difference": -752,
+          "percent_change": -7.330863716124004
+        },
+        "reasoning_output_tokens": {
+          "baseline": 3874,
+          "new": 2645,
+          "difference": -1229,
+          "percent_change": -31.72431595250387
+        },
+        "total_tokens": {
+          "baseline": 997211,
+          "new": 998000,
+          "difference": 789,
+          "percent_change": 0.0791206675417655
+        },
+        "uncached_input_tokens": {
+          "baseline": 105161,
+          "new": 95566,
+          "difference": -9595,
+          "percent_change": -9.124104943848
+        },
+        "duration_ms": {
+          "baseline": 317603,
+          "new": 200659,
+          "difference": -116944,
+          "percent_change": -36.82081088654704
+        }
+      },
+      "cost_difference_usd": "-0.0255964",
+      "cost_percent_change": "-6.381849859828882530520004430"
+    },
+    "files_only_vs_off": {
+      "baseline_run": "off",
+      "new_run": "files_only_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 986953,
+          "new": 553675,
+          "difference": -433278,
+          "percent_change": -43.90057074652998
+        },
+        "cached_input_tokens": {
+          "baseline": 881792,
+          "new": 495616,
+          "difference": -386176,
+          "percent_change": -43.79445492814632
+        },
+        "output_tokens": {
+          "baseline": 10258,
+          "new": 7769,
+          "difference": -2489,
+          "percent_change": -24.263989081692337
+        },
+        "reasoning_output_tokens": {
+          "baseline": 3874,
+          "new": 2377,
+          "difference": -1497,
+          "percent_change": -38.64223025296851
+        },
+        "total_tokens": {
+          "baseline": 997211,
+          "new": 561444,
+          "difference": -435767,
+          "percent_change": -43.69857532658585
+        },
+        "uncached_input_tokens": {
+          "baseline": 105161,
+          "new": 58059,
+          "difference": -47102,
+          "percent_change": -44.7903690531661
+        },
+        "duration_ms": {
+          "baseline": 317603,
+          "new": 152365,
+          "difference": -165238,
+          "percent_change": -52.026586650629866
+        }
+      },
+      "cost_difference_usd": "-0.1577116",
+      "cost_percent_change": "-39.32161367822775039069395424"
+    },
+    "files_only_vs_previous_on": {
+      "baseline_run": "previous_on",
+      "new_run": "files_only_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 988494,
+          "new": 553675,
+          "difference": -434819,
+          "percent_change": -43.988026229800084
+        },
+        "cached_input_tokens": {
+          "baseline": 892928,
+          "new": 495616,
+          "difference": -397312,
+          "percent_change": -44.4954128440367
+        },
+        "output_tokens": {
+          "baseline": 9506,
+          "new": 7769,
+          "difference": -1737,
+          "percent_change": -18.272669892699344
+        },
+        "reasoning_output_tokens": {
+          "baseline": 2645,
+          "new": 2377,
+          "difference": -268,
+          "percent_change": -10.132325141776931
+        },
+        "total_tokens": {
+          "baseline": 998000,
+          "new": 561444,
+          "difference": -436556,
+          "percent_change": -43.74308617234469
+        },
+        "uncached_input_tokens": {
+          "baseline": 95566,
+          "new": 58059,
+          "difference": -37507,
+          "percent_change": -39.247221815289954
+        },
+        "duration_ms": {
+          "baseline": 200659,
+          "new": 152365,
+          "difference": -48294,
+          "percent_change": -24.067696938587357
+        }
+      },
+      "cost_difference_usd": "-0.1321152",
+      "cost_percent_change": "-35.18523253138342750492163731"
+    }
+  },
+  "quality": {
+    "off": 9.0,
+    "previous_on": 9.0,
+    "files_only_on": 9.0,
+    "maximum": 10,
+    "current_review": "Unblinded targeted static review, not runtime proof"
+  },
+  "limitations": [
+    "One predeclared new run per repository against historical OFF and previous ON runs; no variance or isolated causal estimate.",
+    "Client versions, backends, preparation, cache and load differ between runs.",
+    "Raw logs preserve local paths/account/session/tool metadata. No recording exists.",
+    "No application tests or runtime propagation validation; no new indexing or document embeddings."
+  ]
+}

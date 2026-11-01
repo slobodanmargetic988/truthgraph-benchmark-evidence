@@ -1,0 +1,882 @@
+{
+  "schema_version": 3,
+  "publication_date": "2026-11-01",
+  "publication_timezone": "Europe/Belgrade",
+  "source": {
+    "repository": "https://github.com/dotnet/eShop",
+    "commit": "913acea66708a59595351174cee9b29f37179d29",
+    "indexed_repository_id": "github-dotnet-eShop-714ccd15"
+  },
+  "controls": {
+    "model": "gpt-6.1-sol",
+    "effort": "ultra",
+    "provider": "openai",
+    "original_OFF_rerun": false,
+    "new_attempts": 1,
+    "predeclared_one_run_per_repository": true,
+    "outcome_based_retries": 0,
+    "on_endpoint": "https://truthgraph-test-6f8d2a10.redu.cloud/api/mcp",
+    "on_server": "truthgraph_test_customer",
+    "source_task_identical": true,
+    "previous_on_backend": "historical production deployment (exact revision not recorded)",
+    "previous_on_environment": "Hosted production service, 29 Oct",
+    "files_only_backend": "2ed2413763be631bc4474b077820c5de0b773053",
+    "files_only_test_skill": "2026.11.01.1",
+    "fixture_generation": "d99d4b50-488e-46af-97e8-c5f5dc821c29",
+    "cli_versions": {
+      "off": "0.164.0-alpha.11.1",
+      "previous_on": "0.165.0-alpha.1.2",
+      "files_only_on": "0.166.0-alpha.5.1"
+    },
+    "production_status": "Files-only mode runs on the isolated test environment only; production main/prerelease remain at 59ce0f4."
+  },
+  "pricing": {
+    "source": "Owner-supplied API pricing screenshot; stipulated rates, not a verified invoice.",
+    "currency": "USD",
+    "unit": "per1000000tokens",
+    "usd_per_million_tokens": {
+      "uncached_input": "2",
+      "cached_input": "0.10",
+      "output": "10"
+    },
+    "cache_write_tokens": 0,
+    "cached_input_is_subset_of_input": true,
+    "reasoning_is_subset_of_output": true,
+    "infrastructure_included": false
+  },
+  "runs": {
+    "off": {
+      "file": "logs/01-original-off.jsonl",
+      "sha256": "825e4db469debcf0fc648281956053de404fe2e4e476260b84898bb7f6fcce13",
+      "bytes": 1311408,
+      "prompt_file": "prompts/off.txt",
+      "prompt_sha256": "383db1a78cdcd5b99b04e7a6946d60640d6e1a73e63cc02d62632ded59c1cc34",
+      "measured": {
+        "thread_id": "01a186b4-6c69-7872-b61a-e1f1c86380df",
+        "cli_version": "0.164.0-alpha.11.1",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 2112651,
+          "cached_input_tokens": 1997056,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 11479,
+          "reasoning_output_tokens": 3527,
+          "total_tokens": 2124130
+        },
+        "duration_ms": 347718,
+        "model_responses": 22,
+        "local_commands": 36,
+        "nonzero_commands": 0,
+        "native_calls": [],
+        "answer_sha256": "bb8a988dd8f91e9ff636983008979f9ba95c0e4a1fc3430dc6b04132276113e2"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.23119",
+        "cached_input": "0.1997056",
+        "output": "0.11479",
+        "total": "0.5456856"
+      }
+    },
+    "previous_on": {
+      "file": "logs/02-previous-on-with-evidence.jsonl",
+      "sha256": "4006167fb068ac4593368eeca9699bfe718ab16a67a63510b27ceaf7426b6658",
+      "bytes": 1561774,
+      "prompt_file": "prompts/previous_on.txt",
+      "prompt_sha256": "b1490f1db5375312bc7c2bc6a8dd0b284659c781a236a0be870f46fe24407440",
+      "measured": {
+        "thread_id": "01a18990-4c3f-7553-b010-b1fd95b96e3e",
+        "cli_version": "0.165.0-alpha.1.2",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 1885246,
+          "cached_input_tokens": 1754112,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 11552,
+          "reasoning_output_tokens": 3377,
+          "total_tokens": 1896798
+        },
+        "duration_ms": 243980,
+        "model_responses": 18,
+        "local_commands": 33,
+        "nonzero_commands": 2,
+        "native_calls": [
+          {
+            "server": "truthgraph_customer",
+            "tool": "truthgraph_index_status",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": null,
+            "presentation_view": null,
+            "coverage": null,
+            "indexed_revision": "913acea66708a59595351174cee9b29f37179d29",
+            "structured_payload_bytes": 3711
+          },
+          {
+            "server": "truthgraph_customer",
+            "tool": "truthgraph_search",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15",
+              "q": "Where is an order created from a checkout request?",
+              "mode": "hybrid",
+              "limit": 4
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "hybrid",
+              "mode": "hybrid",
+              "resolution_status": "ranked_candidates",
+              "embedding_spec_id": "qwen3-embedding-0.6b-q8-1024-source-v1",
+              "semantic_state": "ready",
+              "eligible_documents": 9249,
+              "ready_documents": 9249,
+              "excluded_documents": 232,
+              "excluded_documents_unit": "source_entity_exclusions",
+              "source_capture_complete": true,
+              "source_capture_state": "complete",
+              "candidate_limit": 4,
+              "returned_count": 4,
+              "candidates_truncated": true,
+              "approximate": false,
+              "ranking": "balanced_source_local_semantic_files_v4",
+              "lexical_query_terms": [
+                "checkout",
+                "created",
+                "order",
+                "request"
+              ],
+              "completeness_scope": "ranked file navigation with at most two separately identified captured subjects per file; not whole-file or impact completeness",
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 2384,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "semantic_readiness",
+                  "outcome": "ok",
+                  "elapsed_ms": 1557,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "embedding",
+                  "outcome": "ok",
+                  "elapsed_ms": 689,
+                  "budget_ms": 3000
+                },
+                {
+                  "phase": "semantic_retrieval",
+                  "outcome": "ok",
+                  "elapsed_ms": 1407,
+                  "budget_ms": 15000,
+                  "pool_acquire_ms": 16,
+                  "database_work_ms": 1391
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 456,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "local_reranking",
+                  "outcome": "ok",
+                  "elapsed_ms": 779,
+                  "budget_ms": 5000
+                }
+              ],
+              "ranking_version": "customer-local-file-navigation/v4",
+              "ranking_intent": "neutral",
+              "ranking_query_terms": [
+                "checkout",
+                "created",
+                "order",
+                "request"
+              ],
+              "duplicate_groups_collapsed": 2,
+              "result_unit": "file",
+              "returned_file_count": 4,
+              "returned_subject_count": 7,
+              "reranking_status": "complete",
+              "reranker_model_spec": "msmarco-tinybert-l2-v2-onnx-quint8-avx2-512-maxwindow-v1",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": null,
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 30559
+          },
+          {
+            "server": "truthgraph_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15",
+              "query": "symbol:github-dotnet-eShop-714ccd15:src/WebApp/Services/BasketState.cs.BasketState.CheckoutAsync",
+              "intent": "impact"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_complete": false,
+              "source_capture_state": "not_checked",
+              "candidate_limit": 10,
+              "returned_count": 1,
+              "candidates_truncated": false,
+              "approximate": false,
+              "ranking": "lexical",
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 1,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": null,
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 15325
+          },
+          {
+            "server": "truthgraph_customer",
+            "tool": "truthgraph_search",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15",
+              "q": "CreateOrderCommand CreateOrderRequest",
+              "mode": "hybrid",
+              "limit": 4
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "hybrid",
+              "mode": "hybrid",
+              "resolution_status": "ranked_candidates",
+              "embedding_spec_id": "qwen3-embedding-0.6b-q8-1024-source-v1",
+              "semantic_state": "ready",
+              "eligible_documents": 9249,
+              "ready_documents": 9249,
+              "excluded_documents": 232,
+              "excluded_documents_unit": "source_entity_exclusions",
+              "source_capture_complete": true,
+              "source_capture_state": "complete",
+              "candidate_limit": 4,
+              "returned_count": 4,
+              "candidates_truncated": true,
+              "approximate": false,
+              "ranking": "balanced_source_local_semantic_files_v4",
+              "lexical_query_terms": [
+                "command",
+                "create",
+                "createordercommand",
+                "createorderrequest",
+                "order",
+                "request"
+              ],
+              "completeness_scope": "ranked file navigation with at most two separately identified captured subjects per file; not whole-file or impact completeness",
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 658,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "semantic_readiness",
+                  "outcome": "ok",
+                  "elapsed_ms": 1116,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "embedding",
+                  "outcome": "ok",
+                  "elapsed_ms": 467,
+                  "budget_ms": 3000
+                },
+                {
+                  "phase": "semantic_retrieval",
+                  "outcome": "ok",
+                  "elapsed_ms": 1227,
+                  "budget_ms": 15000,
+                  "pool_acquire_ms": 0,
+                  "database_work_ms": 1227
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 322,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "local_reranking",
+                  "outcome": "ok",
+                  "elapsed_ms": 561,
+                  "budget_ms": 5000
+                }
+              ],
+              "ranking_version": "customer-local-file-navigation/v4",
+              "ranking_intent": "neutral",
+              "ranking_query_terms": [
+                "command",
+                "create",
+                "createordercommand",
+                "createorderrequest",
+                "order",
+                "request"
+              ],
+              "duplicate_groups_collapsed": 1,
+              "result_unit": "file",
+              "returned_file_count": 4,
+              "returned_subject_count": 8,
+              "reranking_status": "complete",
+              "reranker_model_spec": "msmarco-tinybert-l2-v2-onnx-quint8-avx2-512-maxwindow-v1",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": null,
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 31446
+          },
+          {
+            "server": "truthgraph_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15",
+              "query": "symbol:github-dotnet-eShop-714ccd15:src/Ordering.API/Application/Commands/CreateOrderCommand.cs.CreateOrderCommand",
+              "intent": "impact"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_complete": false,
+              "source_capture_state": "not_checked",
+              "candidate_limit": 10,
+              "returned_count": 1,
+              "candidates_truncated": false,
+              "approximate": false,
+              "ranking": "lexical",
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 1,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": null,
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 15741
+          },
+          {
+            "server": "truthgraph_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15",
+              "query": "symbol:github-dotnet-eShop-714ccd15:src/Ordering.API/Apis/OrdersApi.cs.OrdersApi",
+              "intent": "ownership",
+              "limit": 30
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_complete": false,
+              "source_capture_state": "not_checked",
+              "candidate_limit": 30,
+              "returned_count": 1,
+              "candidates_truncated": false,
+              "approximate": false,
+              "ranking": "lexical",
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 1,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": null,
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 11425
+          }
+        ],
+        "answer_sha256": "952748708efae785eb5aac60f482fab1cdcbf78505add4c783b4c845cdcf1c51"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.262268",
+        "cached_input": "0.1754112",
+        "output": "0.11552",
+        "total": "0.5531992"
+      }
+    },
+    "files_only_on": {
+      "file": "logs/03-on-files-only.jsonl",
+      "sha256": "645418562937aad50ce7081149b29b49bde4b00870cc643373e4842d12373327",
+      "bytes": 1201512,
+      "prompt_file": "prompts/files_only_on.txt",
+      "prompt_sha256": "283db37c81c7f92bce53514761a47501282e8dd79a0200ff6ada90a0572448db",
+      "measured": {
+        "thread_id": "01a19651-f876-7690-ac80-5b265639e0cc",
+        "cli_version": "0.166.0-alpha.5.1",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 1353470,
+          "cached_input_tokens": 1255936,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 16414,
+          "reasoning_output_tokens": 8686,
+          "total_tokens": 1369884
+        },
+        "duration_ms": 455455,
+        "model_responses": 17,
+        "local_commands": 22,
+        "nonzero_commands": 1,
+        "native_calls": [
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_index_status",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15",
+              "view": "compact"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": null,
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": "913acea66708a59595351174cee9b29f37179d29",
+            "structured_payload_bytes": 3589
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_search",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15",
+              "q": "place order create order command checkout",
+              "mode": "hybrid",
+              "limit": 5,
+              "view": "files"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "hybrid",
+              "mode": "hybrid",
+              "resolution_status": "ranked_candidates",
+              "semantic_state": "ready",
+              "source_capture_state": "complete",
+              "candidates_truncated": true,
+              "returned_count": 5,
+              "reranking_status": "complete",
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 937,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "semantic_readiness",
+                  "outcome": "ok",
+                  "elapsed_ms": 1039,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "embedding",
+                  "outcome": "ok",
+                  "elapsed_ms": 843,
+                  "budget_ms": 3000
+                },
+                {
+                  "phase": "semantic_retrieval",
+                  "outcome": "ok",
+                  "elapsed_ms": 1906,
+                  "budget_ms": 15000,
+                  "pool_acquire_ms": 0,
+                  "database_work_ms": 1906
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 1015,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "local_reranking",
+                  "outcome": "ok",
+                  "elapsed_ms": 1166,
+                  "budget_ms": 5000
+                }
+              ]
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "unknown",
+              "unlocated_subjects": 0
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 3279
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15",
+              "query": "symbol:github-dotnet-eShop-714ccd15:src/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs.CreateOrderCommandHandler",
+              "intent": "impact",
+              "view": "files",
+              "limit": 5
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_state": "not_checked",
+              "candidates_truncated": false,
+              "returned_count": 1,
+              "reranking_status": "not_requested"
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "unknown",
+              "unlocated_subjects": 3,
+              "traversal_complete": true,
+              "impact_scope": "symbol"
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 2343
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15",
+              "query": "src/Ordering.API/Apis/OrdersApi.cs.OrdersApi.CreateOrderAsync",
+              "intent": "impact",
+              "view": "files",
+              "limit": 5
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_state": "not_checked",
+              "candidates_truncated": false,
+              "returned_count": 1,
+              "reranking_status": "not_requested"
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "unknown",
+              "unlocated_subjects": 3,
+              "traversal_complete": true,
+              "impact_scope": "symbol"
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 2357
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15",
+              "query": "OrderStatusChangedToPaidIntegrationEvent",
+              "intent": "ownership",
+              "view": "files",
+              "limit": 8
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "lexical",
+              "resolution_status": "ranked_candidates",
+              "semantic_state": "not_requested",
+              "source_capture_state": "not_checked",
+              "candidates_truncated": true,
+              "returned_count": 8,
+              "reranking_status": "not_requested",
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 1068,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 609,
+                  "budget_ms": 15000
+                }
+              ]
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "unknown",
+              "unlocated_subjects": 1
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 5833
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-dotnet-eShop-714ccd15",
+              "query": "symbol:github-dotnet-eShop-714ccd15:src/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs.CreateOrderCommandHandler.Handle",
+              "intent": "impact",
+              "limit": 5,
+              "view": "files"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_state": "not_checked",
+              "candidates_truncated": false,
+              "returned_count": 1,
+              "reranking_status": "not_requested"
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "unknown",
+              "unlocated_subjects": 3,
+              "traversal_complete": true,
+              "impact_scope": "symbol"
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 2364
+          }
+        ],
+        "answer_sha256": "428e2c9051577aa1f5f09d84ae6b8068f96aff53e077f742c49493c7bc07ca1a"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.195068",
+        "cached_input": "0.1255936",
+        "output": "0.16414",
+        "total": "0.4848016"
+      }
+    }
+  },
+  "comparisons": {
+    "previous_on_vs_off": {
+      "baseline_run": "off",
+      "new_run": "previous_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 2112651,
+          "new": 1885246,
+          "difference": -227405,
+          "percent_change": -10.763964327283592
+        },
+        "cached_input_tokens": {
+          "baseline": 1997056,
+          "new": 1754112,
+          "difference": -242944,
+          "percent_change": -12.165107037559286
+        },
+        "output_tokens": {
+          "baseline": 11479,
+          "new": 11552,
+          "difference": 73,
+          "percent_change": 0.6359438975520604
+        },
+        "reasoning_output_tokens": {
+          "baseline": 3527,
+          "new": 3377,
+          "difference": -150,
+          "percent_change": -4.252906152537572
+        },
+        "total_tokens": {
+          "baseline": 2124130,
+          "new": 1896798,
+          "difference": -227332,
+          "percent_change": -10.70235814192163
+        },
+        "uncached_input_tokens": {
+          "baseline": 115595,
+          "new": 131134,
+          "difference": 15539,
+          "percent_change": 13.442622950819683
+        },
+        "duration_ms": {
+          "baseline": 347718,
+          "new": 243980,
+          "difference": -103738,
+          "percent_change": -29.833945898688018
+        }
+      },
+      "cost_difference_usd": "0.0075136",
+      "cost_percent_change": "1.376910074225891245801611800"
+    },
+    "files_only_vs_off": {
+      "baseline_run": "off",
+      "new_run": "files_only_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 2112651,
+          "new": 1353470,
+          "difference": -759181,
+          "percent_change": -35.93499352235651
+        },
+        "cached_input_tokens": {
+          "baseline": 1997056,
+          "new": 1255936,
+          "difference": -741120,
+          "percent_change": -37.11062684271247
+        },
+        "output_tokens": {
+          "baseline": 11479,
+          "new": 16414,
+          "difference": 4935,
+          "percent_change": 42.991549786566786
+        },
+        "reasoning_output_tokens": {
+          "baseline": 3527,
+          "new": 8686,
+          "difference": 5159,
+          "percent_change": 146.27161893960871
+        },
+        "total_tokens": {
+          "baseline": 2124130,
+          "new": 1369884,
+          "difference": -754246,
+          "percent_change": -35.508466995899504
+        },
+        "uncached_input_tokens": {
+          "baseline": 115595,
+          "new": 97534,
+          "difference": -18061,
+          "percent_change": -15.624378217050916
+        },
+        "duration_ms": {
+          "baseline": 347718,
+          "new": 455455,
+          "difference": 107737,
+          "percent_change": 30.984015782904528
+        }
+      },
+      "cost_difference_usd": "-0.0608840",
+      "cost_percent_change": "-11.15734041726591282599357579"
+    },
+    "files_only_vs_previous_on": {
+      "baseline_run": "previous_on",
+      "new_run": "files_only_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 1885246,
+          "new": 1353470,
+          "difference": -531776,
+          "percent_change": -28.207247223969713
+        },
+        "cached_input_tokens": {
+          "baseline": 1754112,
+          "new": 1255936,
+          "difference": -498176,
+          "percent_change": -28.400467016929365
+        },
+        "output_tokens": {
+          "baseline": 11552,
+          "new": 16414,
+          "difference": 4862,
+          "percent_change": 42.08795013850415
+        },
+        "reasoning_output_tokens": {
+          "baseline": 3377,
+          "new": 8686,
+          "difference": 5309,
+          "percent_change": 157.21054190109567
+        },
+        "total_tokens": {
+          "baseline": 1896798,
+          "new": 1369884,
+          "difference": -526914,
+          "percent_change": -27.779130935397443
+        },
+        "uncached_input_tokens": {
+          "baseline": 131134,
+          "new": 97534,
+          "difference": -33600,
+          "percent_change": -25.62264553815181
+        },
+        "duration_ms": {
+          "baseline": 243980,
+          "new": 455455,
+          "difference": 211475,
+          "percent_change": 86.67718665464383
+        }
+      },
+      "cost_difference_usd": "-0.0683976",
+      "cost_percent_change": "-12.36400920319479854634641554"
+    }
+  },
+  "quality": {
+    "off": 9.5,
+    "previous_on": 9.5,
+    "files_only_on": 9.5,
+    "maximum": 10,
+    "current_review": "Unblinded targeted static review, not runtime proof"
+  },
+  "limitations": [
+    "One predeclared new run per repository against historical OFF and previous ON runs; no variance or isolated causal estimate.",
+    "Client versions, backends, preparation, cache and load differ between runs.",
+    "Raw logs preserve local paths/account/session/tool metadata. No recording exists.",
+    "No application tests or runtime propagation validation; no new indexing or document embeddings."
+  ]
+}

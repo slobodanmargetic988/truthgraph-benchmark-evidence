@@ -1,0 +1,671 @@
+{
+  "schema_version": 3,
+  "publication_date": "2026-11-01",
+  "publication_timezone": "Europe/Belgrade",
+  "source": {
+    "repository": "https://github.com/GoogleCloudPlatform/microservices-demo",
+    "commit": "38e7348eb289eb5b87c0c6e8cb19ced0449dc389",
+    "indexed_repository_id": "github-GoogleCloudPlatform-microservices-demo-1ae34901"
+  },
+  "controls": {
+    "model": "gpt-6.1-sol",
+    "effort": "ultra",
+    "provider": "openai",
+    "original_OFF_rerun": false,
+    "new_attempts": 1,
+    "predeclared_one_run_per_repository": true,
+    "outcome_based_retries": 0,
+    "on_endpoint": "https://truthgraph-test-6f8d2a10.redu.cloud/api/mcp",
+    "on_server": "truthgraph_test_customer",
+    "source_task_identical": true,
+    "previous_on_backend": "3ecddc8",
+    "previous_on_environment": "Redu test VM, evidence-bearing responses (selected run, 30 Oct)",
+    "files_only_backend": "2ed2413763be631bc4474b077820c5de0b773053",
+    "files_only_test_skill": "2026.11.01.1",
+    "fixture_generation": "d99d4b50-488e-46af-97e8-c5f5dc821c29",
+    "cli_versions": {
+      "off": "0.164.0-alpha.11.1",
+      "previous_on": "0.165.0-alpha.1.2",
+      "files_only_on": "0.166.0-alpha.5.1"
+    },
+    "production_status": "Files-only mode runs on the isolated test environment only; production main/prerelease remain at 59ce0f4."
+  },
+  "pricing": {
+    "source": "Owner-supplied API pricing screenshot; stipulated rates, not a verified invoice.",
+    "currency": "USD",
+    "unit": "per1000000tokens",
+    "usd_per_million_tokens": {
+      "uncached_input": "2",
+      "cached_input": "0.10",
+      "output": "10"
+    },
+    "cache_write_tokens": 0,
+    "cached_input_is_subset_of_input": true,
+    "reasoning_is_subset_of_output": true,
+    "infrastructure_included": false
+  },
+  "runs": {
+    "off": {
+      "file": "logs/01-original-off.jsonl",
+      "sha256": "ccad25cfd557bfc7bead73d58561e90de585231ce74fd55ac5cdba995a895081",
+      "bytes": 1022768,
+      "prompt_file": "prompts/off.txt",
+      "prompt_sha256": "541c09d4214a0fa6f930435538633eb31c4b774a31e7e157bb9295ec6e045a64",
+      "measured": {
+        "thread_id": "01a186c8-7ddf-7b92-adfe-3fcae9d7f6b4",
+        "cli_version": "0.164.0-alpha.11.1",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 962651,
+          "cached_input_tokens": 852608,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 9767,
+          "reasoning_output_tokens": 4613,
+          "total_tokens": 972418
+        },
+        "duration_ms": 342937,
+        "model_responses": 12,
+        "local_commands": 22,
+        "nonzero_commands": 2,
+        "native_calls": [],
+        "answer_sha256": "ed48a2ef8a29d379de51aa37b5e4d0bd7cb8ca4d30bc62e4a3b7bc2183579930"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.220086",
+        "cached_input": "0.0852608",
+        "output": "0.09767",
+        "total": "0.4030168"
+      }
+    },
+    "previous_on": {
+      "file": "logs/02-previous-on-with-evidence.jsonl",
+      "sha256": "13a1fa463762124d16978189ac753df0a83055af773c2c11ea1f6cb669f72c73",
+      "bytes": 1102001,
+      "prompt_file": "prompts/previous_on.txt",
+      "prompt_sha256": "531a485dcaac9778e5a2651f10353fbc97a9aa3cdde7d8c4cd296be22cb04389",
+      "measured": {
+        "thread_id": "01a18cf9-9b36-7c20-b17c-33619e869485",
+        "cli_version": "0.165.0-alpha.1.2",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 1107086,
+          "cached_input_tokens": 1006336,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 8387,
+          "reasoning_output_tokens": 2694,
+          "total_tokens": 1115473
+        },
+        "duration_ms": 261751,
+        "model_responses": 13,
+        "local_commands": 16,
+        "nonzero_commands": 0,
+        "native_calls": [
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_index_status",
+            "arguments": {
+              "repositoryId": "github-GoogleCloudPlatform-microservices-demo-1ae34901",
+              "view": "compact"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": null,
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": "38e7348eb289eb5b87c0c6e8cb19ced0449dc389",
+            "structured_payload_bytes": 3824
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_search",
+            "arguments": {
+              "repositoryId": "github-GoogleCloudPlatform-microservices-demo-1ae34901",
+              "q": "PlaceOrder",
+              "mode": "hybrid",
+              "limit": 4,
+              "view": "compact"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "hybrid",
+              "mode": "hybrid",
+              "resolution_status": "ranked_candidates",
+              "embedding_spec_id": "qwen3-embedding-0.6b-q8-1024-source-v1",
+              "semantic_state": "ready",
+              "eligible_documents": 4917,
+              "ready_documents": 4917,
+              "excluded_documents": 225,
+              "excluded_documents_unit": "source_entity_exclusions",
+              "source_capture_complete": true,
+              "source_capture_state": "complete",
+              "candidate_limit": 4,
+              "returned_count": 4,
+              "candidates_truncated": true,
+              "approximate": false,
+              "ranking": "customer_local_evidence_v2",
+              "lexical_query_terms": [
+                "order",
+                "place",
+                "placeorder"
+              ],
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 2052,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "semantic_readiness",
+                  "outcome": "ok",
+                  "elapsed_ms": 2617,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "embedding",
+                  "outcome": "ok",
+                  "elapsed_ms": 414,
+                  "budget_ms": 3000
+                },
+                {
+                  "phase": "semantic_retrieval",
+                  "outcome": "ok",
+                  "elapsed_ms": 5464,
+                  "budget_ms": 15000,
+                  "pool_acquire_ms": 0,
+                  "database_work_ms": 5464
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 3917,
+                  "budget_ms": 15000
+                }
+              ],
+              "ranking_version": "customer-local-evidence/v2",
+              "ranking_intent": "neutral",
+              "ranking_query_terms": [
+                "order",
+                "place",
+                "placeorder"
+              ],
+              "duplicate_groups_collapsed": 13,
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 4,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 17378
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-GoogleCloudPlatform-microservices-demo-1ae34901",
+              "query": "symbol:github-GoogleCloudPlatform-microservices-demo-1ae34901:src/checkoutservice/main.go.checkoutService.PlaceOrder",
+              "intent": "impact",
+              "limit": 5,
+              "view": "compact"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_complete": false,
+              "source_capture_state": "not_checked",
+              "candidate_limit": 5,
+              "returned_count": 1,
+              "candidates_truncated": false,
+              "approximate": false,
+              "ranking": "lexical",
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 1,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 16688
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-GoogleCloudPlatform-microservices-demo-1ae34901",
+              "query": "symbol:github-GoogleCloudPlatform-microservices-demo-1ae34901:src/checkoutservice/main.go.checkoutService.PlaceOrder",
+              "intent": "ownership",
+              "limit": 8,
+              "view": "compact"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_complete": false,
+              "source_capture_state": "not_checked",
+              "candidate_limit": 8,
+              "returned_count": 1,
+              "candidates_truncated": false,
+              "approximate": false,
+              "ranking": "lexical",
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 1,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 21348
+          }
+        ],
+        "answer_sha256": "f2dbe75de5a0c82c8858b18d5270546b6c89cb53932d84d99dd639c082330022"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.2015",
+        "cached_input": "0.1006336",
+        "output": "0.08387",
+        "total": "0.3860036"
+      }
+    },
+    "files_only_on": {
+      "file": "logs/03-on-files-only.jsonl",
+      "sha256": "4b7e4304d81ecee5f7b66db1f0171c5eb1f6c03c1ffb9ed0c4c8af5770032a47",
+      "bytes": 742815,
+      "prompt_file": "prompts/files_only_on.txt",
+      "prompt_sha256": "531a485dcaac9778e5a2651f10353fbc97a9aa3cdde7d8c4cd296be22cb04389",
+      "measured": {
+        "thread_id": "01a19649-4bb3-72d1-89f8-bf61842c6780",
+        "cli_version": "0.166.0-alpha.5.1",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 674555,
+          "cached_input_tokens": 611840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7818,
+          "reasoning_output_tokens": 3102,
+          "total_tokens": 682373
+        },
+        "duration_ms": 237721,
+        "model_responses": 12,
+        "local_commands": 11,
+        "nonzero_commands": 1,
+        "native_calls": [
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_index_status",
+            "arguments": {
+              "repositoryId": "github-GoogleCloudPlatform-microservices-demo-1ae34901"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": null,
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": "38e7348eb289eb5b87c0c6e8cb19ced0449dc389",
+            "structured_payload_bytes": 3930
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_search",
+            "arguments": {
+              "repositoryId": "github-GoogleCloudPlatform-microservices-demo-1ae34901",
+              "q": "checkout PlaceOrder handler",
+              "mode": "hybrid",
+              "limit": 4,
+              "view": "files"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "hybrid",
+              "mode": "hybrid",
+              "resolution_status": "ranked_candidates",
+              "semantic_state": "ready",
+              "source_capture_state": "complete",
+              "candidates_truncated": true,
+              "returned_count": 4,
+              "reranking_status": "complete",
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 2088,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "semantic_readiness",
+                  "outcome": "ok",
+                  "elapsed_ms": 1234,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "embedding",
+                  "outcome": "ok",
+                  "elapsed_ms": 1165,
+                  "budget_ms": 3000
+                },
+                {
+                  "phase": "semantic_retrieval",
+                  "outcome": "ok",
+                  "elapsed_ms": 3619,
+                  "budget_ms": 15000,
+                  "pool_acquire_ms": 0,
+                  "database_work_ms": 3619
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 627,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "local_reranking",
+                  "outcome": "ok",
+                  "elapsed_ms": 543,
+                  "budget_ms": 5000
+                }
+              ]
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "partial",
+              "source_omissions": {
+                "count": 1,
+                "pathsTruncated": false
+              },
+              "unlocated_subjects": 0
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 5263
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-GoogleCloudPlatform-microservices-demo-1ae34901",
+              "query": "symbol:github-GoogleCloudPlatform-microservices-demo-1ae34901:src/checkoutservice/main.go.checkoutService.PlaceOrder",
+              "intent": "impact",
+              "limit": 5,
+              "view": "files"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_state": "not_checked",
+              "candidates_truncated": false,
+              "returned_count": 1,
+              "reranking_status": "not_requested"
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "partial",
+              "source_omissions": {
+                "count": 1,
+                "pathsTruncated": false
+              },
+              "unlocated_subjects": 3,
+              "traversal_complete": true,
+              "impact_scope": "symbol"
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 2508
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-GoogleCloudPlatform-microservices-demo-1ae34901",
+              "query": "endpoint:github-GoogleCloudPlatform-microservices-demo-1ae34901:protobuf:protos/demo.proto:hipstershop.CheckoutService.PlaceOrder",
+              "intent": "ownership",
+              "limit": 8,
+              "view": "files"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_state": "not_checked",
+              "candidates_truncated": false,
+              "returned_count": 1,
+              "reranking_status": "not_requested"
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "partial",
+              "source_omissions": {
+                "count": 1,
+                "pathsTruncated": false
+              },
+              "unlocated_subjects": 1
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 3351
+          }
+        ],
+        "answer_sha256": "1990c8d69b8d7022d767e141caf24f3de3f3c9fbe2bbf6af46aaa969fe53ca50"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.12543",
+        "cached_input": "0.061184",
+        "output": "0.07818",
+        "total": "0.264794"
+      }
+    }
+  },
+  "comparisons": {
+    "previous_on_vs_off": {
+      "baseline_run": "off",
+      "new_run": "previous_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 962651,
+          "new": 1107086,
+          "difference": 144435,
+          "percent_change": 15.00387991078802
+        },
+        "cached_input_tokens": {
+          "baseline": 852608,
+          "new": 1006336,
+          "difference": 153728,
+          "percent_change": 18.030325776910374
+        },
+        "output_tokens": {
+          "baseline": 9767,
+          "new": 8387,
+          "difference": -1380,
+          "percent_change": -14.129210607146515
+        },
+        "reasoning_output_tokens": {
+          "baseline": 4613,
+          "new": 2694,
+          "difference": -1919,
+          "percent_change": -41.59982657706481
+        },
+        "total_tokens": {
+          "baseline": 972418,
+          "new": 1115473,
+          "difference": 143055,
+          "percent_change": 14.711266142749313
+        },
+        "uncached_input_tokens": {
+          "baseline": 110043,
+          "new": 100750,
+          "difference": -9293,
+          "percent_change": -8.444880637568952
+        },
+        "duration_ms": {
+          "baseline": 342937,
+          "new": 261751,
+          "difference": -81186,
+          "percent_change": -23.673735992325117
+        }
+      },
+      "cost_difference_usd": "-0.0170132",
+      "cost_percent_change": "-4.221461735590178870955255460"
+    },
+    "files_only_vs_off": {
+      "baseline_run": "off",
+      "new_run": "files_only_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 962651,
+          "new": 674555,
+          "difference": -288096,
+          "percent_change": -29.927356851029085
+        },
+        "cached_input_tokens": {
+          "baseline": 852608,
+          "new": 611840,
+          "difference": -240768,
+          "percent_change": -28.239003152679775
+        },
+        "output_tokens": {
+          "baseline": 9767,
+          "new": 7818,
+          "difference": -1949,
+          "percent_change": -19.954950342991708
+        },
+        "reasoning_output_tokens": {
+          "baseline": 4613,
+          "new": 3102,
+          "difference": -1511,
+          "percent_change": -32.75525688272274
+        },
+        "total_tokens": {
+          "baseline": 972418,
+          "new": 682373,
+          "difference": -290045,
+          "percent_change": -29.827193655403338
+        },
+        "uncached_input_tokens": {
+          "baseline": 110043,
+          "new": 62715,
+          "difference": -47328,
+          "percent_change": -43.008642076279266
+        },
+        "duration_ms": {
+          "baseline": 342937,
+          "new": 237721,
+          "difference": -105216,
+          "percent_change": -30.680853917774986
+        }
+      },
+      "cost_difference_usd": "-0.1382228",
+      "cost_percent_change": "-34.29703178626796699293925216"
+    },
+    "files_only_vs_previous_on": {
+      "baseline_run": "previous_on",
+      "new_run": "files_only_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 1107086,
+          "new": 674555,
+          "difference": -432531,
+          "percent_change": -39.069322527789176
+        },
+        "cached_input_tokens": {
+          "baseline": 1006336,
+          "new": 611840,
+          "difference": -394496,
+          "percent_change": -39.201221063342665
+        },
+        "output_tokens": {
+          "baseline": 8387,
+          "new": 7818,
+          "difference": -569,
+          "percent_change": -6.7843090497198055
+        },
+        "reasoning_output_tokens": {
+          "baseline": 2694,
+          "new": 3102,
+          "difference": 408,
+          "percent_change": 15.144766146993316
+        },
+        "total_tokens": {
+          "baseline": 1115473,
+          "new": 682373,
+          "difference": -433100,
+          "percent_change": -38.82657850077948
+        },
+        "uncached_input_tokens": {
+          "baseline": 100750,
+          "new": 62715,
+          "difference": -38035,
+          "percent_change": -37.75186104218362
+        },
+        "duration_ms": {
+          "baseline": 261751,
+          "new": 237721,
+          "difference": -24030,
+          "percent_change": -9.180480685842651
+        }
+      },
+      "cost_difference_usd": "-0.1212096",
+      "cost_percent_change": "-31.40115791666191714274167391"
+    }
+  },
+  "quality": {
+    "off": 9.5,
+    "previous_on": 9.5,
+    "files_only_on": 9.5,
+    "maximum": 10,
+    "current_review": "Unblinded targeted static review, not runtime proof"
+  },
+  "limitations": [
+    "One predeclared new run per repository against historical OFF and previous ON runs; no variance or isolated causal estimate.",
+    "Client versions, backends, preparation, cache and load differ between runs.",
+    "Raw logs preserve local paths/account/session/tool metadata. No recording exists.",
+    "No application tests or runtime propagation validation; no new indexing or document embeddings."
+  ]
+}
