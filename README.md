@@ -11,5 +11,8 @@ Raw, unedited evidence behind performance claims made about [TruthGraph](https:/
 | [`2026-10-30-petclinic-redu-output-win`](2026-10-30-petclinic-redu-output-win/) | Selected Redu output win: output -7.33%, uncached input -9.12%, time -36.82%; static quality 9.0/10. n=1 historical pair; conditions differ. |
 | [`2026-10-31-opentelemetry-redu-fallback-output-win`](2026-10-31-opentelemetry-redu-fallback-output-win/) | **Lexical-fallback-assisted** Redu output win: output -12.78%, uncached input +46.39%, time -28.09%; static quality 9.5/10. n=1 historical pair; conditions differ. |
 | [`2026-11-01-opentelemetry-files-only`](2026-11-01-opentelemetry-files-only/) | Three-way priced files-only analysis: estimated cost−6.37% vsOFF/−28.12% vs previous ON; **output+3.63%, time+14.82%, quality9.0 vs9.5** against previous ON. One new run; hybrid versus prior fallback and preparation differ. |
+| [`2026-11-01-microservices-demo-files-only`](2026-11-01-microservices-demo-files-only/) | Predeclared files-only run vs original OFF: estimated cost -34.30%, time -30.68%, output -19.95%, quality 9.5 → 9.5. One run; client, backend and preparation differ. |
+| [`2026-11-01-petclinic-files-only`](2026-11-01-petclinic-files-only/) | Predeclared files-only run vs original OFF: estimated cost -39.32%, time -52.03%, output -24.26%, quality 9.0 → 9.0. One run; client, backend and preparation differ. |
+| [`2026-11-01-eshop-files-only`](2026-11-01-eshop-files-only/) | Predeclared files-only run vs original OFF: estimated cost -11.16%, **time +30.98%, output +42.99%**, quality 9.5 → 9.5. One run; client, backend and preparation differ. |
 
 The logs come straight from the agent. Nothing has been trimmed, redacted or reformatted.

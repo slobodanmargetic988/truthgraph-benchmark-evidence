@@ -1,0 +1,340 @@
+{
+  "off": {
+    "score": 9.5,
+    "provenance": "Existing frozen masked source grade; not rerun.",
+    "maximum": 10,
+    "answerSHA256": "bb8a988dd8f91e9ff636983008979f9ba95c0e4a1fc3430dc6b04132276113e2",
+    "detail": "2026-10-29-eshop-change-impact-hybrid/quality-review.json"
+  },
+  "previous_on": {
+    "score": 9.5,
+    "provenance": "Existing selected production ON static review; not rerun.",
+    "maximum": 10,
+    "answerSHA256": "952748708efae785eb5aac60f482fab1cdcbf78505add4c783b4c845cdcf1c51",
+    "detail": "2026-10-29-eshop-change-impact-hybrid/quality-review.json"
+  },
+  "files_only_on": {
+    "at": "2026-11-01T09:07:28.953784+00:00",
+    "method": "Unblinded targeted static review by coordinator against frozen rubric; no app/runtime tests.",
+    "sourceCommit": "913acea66708a59595351174cee9b29f37179d29",
+    "score": 9.5,
+    "maximum": 10,
+    "criteria": [
+      {
+        "id": "E01",
+        "score": 1,
+        "assessment": "Correct web and mobile entry paths, separate request models and explicit API/command reconstruction; buyer/auth identity preserved.",
+        "source_references": [
+          {
+            "path": "src/WebApp/Components/Pages/Checkout/Checkout.razor",
+            "start_line": 80,
+            "end_line": 116,
+            "file_sha256": "152da9306699f1078663a9059e43c0d20482aac74f4c44ae5e58ba55f3f9a91e",
+            "range_sha256": "16756fa5786b7b77bef9d54dccc6ed4901408c7b1abc77aaf5edd94bc73d5ec3"
+          },
+          {
+            "path": "src/WebApp/Services/BasketState.cs",
+            "start_line": 78,
+            "end_line": 108,
+            "file_sha256": "e877f170e940ffaff6528199fa6436950f361e8924bbdd392819c7eb8714f8e7",
+            "range_sha256": "9d106641a9c3ddbd655fcbbfcd389ae21e1730adf80ade9b3dbfe4a06d7801f6"
+          },
+          {
+            "path": "src/WebApp/Services/BasketState.cs",
+            "start_line": 158,
+            "end_line": 172,
+            "file_sha256": "e877f170e940ffaff6528199fa6436950f361e8924bbdd392819c7eb8714f8e7",
+            "range_sha256": "b221a46c7690c26bc3c61905b464cc53fe88c2e688b20b16c4df36c61de9422b"
+          },
+          {
+            "path": "src/WebApp/Services/OrderingService.cs",
+            "start_line": 12,
+            "end_line": 18,
+            "file_sha256": "2e8578d1eda8e3ab7ce7e471d6e3d5447e4c80a1a0d1407af74734ce989932c2",
+            "range_sha256": "0ee0a6e5654a70e2c756af313d84d15a2747fba053517637390d2db96ee2daa4"
+          },
+          {
+            "path": "src/Ordering.API/Apis/OrdersApi.cs",
+            "start_line": 118,
+            "end_line": 146,
+            "file_sha256": "a01792c9e73e84fa6b3f066900dff1041914cf92c033a5a5ace548e58dc11635",
+            "range_sha256": "22e82e1dd8185af0d249a9e044289c98895e2e169b7f0bfc567d2111a69dff00"
+          }
+        ]
+      },
+      {
+        "id": "E02",
+        "score": 1,
+        "assessment": "Preserves x-requestid duplicate semantics, original reference on duplicate and separate order/event/tracing identities.",
+        "source_references": [
+          {
+            "path": "src/Ordering.API/Apis/OrdersApi.cs",
+            "start_line": 118,
+            "end_line": 146,
+            "file_sha256": "a01792c9e73e84fa6b3f066900dff1041914cf92c033a5a5ace548e58dc11635",
+            "range_sha256": "22e82e1dd8185af0d249a9e044289c98895e2e169b7f0bfc567d2111a69dff00"
+          },
+          {
+            "path": "src/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs",
+            "start_line": 39,
+            "end_line": 48,
+            "file_sha256": "4aebc22ef8adbadec99cf626f6f483f8a239127c0d10ac62787952d879f8c839",
+            "range_sha256": "0e0457bb32c2641661cbef8d1aca17b99cde077372922b75c7334cbdc8df7f11"
+          },
+          {
+            "path": "src/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs",
+            "start_line": 56,
+            "end_line": 69,
+            "file_sha256": "3750cc1baf18b1f3eb9f4cc12ea6df5c4e992c1f339ac46d61378423bb73d0b9",
+            "range_sha256": "48982e69201d6565185699f25add68c56df57f2708dfb45d21f643c5900b9cb7"
+          }
+        ]
+      },
+      {
+        "id": "E03",
+        "score": 1,
+        "assessment": "Command/handler/aggregate reconstruction, setting field before initial domain event and separately rebuilt OrderStartedIntegrationEvent covered.",
+        "source_references": [
+          {
+            "path": "src/Ordering.API/Apis/OrdersApi.cs",
+            "start_line": 140,
+            "end_line": 155,
+            "file_sha256": "a01792c9e73e84fa6b3f066900dff1041914cf92c033a5a5ace548e58dc11635",
+            "range_sha256": "ff5eb36d871d51d90218fd56ac6b8db857b0bd38c89ed3c9f5b6c7aeb8a70bf6"
+          },
+          {
+            "path": "src/Ordering.API/Application/Commands/CreateOrderCommand.cs",
+            "start_line": 16,
+            "end_line": 80,
+            "file_sha256": "13280b88f7f788e209c90f19a078202333a551afe323f18fdc8efaff8d2169de",
+            "range_sha256": "2ae151c06bde3e749979a51e074a53a3dcf5f86d4499768e0cd93d7aada1673b"
+          },
+          {
+            "path": "src/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs",
+            "start_line": 29,
+            "end_line": 51,
+            "file_sha256": "3750cc1baf18b1f3eb9f4cc12ea6df5c4e992c1f339ac46d61378423bb73d0b9",
+            "range_sha256": "561c35f9b0df41b94c49c39c16c3d78831b6b6ac77d8f69d0d7347c543f7f600"
+          },
+          {
+            "path": "src/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs",
+            "start_line": 52,
+            "end_line": 65,
+            "file_sha256": "4b3173a9b21c1d4b1878b739a06ce36eaf9b268fd2674718db00426bf17aabd4",
+            "range_sha256": "6b39f9c43648ac020a172426889f100e203b137880bf98580eb69a2880603319"
+          }
+        ]
+      },
+      {
+        "id": "E04",
+        "score": 1,
+        "assessment": "Nullable aggregate state, EF mapping, migration/snapshot and legacy-null orders covered.",
+        "source_references": [
+          {
+            "path": "src/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs",
+            "start_line": 5,
+            "end_line": 35,
+            "file_sha256": "4b3173a9b21c1d4b1878b739a06ce36eaf9b268fd2674718db00426bf17aabd4",
+            "range_sha256": "f900bea9fe9ebe049a896a1555cded8e4fdab4d65b280033e7761c1fd37e0f98"
+          },
+          {
+            "path": "src/Ordering.Infrastructure/EntityConfigurations/OrderEntityTypeConfiguration.cs",
+            "start_line": 3,
+            "end_line": 35,
+            "file_sha256": "fa62243ed719ea3029e8e8b88e87ff8547874e7fec1e16c0e8404d14eaa36d08",
+            "range_sha256": "c6105222ddd8df7d2a08edb49aee01d050ff49ff45c8be4091bc81b8d5b9432c"
+          },
+          {
+            "path": "src/Ordering.Infrastructure/Migrations/OrderingContextModelSnapshot.cs",
+            "start_line": 1,
+            "end_line": 35,
+            "file_sha256": "61c6e941afaa1fe2c1005438558e068a6e4ad5ae169613f7a556f3f187895243",
+            "range_sha256": "0d9fdf005cf00607f987640bc205ca0d72ae4a53775a1b48d86b9bac764ed523"
+          }
+        ]
+      },
+      {
+        "id": "E05",
+        "score": 1,
+        "assessment": "Both detail/list read projections, DTOs and WebApp/mobile response boundaries covered.",
+        "source_references": [
+          {
+            "path": "src/Ordering.API/Application/Queries/OrderQueries.cs",
+            "start_line": 6,
+            "end_line": 48,
+            "file_sha256": "c6e98304fd381c240ebac81b81e2d55e6d72a6fb045109849d5adfda51910308",
+            "range_sha256": "bbff3496ea703c165018715f1f2c1f6c6829c807e9b7407146f02090b255369e"
+          },
+          {
+            "path": "src/Ordering.API/Apis/OrdersApi.cs",
+            "start_line": 80,
+            "end_line": 98,
+            "file_sha256": "a01792c9e73e84fa6b3f066900dff1041914cf92c033a5a5ace548e58dc11635",
+            "range_sha256": "820788d913ffe86c960f1a0cddf9b738523a6856ac289402acf671e172c63447"
+          },
+          {
+            "path": "src/WebApp/Services/OrderingService.cs",
+            "start_line": 7,
+            "end_line": 25,
+            "file_sha256": "2e8578d1eda8e3ab7ce7e471d6e3d5447e4c80a1a0d1407af74734ce989932c2",
+            "range_sha256": "62f608b6818b38cd3ff96305ba71001ac267cf2df25202730f8136d621f0a24d"
+          }
+        ]
+      },
+      {
+        "id": "E06",
+        "score": 1,
+        "assessment": "Independent producer and consumer-local event copies and webhook reserialization covered with optional-field compatibility.",
+        "source_references": [
+          {
+            "path": "src/Ordering.API/Application/DomainEventHandlers/OrderStatusChangedToAwaitingValidationDomainEventHandler.cs",
+            "start_line": 23,
+            "end_line": 34,
+            "file_sha256": "46deeb0ab93524d148e1286b327c4b6fca640f2db5eea9efd0a2efc08164689e",
+            "range_sha256": "6cd80cd43ed212cddf587681673a74f34d7f38969858ded9312eef5ebd66627e"
+          },
+          {
+            "path": "src/Ordering.API/Application/DomainEventHandlers/OrderStatusChangedToPaidDomainEventHandler.cs",
+            "start_line": 22,
+            "end_line": 39,
+            "file_sha256": "4e139178facab726b0cc94aac3203454b8ba87d850006e50f6206d2f208161a8",
+            "range_sha256": "c9067d3cec03c5e27f61dcf6919a416b5c68bebfd30b94487c352f06b6b9b0ac"
+          },
+          {
+            "path": "src/Ordering.API/Application/IntegrationEvents/Events/OrderStatusChangedToPaidIntegrationEvent.cs",
+            "start_line": 3,
+            "end_line": 20,
+            "file_sha256": "9d2c8f7a625bae497752e1fba546fcf1cde7291f7e28536870e0c39dc4b6a5c2",
+            "range_sha256": "0704c61dd393e69058578b559644720125e1c8f0efa0cd7b158c47160f5ead86"
+          },
+          {
+            "path": "src/Webhooks.API/IntegrationEvents/OrderStatusChangedToPaidIntegrationEvent.cs",
+            "start_line": 1,
+            "end_line": 3,
+            "file_sha256": "df82210cab1b26d03948432d5c09c77f6b7e559158fdaa2c31389017ea347775",
+            "range_sha256": "3b6316ef3310348d22a5a4f628cd7a7b33ca595117930c7bf3af4dfd96853131"
+          }
+        ]
+      },
+      {
+        "id": "E07",
+        "score": 1,
+        "assessment": "Catalog stock and PaymentProcessor outcomes reconstructed around order ID, with Ordering aggregate reload and stock-rejection non-event gap distinguished.",
+        "source_references": [
+          {
+            "path": "src/Catalog.API/IntegrationEvents/EventHandling/OrderStatusChangedToAwaitingValidationIntegrationEventHandler.cs",
+            "start_line": 9,
+            "end_line": 32,
+            "file_sha256": "f1c414825b72598e9d11b952c7daeed8e9b26a1caa55e309cc14f6547d7efca0",
+            "range_sha256": "7ed093eb6b5d0e3d91a10fad6579399134bcde0b41f88772dc50476832d5450f"
+          },
+          {
+            "path": "src/PaymentProcessor/IntegrationEvents/EventHandling/OrderStatusChangedToStockConfirmedIntegrationEventHandler.cs",
+            "start_line": 9,
+            "end_line": 32,
+            "file_sha256": "5cb0b3b60375e788e6cb71b97ee4badf1c2366cdc693bb7926851176507fd948",
+            "range_sha256": "f8390b3367dad2904353685878f207963c6405824b6c808e8cb53bf68452b671"
+          }
+        ]
+      },
+      {
+        "id": "E08",
+        "score": 1,
+        "assessment": "Transactional event save/commit then publication, failed publication marking and acknowledge-on-handler-error boundaries retained; fake-exception trigger independently verified in source.",
+        "source_references": [
+          {
+            "path": "src/Ordering.API/Application/Behaviors/TransactionBehavior.cs",
+            "start_line": 20,
+            "end_line": 61,
+            "file_sha256": "bbd22e965ac6936832f3ba5ee35d44a678ea90439ce819df66e9e548b04ff638",
+            "range_sha256": "699600f3c0415884f966667ea4be7172abeb6ffa2a15a3b5bafb7ca24ed320a4"
+          },
+          {
+            "path": "src/Ordering.API/Application/IntegrationEvents/OrderingIntegrationEventService.cs",
+            "start_line": 13,
+            "end_line": 40,
+            "file_sha256": "a6405c210772bb1411fcc83a30f269c7c6a78ba004d14f9290e5621891eb7a98",
+            "range_sha256": "62f5d91f348abbb6ceb2ead281dbd0136d69259767b8afa9ef2a85855b7e58c4"
+          },
+          {
+            "path": "src/Ordering.API/Apis/OrdersApi.cs",
+            "start_line": 126,
+            "end_line": 163,
+            "file_sha256": "a01792c9e73e84fa6b3f066900dff1041914cf92c033a5a5ace548e58dc11635",
+            "range_sha256": "cf46f956d67db90c56745756b4c2e71bb3fc525d26a0eb2e61af43b9c4fa3138"
+          }
+        ]
+      },
+      {
+        "id": "E09",
+        "score": 1,
+        "assessment": "Buyer-keyed WebApp refresh callback and Webhooks string payload correctly distinguished; no invented live payment provider or reliable delivery claim.",
+        "source_references": [
+          {
+            "path": "src/WebApp/Services/OrderStatus/IntegrationEvents/EventHandling/OrderStatusChangedToPaidIntegrationEventHandler.cs",
+            "start_line": 5,
+            "end_line": 13,
+            "file_sha256": "1f944591cb3363d0d93270539ac65dc8175ff9443927ee1ac8b05705b6fec720",
+            "range_sha256": "a0a0d1cbf086061f639e9b840e79e4f3cb17f8031403922b95a6e5d6c13fe9b8"
+          },
+          {
+            "path": "src/WebApp/Services/OrderStatus/OrderStatusNotificationService.cs",
+            "start_line": 9,
+            "end_line": 34,
+            "file_sha256": "ff72be6e3dda33182170fa4d6433693882ca3b2712c8318cee1e8db394b860c5",
+            "range_sha256": "f36daba5a63f9e257ae20d234a27d7517338f3c928b093f3294ad5c35a01ac22"
+          },
+          {
+            "path": "src/Webhooks.API/IntegrationEvents/OrderStatusChangedToPaidIntegrationEventHandler.cs",
+            "start_line": 8,
+            "end_line": 16,
+            "file_sha256": "38d724d35f0a05e29d995dea3137b7a0c8f4a9cabe2ce23f87dd2dbaa4370abd",
+            "range_sha256": "36dfb5c9dc785eea64df81bff42b81dc11d612f17ec4e51d891e84b218974f7e"
+          },
+          {
+            "path": "src/PaymentProcessor/IntegrationEvents/EventHandling/OrderStatusChangedToStockConfirmedIntegrationEventHandler.cs",
+            "start_line": 15,
+            "end_line": 27,
+            "file_sha256": "5cb0b3b60375e788e6cb71b97ee4badf1c2366cdc693bb7926851176507fd948",
+            "range_sha256": "ebd73a8cc45d17e47436a69a7cc067e3a87b3a485dd012a60fe6e45bcb73ba44"
+          }
+        ]
+      },
+      {
+        "id": "E10",
+        "score": 0.5,
+        "assessment": "Useful omitted/null/supplied, persistence/read, event, consumer, duplicate and end-to-end additions; existing unit/idempotency coverage is asserted without concrete test-file citations, the same traceability gap as prior9.5 grade.",
+        "source_references": [
+          {
+            "path": "tests/Ordering.UnitTests/Application/IdentifiedCommandHandlerTest.cs",
+            "start_line": 17,
+            "end_line": 57,
+            "file_sha256": "41d3c9e5036c8d21c5947d45140362b99d59d0c5af5341dfd9b196f3a6be24a1",
+            "range_sha256": "4a54e63fdd8efdd51b948fa08851a7f8a9dc919fd2fa45a2276bf622140161c2"
+          },
+          {
+            "path": "tests/Ordering.UnitTests/Application/NewOrderCommandHandlerTest.cs",
+            "start_line": 1,
+            "end_line": 65,
+            "file_sha256": "386873bf1db3bbe0b84b0f75dd119685fe6971f9732db915780c5345b63d80d1",
+            "range_sha256": "8bd0739f3223845b3aafa7075e7863d845695a35e3ca1ffe737d180ca8728151"
+          },
+          {
+            "path": "tests/Ordering.FunctionalTests/OrderingApiTests.cs",
+            "start_line": 119,
+            "end_line": 181,
+            "file_sha256": "5e12522e2613d04f7503be4ce0b772a08722507e8305a64dce7fa9e1e78e9a9f",
+            "range_sha256": "a23adfbbfc0a7f77994ca6f2075632e74b9eacf53e367461bd6d4255aa08b48e"
+          }
+        ]
+      }
+    ],
+    "frozenEvidenceFileHashesMatched": 34,
+    "answerSHA256": "428e2c9051577aa1f5f09d84ae6b8068f96aff53e077f742c49493c7bc07ca1a",
+    "materialIncorrectClaimFound": false,
+    "limits": [
+      "Targeted/static/unblinded; no exhaustive citation/runtime assurance.",
+      "Test fixture omission inventory unknown; runtime propagation not exercised."
+    ]
+  }
+}
