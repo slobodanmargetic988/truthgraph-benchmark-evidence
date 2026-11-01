@@ -1,0 +1,724 @@
+{
+  "schema_version": 3,
+  "publication_date": "2026-11-01",
+  "publication_timezone": "Europe/Belgrade",
+  "source": {
+    "repository": "https://github.com/open-telemetry/opentelemetry-demo",
+    "commit": "d306972ec1d91c7d01ec788e7e98e90535570a4c",
+    "indexed_repository_id": "github-open-telemetry-opentelemetry-demo-1c508b01"
+  },
+  "controls": {
+    "model": "gpt-6.1-sol",
+    "effort": "ultra",
+    "provider": "openai",
+    "original_OFF_rerun": false,
+    "new_attempts": 1,
+    "previous_selected_ON_one_of_earlier_Redu_chats": 4,
+    "on_endpoint": "https://truthgraph-test-6f8d2a10.redu.cloud/api/mcp",
+    "on_server": "truthgraph_test_customer",
+    "source_task_identical": true,
+    "previous_on_backend": "544318527289b532226a0ff9f1641107b34b2b77",
+    "files_only_backend": "2ed2413763be631bc4474b077820c5de0b773053",
+    "previous_on_test_skill": "2026.10.30.2",
+    "files_only_test_skill": "2026.11.01.1",
+    "fixture_generation": "d99d4b50-488e-46af-97e8-c5f5dc821c29",
+    "hardware": "Same Redu2vCPU/4GiB snapshot; source pin fixed.",
+    "preparation": "Files-only followed generic files/full searches and encoder warm-up; previous ON followed task-specific ownership/readiness. Cache/load and investigation choices uncontrolled.",
+    "retrieval_difference": "Previous ON embedding timed out and used lexical fallback. Files-only timed hybrid retrieval/reranking succeeded; search limit/query and number of calls differ."
+  },
+  "pricing": {
+    "source": "Owner-supplied API pricing screenshot; stipulated rates, not a verified invoice.",
+    "currency": "USD",
+    "unit": "per1000000tokens",
+    "usd_per_million_tokens": {
+      "uncached_input": "2",
+      "cached_input": "0.10",
+      "output": "10"
+    },
+    "cache_write_tokens": 0,
+    "cached_input_is_subset_of_input": true,
+    "reasoning_is_subset_of_output": true,
+    "infrastructure_included": false
+  },
+  "runs": {
+    "off": {
+      "file": "logs/01-original-off.jsonl",
+      "sha256": "b6af8b789e591d240985947820be6baba67a01525823bb802eb0747052aca645",
+      "bytes": 1273356,
+      "prompt_file": "prompts/off.txt",
+      "prompt_sha256": "820f6b9bca5fca8f25cbf07a1d2fcea930f3c959b2a5f9991cec25a3a74dc0fc",
+      "measured": {
+        "thread_id": "01a186ce-66a2-7300-aa04-c8e8417263f9",
+        "cli_version": "0.164.0-alpha.11.1",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 1358312,
+          "cached_input_tokens": 1234944,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 12176,
+          "reasoning_output_tokens": 4670,
+          "total_tokens": 1370488
+        },
+        "duration_ms": 374683,
+        "model_responses": 14,
+        "local_commands": 36,
+        "nonzero_commands": 4,
+        "native_calls": [],
+        "answer_sha256": "9d495f3508d7eec5c69d62500395d468acbed92be762352c4b22ffa39a202618"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.246736",
+        "cached_input": "0.1234944",
+        "output": "0.12176",
+        "total": "0.4919904"
+      }
+    },
+    "previous_on": {
+      "file": "logs/02-previous-on-with-evidence.jsonl",
+      "sha256": "230844522a14202bf12ad65e11cd910fd2ec0d60cda8362dbe43f4e27c84b379",
+      "bytes": 1486913,
+      "prompt_file": "prompts/previous_on.txt",
+      "prompt_sha256": "23925b3183cc7ed926624148ff24f736e8c48247158dc4734beee4a4130d4775",
+      "measured": {
+        "thread_id": "01a18f23-261c-7bf3-b009-3f743fef7c35",
+        "cli_version": "0.166.0-alpha.5.1",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 1914876,
+          "cached_input_tokens": 1734272,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10620,
+          "reasoning_output_tokens": 3471,
+          "total_tokens": 1925496
+        },
+        "duration_ms": 269443,
+        "model_responses": 18,
+        "local_commands": 91,
+        "nonzero_commands": 3,
+        "native_calls": [
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_index_status",
+            "arguments": {
+              "repositoryId": "github-open-telemetry-opentelemetry-demo-1c508b01"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": null,
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": "d306972ec1d91c7d01ec788e7e98e90535570a4c",
+            "structured_payload_bytes": 3537
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_search",
+            "arguments": {
+              "repositoryId": "github-open-telemetry-opentelemetry-demo-1c508b01",
+              "q": "checkout PlaceOrder handler",
+              "mode": "hybrid",
+              "limit": 4
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "hybrid",
+              "mode": "lexical",
+              "resolution_status": "ranked_candidates",
+              "embedding_spec_id": "qwen3-embedding-0.6b-q8-1024-source-v1",
+              "semantic_state": "unavailable",
+              "eligible_documents": 10456,
+              "ready_documents": 10456,
+              "excluded_documents": 365,
+              "excluded_documents_unit": "source_entity_exclusions",
+              "source_capture_complete": true,
+              "source_capture_state": "complete",
+              "candidate_limit": 4,
+              "returned_count": 4,
+              "candidates_truncated": true,
+              "approximate": false,
+              "ranking": "customer_local_evidence_v2",
+              "lexical_query_terms": [
+                "checkout",
+                "handler",
+                "order",
+                "place",
+                "placeorder"
+              ],
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "warnings": [
+                "Semantic discovery was unavailable or exceeded its budget; these are lexical candidates. No semantic completeness claim is made."
+              ],
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 5052,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "semantic_readiness",
+                  "outcome": "ok",
+                  "elapsed_ms": 1335,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "embedding",
+                  "outcome": "failed",
+                  "elapsed_ms": 3004,
+                  "budget_ms": 3000,
+                  "error_code": "deadline_exceeded"
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 7442,
+                  "budget_ms": 15000
+                }
+              ],
+              "ranking_version": "customer-local-evidence/v2",
+              "ranking_intent": "implementation",
+              "ranking_query_terms": [
+                "checkout",
+                "order",
+                "place",
+                "placeorder"
+              ],
+              "ranking_ignored_intent_terms": [
+                "handler"
+              ],
+              "duplicate_groups_collapsed": 4,
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 4,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 13613
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-open-telemetry-opentelemetry-demo-1c508b01",
+              "query": "symbol:github-open-telemetry-opentelemetry-demo-1c508b01:src/checkout/main.go.checkout.PlaceOrder",
+              "intent": "impact",
+              "limit": 5
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_complete": false,
+              "source_capture_state": "not_checked",
+              "candidate_limit": 5,
+              "returned_count": 1,
+              "candidates_truncated": false,
+              "approximate": false,
+              "ranking": "lexical",
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 1,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 24876
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-open-telemetry-opentelemetry-demo-1c508b01",
+              "query": "endpoint:github-open-telemetry-opentelemetry-demo-1c508b01:protobuf:pb/demo.proto:oteldemo.CheckoutService.PlaceOrder",
+              "intent": "ownership",
+              "limit": 8
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_complete": false,
+              "source_capture_state": "not_checked",
+              "candidate_limit": 8,
+              "returned_count": 1,
+              "candidates_truncated": false,
+              "approximate": false,
+              "ranking": "lexical",
+              "completeness_scope": "ranked subject discovery only; neither an exhaustive inventory nor impact completeness",
+              "result_unit": "subject",
+              "returned_file_count": 0,
+              "returned_subject_count": 1,
+              "reranking_status": "not_requested",
+              "reranker_token_truncations": 0
+            },
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 21677
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-open-telemetry-opentelemetry-demo-1c508b01",
+              "query": "contract:github-open-telemetry-opentelemetry-demo-1c508b01:protobuf:pb/demo.proto:oteldemo.OrderResult",
+              "intent": "impact",
+              "limit": 3
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": null,
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": null,
+            "structured_payload_bytes": 14265
+          }
+        ],
+        "answer_sha256": "5d52262d5950c3f6fbcf6033c25a4a3645dcb0347719f89717c7687263026ef5"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.361208",
+        "cached_input": "0.1734272",
+        "output": "0.1062",
+        "total": "0.6408352"
+      }
+    },
+    "files_only_on": {
+      "file": "logs/03-on-files-only.jsonl",
+      "sha256": "590a1a32af5a9d639ada292a4208d4b0cf7deb00fd941d5e6188d1bddbe771a1",
+      "bytes": 978627,
+      "prompt_file": "prompts/files_only_on.txt",
+      "prompt_sha256": "23925b3183cc7ed926624148ff24f736e8c48247158dc4734beee4a4130d4775",
+      "measured": {
+        "thread_id": "01a19626-e5e6-7e71-b889-3c96c255161e",
+        "cli_version": "0.166.0-alpha.5.1",
+        "provider": "openai",
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "efforts": [
+          "ultra"
+        ],
+        "usage": {
+          "input_tokens": 1275292,
+          "cached_input_tokens": 1157888,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 11005,
+          "reasoning_output_tokens": 3709,
+          "total_tokens": 1286297
+        },
+        "duration_ms": 309377,
+        "model_responses": 18,
+        "local_commands": 34,
+        "nonzero_commands": 3,
+        "native_calls": [
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_index_status",
+            "arguments": {
+              "repositoryId": "github-open-telemetry-opentelemetry-demo-1c508b01"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": null,
+            "presentation_view": "compact",
+            "coverage": null,
+            "indexed_revision": "d306972ec1d91c7d01ec788e7e98e90535570a4c",
+            "structured_payload_bytes": 3645
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_search",
+            "arguments": {
+              "repositoryId": "github-open-telemetry-opentelemetry-demo-1c508b01",
+              "q": "checkout PlaceOrder handler",
+              "mode": "hybrid",
+              "limit": 5,
+              "view": "files"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "hybrid",
+              "mode": "hybrid",
+              "resolution_status": "ranked_candidates",
+              "semantic_state": "ready",
+              "source_capture_state": "complete",
+              "candidates_truncated": true,
+              "returned_count": 5,
+              "reranking_status": "complete",
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 1370,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "semantic_readiness",
+                  "outcome": "ok",
+                  "elapsed_ms": 2230,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "embedding",
+                  "outcome": "ok",
+                  "elapsed_ms": 1065,
+                  "budget_ms": 3000
+                },
+                {
+                  "phase": "semantic_retrieval",
+                  "outcome": "ok",
+                  "elapsed_ms": 1364,
+                  "budget_ms": 15000,
+                  "pool_acquire_ms": 0,
+                  "database_work_ms": 1363
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 957,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "local_reranking",
+                  "outcome": "ok",
+                  "elapsed_ms": 732,
+                  "budget_ms": 5000
+                }
+              ]
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "no_omissions_recorded",
+              "source_omissions": {
+                "count": 0,
+                "pathsTruncated": false
+              },
+              "unlocated_subjects": 0
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 3811
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-open-telemetry-opentelemetry-demo-1c508b01",
+              "query": "symbol:github-open-telemetry-opentelemetry-demo-1c508b01:src/checkout/main.go.checkout.PlaceOrder",
+              "intent": "impact",
+              "limit": 5,
+              "view": "files"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "exact",
+              "resolution_status": "exact",
+              "semantic_state": "not_requested",
+              "source_capture_state": "not_checked",
+              "candidates_truncated": false,
+              "returned_count": 1,
+              "reranking_status": "not_requested"
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "no_omissions_recorded",
+              "source_omissions": {
+                "count": 0,
+                "pathsTruncated": false
+              },
+              "unlocated_subjects": 3,
+              "traversal_complete": true,
+              "impact_scope": "symbol"
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 2539
+          },
+          {
+            "server": "truthgraph_test_customer",
+            "tool": "truthgraph_context",
+            "arguments": {
+              "repositoryId": "github-open-telemetry-opentelemetry-demo-1c508b01",
+              "query": "OrderResult orders Kafka accounting fraud-detection",
+              "intent": "ownership",
+              "limit": 8,
+              "view": "files"
+            },
+            "status": "completed",
+            "isError": false,
+            "discovery": {
+              "requested_mode": "auto",
+              "mode": "hybrid",
+              "resolution_status": "ranked_candidates",
+              "semantic_state": "ready",
+              "source_capture_state": "complete",
+              "candidates_truncated": true,
+              "returned_count": 8,
+              "reranking_status": "complete",
+              "phases": [
+                {
+                  "phase": "source_lexical",
+                  "outcome": "ok",
+                  "elapsed_ms": 577,
+                  "budget_ms": 15000,
+                  "strategy": "customer_fields_v1"
+                },
+                {
+                  "phase": "semantic_readiness",
+                  "outcome": "ok",
+                  "elapsed_ms": 1059,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "embedding",
+                  "outcome": "ok",
+                  "elapsed_ms": 1188,
+                  "budget_ms": 3000
+                },
+                {
+                  "phase": "semantic_retrieval",
+                  "outcome": "ok",
+                  "elapsed_ms": 1514,
+                  "budget_ms": 15000,
+                  "pool_acquire_ms": 0,
+                  "database_work_ms": 1513
+                },
+                {
+                  "phase": "ranking_evidence",
+                  "outcome": "ok",
+                  "elapsed_ms": 828,
+                  "budget_ms": 15000
+                },
+                {
+                  "phase": "local_reranking",
+                  "outcome": "ok",
+                  "elapsed_ms": 970,
+                  "budget_ms": 5000
+                }
+              ]
+            },
+            "presentation_view": "files",
+            "coverage": {
+              "scope": "file_navigation_only",
+              "complete_change_impact": false,
+              "source_status": "no_omissions_recorded",
+              "source_omissions": {
+                "count": 0,
+                "pathsTruncated": false
+              },
+              "unlocated_subjects": 0
+            },
+            "indexed_revision": null,
+            "structured_payload_bytes": 4871
+          }
+        ],
+        "answer_sha256": "c27af562dc2865ad3c578d6d19d74832bb5eaa85f8c8abc7e3d981925d1c7e91"
+      },
+      "estimated_cost_usd": {
+        "uncached_input": "0.234808",
+        "cached_input": "0.1157888",
+        "output": "0.11005",
+        "total": "0.4606468"
+      }
+    }
+  },
+  "comparisons": {
+    "previous_on_vs_off": {
+      "baseline_run": "off",
+      "new_run": "previous_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 1358312,
+          "new": 1914876,
+          "difference": 556564,
+          "percent_change": 40.97468033853784
+        },
+        "cached_input_tokens": {
+          "baseline": 1234944,
+          "new": 1734272,
+          "difference": 499328,
+          "percent_change": 40.433250414593694
+        },
+        "output_tokens": {
+          "baseline": 12176,
+          "new": 10620,
+          "difference": -1556,
+          "percent_change": -12.779237844940871
+        },
+        "reasoning_output_tokens": {
+          "baseline": 4670,
+          "new": 3471,
+          "difference": -1199,
+          "percent_change": -25.6745182012848
+        },
+        "total_tokens": {
+          "baseline": 1370488,
+          "new": 1925496,
+          "difference": 555008,
+          "percent_change": 40.49710759962875
+        },
+        "uncached_input_tokens": {
+          "baseline": 123368,
+          "new": 180604,
+          "difference": 57236,
+          "percent_change": 46.39452694377797
+        },
+        "duration_ms": {
+          "baseline": 374683,
+          "new": 269443,
+          "difference": -105240,
+          "percent_change": -28.08774350584361
+        }
+      },
+      "cost_difference_usd": "0.1488448",
+      "cost_percent_change": "30.25359844419728515027935500"
+    },
+    "files_only_vs_off": {
+      "baseline_run": "off",
+      "new_run": "files_only_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 1358312,
+          "new": 1275292,
+          "difference": -83020,
+          "percent_change": -6.111997832603999
+        },
+        "cached_input_tokens": {
+          "baseline": 1234944,
+          "new": 1157888,
+          "difference": -77056,
+          "percent_change": -6.239635157545608
+        },
+        "output_tokens": {
+          "baseline": 12176,
+          "new": 11005,
+          "difference": -1171,
+          "percent_change": -9.617279894875164
+        },
+        "reasoning_output_tokens": {
+          "baseline": 4670,
+          "new": 3709,
+          "difference": -961,
+          "percent_change": -20.57815845824411
+        },
+        "total_tokens": {
+          "baseline": 1370488,
+          "new": 1286297,
+          "difference": -84191,
+          "percent_change": -6.14314025369066
+        },
+        "uncached_input_tokens": {
+          "baseline": 123368,
+          "new": 117404,
+          "difference": -5964,
+          "percent_change": -4.834316840671815
+        },
+        "duration_ms": {
+          "baseline": 374683,
+          "new": 309377,
+          "difference": -65306,
+          "percent_change": -17.429667212016554
+        }
+      },
+      "cost_difference_usd": "-0.0313436",
+      "cost_percent_change": "-6.370774714303368521011792100"
+    },
+    "files_only_vs_previous_on": {
+      "baseline_run": "previous_on",
+      "new_run": "files_only_on",
+      "metrics": {
+        "input_tokens": {
+          "baseline": 1914876,
+          "new": 1275292,
+          "difference": -639584,
+          "percent_change": -33.40080506518438
+        },
+        "cached_input_tokens": {
+          "baseline": 1734272,
+          "new": 1157888,
+          "difference": -576384,
+          "percent_change": -33.234925086722264
+        },
+        "output_tokens": {
+          "baseline": 10620,
+          "new": 11005,
+          "difference": 385,
+          "percent_change": 3.625235404896432
+        },
+        "reasoning_output_tokens": {
+          "baseline": 3471,
+          "new": 3709,
+          "difference": 238,
+          "percent_change": 6.856813598386635
+        },
+        "total_tokens": {
+          "baseline": 1925496,
+          "new": 1286297,
+          "difference": -639199,
+          "percent_change": -33.19658934632946
+        },
+        "uncached_input_tokens": {
+          "baseline": 180604,
+          "new": 117404,
+          "difference": -63200,
+          "percent_change": -34.993687847445244
+        },
+        "duration_ms": {
+          "baseline": 269443,
+          "new": 309377,
+          "difference": 39934,
+          "percent_change": 14.820945431872424
+        }
+      },
+      "cost_difference_usd": "-0.1801884",
+      "cost_percent_change": "-28.11774384428321041041440920"
+    }
+  },
+  "quality": {
+    "off": 8.5,
+    "previous_on": 9.5,
+    "files_only_on": 9.0,
+    "maximum": 10,
+    "current_review": "Unblinded targeted static review, not runtime proof"
+  },
+  "limitations": [
+    "One new run and historical selected comparisons; no variance or isolated causal estimate.",
+    "Previous ON has lower output but higher uncached and cached input than OFF; lower output alone did not save cost at these rates.",
+    "Files-only cost is lower, but output and duration rise versus previous ON and static checklist coverage loses half a point.",
+    "Raw logs preserve local paths/account/session/tool metadata. No recording exists.",
+    "No application tests or runtime propagation validation; no new indexing/document embeddings."
+  ]
+}
