@@ -1,0 +1,13 @@
+# Repository social preview
+
+`truthgraph-benchmarks-v1.jpg` is the GitHub repository social preview: a 1774 × 887 (2:1) image in TruthGraph's ink/violet branding, with open document sheets, JSONL/code files and a GitHub repository label. The charts are decorative, not benchmark measurements. It contains no performance claims.
+
+Created on 2 November 2026 using the built-in image-generation tool with the TruthGraph website's `truthgraph-ink-v1.png` as a visual reference. Exported to JPEG for GitHub's upload size limit, preserving the generated dimensions and composition.
+
+GitHub serves the repository's Open Graph and Twitter metadata. Upload this asset under **Settings → General → Social preview → Edit**; committing it alone does not activate the preview. Sharing platforms may retain an earlier card until their caches refresh.
+
+Suggested descriptive alt text: “TruthGraph benchmark evidence on GitHub. Open reports and code files glow violet above a repository archive, with raw runs, baselines and cost comparisons.” GitHub controls the actual repository image alt metadata.
+
+## Generation prompt
+
+Use case: ads-marketing. Create a beautiful GitHub repository social preview card, exactly 1280x640 pixels (2:1), inspired by the referenced TruthGraph website card. Reference image is branding/style reference only, not an edit target. Preserve the sophisticated near-black ink palette, glowing violet/lavender highlights, crisp white typography and small truthgraph. wordmark with its connected-node mark. Main headline on left in large very legible type: "TruthGraph" then "Benchmark evidence" (lavender second line). Smaller supporting text exactly "Raw runs. Open evidence." then "Logs · Baselines · Cost comparisons". Bottom left a clear Git branch/repository icon beside "GitHub repository" and below it "slobodanmargetic988/truthgraph-benchmark-evidence" in readable small mono. Right half: cinematic refined illustration of an open repository archive: floating open document sheets and code files, subtle JSONL/code lines, a comparison report sheet with simple unlabeled charts (NO numbers or claims), linked by violet graph nodes; echo the original glowing network and deep archive atmosphere. It must immediately read as a public benchmark/documentation repository, not a product signup ad. No robots necessary; documents and code dominate the illustration. Strong typography, generous safe margins at least 60 pixels, polished professional developer-tool branding, readable at thumbnail size. No trial CTA, no percent claims, no fabricated performance figures, no watermarks, no unrelated text. Use only requested copy.
