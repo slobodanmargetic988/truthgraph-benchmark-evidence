@@ -1,5 +1,7 @@
 # TruthGraph benchmark evidence
 
+[![Support me](https://img.shields.io/badge/Support%20me-GitHub%20Sponsors-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/slobodanmargetic988)
+
 Raw, unedited evidence behind performance claims made about [TruthGraph](https://truthgraph.weeyuga.com). Each folder is one comparison. It holds the agent session logs exactly as the agent wrote them, a standard-library script that recomputes the numbers, and SHA-256 hashes of every file. Where recordings exist, they are attached to the release with the same name as the folder; automated comparisons explicitly state when there is no recording.
 
 | Folder | What it shows |
